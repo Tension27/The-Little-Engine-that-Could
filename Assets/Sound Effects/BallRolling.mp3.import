@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5e08lcy4equj"
+path="res://.godot/imported/BallRolling.mp3-5b33fb5b1e937374c385c8e5681e06b5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/BallRolling.mp3"
+dest_files=["res://.godot/imported/BallRolling.mp3-5b33fb5b1e937374c385c8e5681e06b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

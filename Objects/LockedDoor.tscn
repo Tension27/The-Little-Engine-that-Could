@@ -1,0 +1,179 @@
+[gd_scene load_steps=10 format=3 uid="uid://dql8a7rkbpx6s"]
+
+[ext_resource type="Script" path="res://Objects/LockedDoor.cs" id="1_bo8bx"]
+[ext_resource type="Texture2D" uid="uid://dlo0m6da4x8wu" path="res://Assets/BrickDoorAnimationUpdated.png" id="2_uncu5"]
+[ext_resource type="AudioStream" uid="uid://cq4x8e3xm5vas" path="res://Assets/Sound Effects/BrickDoorOpening.mp3" id="4_6dfo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fwos"]
+resource_local_to_scene = true
+size = Vector2(64.5, 321)
+
+[sub_resource type="Animation" id="Animation_gjoaj"]
+resource_name = "Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Closed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-0.25, -143), Vector2(-0.25, -127), Vector2(-0.25, -111), Vector2(-0.25, -95), Vector2(-0.25, -79), Vector2(-0.25, -63), Vector2(-0.25, -47), Vector2(-0.25, -31), Vector2(-0.25, -14.5), Vector2(-0.25, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Closed:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(64.5, 32), Vector2(64.5, 64), Vector2(64.5, 96), Vector2(64.5, 128), Vector2(64.5, 160), Vector2(64.5, 192), Vector2(64.5, 224), Vector2(64.5, 256), Vector2(64.5, 289), Vector2(64.5, 321)]
+}
+
+[sub_resource type="Animation" id="Animation_u7abs"]
+resource_name = "Idle"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Closed:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_6fwos")]
+}
+
+[sub_resource type="Animation" id="Animation_6v5mf"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Closed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-0.25, 0.5), Vector2(-0.25, -14.5), Vector2(-0.25, -31), Vector2(-0.25, -47), Vector2(-0.25, -63), Vector2(-0.25, -79), Vector2(-0.25, -95), Vector2(-0.25, -111), Vector2(-0.25, -127), Vector2(-0.25, -143)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Closed:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(64.5, 321), Vector2(64.5, 289), Vector2(64.5, 256), Vector2(64.5, 224), Vector2(64.5, 192), Vector2(64.5, 160), Vector2(64.5, 128), Vector2(64.5, 96), Vector2(64.5, 64), Vector2(64.5, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_s1r8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Closed:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_6fwos")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_33mpg"]
+_data = {
+"Close": SubResource("Animation_gjoaj"),
+"Idle": SubResource("Animation_u7abs"),
+"Open": SubResource("Animation_6v5mf"),
+"RESET": SubResource("Animation_s1r8p")
+}
+
+[node name="LockedDoor" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 17
+script = ExtResource("1_bo8bx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1)
+scale = Vector2(4, 4)
+texture = ExtResource("2_uncu5")
+hframes = 10
+
+[node name="Closed" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 0.5)
+shape = SubResource("RectangleShape2D_6fwos")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_33mpg")
+}
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6dfo2")
+volume_db = -25.0
+pitch_scale = 0.85
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnDoorMoveFinished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="OnDoorMoveStarted"]

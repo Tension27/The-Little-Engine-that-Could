@@ -1,0 +1,215 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3rv0er4v0goq"]
+
+[ext_resource type="PackedScene" uid="uid://cgdvrqt8pbhj5" path="res://Environment/FloorChunk.tscn" id="1_kyofb"]
+[ext_resource type="PackedScene" uid="uid://xko5xuiyxel6" path="res://Objects/Finish.tscn" id="2_2ficc"]
+[ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="3_bi0xi"]
+[ext_resource type="Script" path="res://DeathZone.cs" id="3_m3gs2"]
+[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/LockedDoor.tscn" id="3_muyx3"]
+[ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="4_wst7l"]
+[ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/MovingPlatform.tscn" id="5_dlumq"]
+[ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="5_rn23s"]
+[ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="7_paiq0"]
+[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="7_ueg52"]
+[ext_resource type="PackedScene" uid="uid://lea4mkpn668t" path="res://Objects/key.tscn" id="8_by857"]
+[ext_resource type="PackedScene" uid="uid://cio6ooqnjuxmp" path="res://Objects/DoorThatNeedsKey.tscn" id="9_5er1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ul34"]
+size = Vector2(4673, 310)
+
+[node name="Level_1" type="Node2D"]
+
+[node name="Floor&Walls" parent="." instance=ExtResource("1_kyofb")]
+position = Vector2(864, 746)
+
+[node name="FloorChunk2" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-512, 0)
+
+[node name="FloorChunk3" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-2560, 0)
+
+[node name="FloorChunk4" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-1920, 0)
+
+[node name="FloorChunk5" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-1280, 0)
+
+[node name="FloorChunk6" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(0, -1492)
+
+[node name="FloorChunk7" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-640, -1492)
+
+[node name="FloorChunk8" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-2560, -1492)
+
+[node name="FloorChunk9" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-1920, -1492)
+
+[node name="FloorChunk10" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-1280, -1492)
+
+[node name="FloorChunk11" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(512, -128)
+rotation = -1.5708
+
+[node name="FloorChunk12" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(512, -1408)
+rotation = -1.5708
+
+[node name="FloorChunk13" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-2304, -1920)
+rotation = 1.5708
+
+[node name="FloorChunk14" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-2304, -640)
+rotation = 1.5708
+
+[node name="FloorChunk15" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-2304, -1280)
+rotation = 1.5708
+
+[node name="FloorChunk17" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-2176, -1024)
+
+[node name="FloorChunk18" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-2176, -684)
+
+[node name="FloorChunk19" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-1119, -515)
+
+[node name="FloorChunk20" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-1285, -940)
+
+[node name="FloorChunk" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-128, -256)
+
+[node name="FloorChunk16" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(512, -768)
+rotation = -1.5708
+
+[node name="FloorChunk21" parent="Floor&Walls" instance=ExtResource("1_kyofb")]
+position = Vector2(-128, -950)
+
+[node name="Coin4" parent="." instance=ExtResource("4_wst7l")]
+position = Vector2(-5, 93)
+
+[node name="Coin" parent="." instance=ExtResource("4_wst7l")]
+position = Vector2(1244, 618)
+
+[node name="Coin2" parent="." instance=ExtResource("4_wst7l")]
+position = Vector2(-1306, -98)
+
+[node name="Coin3" parent="." instance=ExtResource("4_wst7l")]
+position = Vector2(679, -5)
+
+[node name="Coins" parent="." instance=ExtResource("4_wst7l")]
+position = Vector2(-1046, 605)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-99, 975)
+collision_layer = 4
+script = ExtResource("3_m3gs2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(63.5, 90)
+shape = SubResource("RectangleShape2D_6ul34")
+
+[node name="Spike" parent="." instance=ExtResource("3_bi0xi")]
+position = Vector2(-929, 628)
+
+[node name="Spike2" parent="Spike" instance=ExtResource("3_bi0xi")]
+position = Vector2(1052, -2)
+
+[node name="Spike3" parent="Spike" instance=ExtResource("3_bi0xi")]
+position = Vector2(1248, 1)
+
+[node name="Spike4" parent="Spike" instance=ExtResource("3_bi0xi")]
+position = Vector2(1818, -255)
+
+[node name="Spike5" parent="Spike" instance=ExtResource("3_bi0xi")]
+position = Vector2(1867, -255)
+
+[node name="Spike6" parent="Spike" instance=ExtResource("3_bi0xi")]
+position = Vector2(242, -939)
+rotation = 1.5708
+
+[node name="Spike7" parent="Spike" instance=ExtResource("3_bi0xi")]
+position = Vector2(-27, -682)
+
+[node name="Finish" parent="." instance=ExtResource("2_2ficc")]
+position = Vector2(-1280, -502)
+coinsToFinish = 5
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Goomba2" parent="Enemies" instance=ExtResource("5_rn23s")]
+position = Vector2(-141, 528)
+
+[node name="Goomba" parent="Enemies" instance=ExtResource("5_rn23s")]
+position = Vector2(-783, 600)
+direction = 1
+
+[node name="Gooma3" parent="Enemies" instance=ExtResource("5_rn23s")]
+direction = 1
+
+[node name="CharacterBody2D" parent="Enemies" instance=ExtResource("5_rn23s")]
+position = Vector2(1139, 618)
+direction = 1
+
+[node name="CharacterBody2D2" parent="Enemies" instance=ExtResource("5_rn23s")]
+position = Vector2(1006, 343)
+direction = 1
+
+[node name="CharacterBody2D3" parent="Enemies" instance=ExtResource("5_rn23s")]
+position = Vector2(-786, -404)
+direction = 1
+
+[node name="CharacterBody2D4" parent="Enemies" instance=ExtResource("7_paiq0")]
+position = Vector2(-349, -324)
+
+[node name="CharacterBody2D5" parent="Enemies" instance=ExtResource("7_paiq0")]
+position = Vector2(-395, 589)
+direction = 1
+
+[node name="CharacterBody2D6" parent="Enemies" instance=ExtResource("7_paiq0")]
+position = Vector2(-1089, -68)
+
+[node name="CharacterBody2D7" parent="Enemies" instance=ExtResource("7_paiq0")]
+position = Vector2(1043, -78)
+
+[node name="Doors&Keys" type="Node" parent="."]
+
+[node name="YellowKey" parent="Doors&Keys" instance=ExtResource("8_by857")]
+position = Vector2(1125, -375)
+
+[node name="BlueKeyDoor" parent="Doors&Keys" instance=ExtResource("9_5er1b")]
+modulate = Color(0.027451, 0.121569, 1, 1)
+self_modulate = Color(0.027451, 0.121569, 1, 1)
+position = Vector2(893, -369)
+
+[node name="YellowKeyDoor" parent="Doors&Keys" instance=ExtResource("9_5er1b")]
+modulate = Color(100, 100, 0.969, 1)
+self_modulate = Color(1, 1, 0, 1)
+light_mask = 0
+position = Vector2(-1023, -422)
+
+[node name="BlueKey" parent="Doors&Keys" instance=ExtResource("8_by857")]
+modulate = Color(0.053, 0.167, 100, 1)
+position = Vector2(-203, 105)
+
+[node name="LockedDoor" parent="Doors&Keys" instance=ExtResource("3_muyx3")]
+z_index = -1
+position = Vector2(-1200, -54)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("5_dlumq")]
+position = Vector2(930, 88)
+phaseOffset = 0.22
+distance = Vector2(0, 90)
+debug = false
+
+[node name="Area2D2" parent="." instance=ExtResource("7_ueg52")]
+position = Vector2(1158, 431)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="OnBodyEntered2D"]
+[connection signal="body_entered" from="Area2D2" to="Doors&Keys/LockedDoor" method="LeverSignal"]
+[connection signal="body_exited" from="Area2D2" to="Doors&Keys/LockedDoor" method="LeverSignal"]

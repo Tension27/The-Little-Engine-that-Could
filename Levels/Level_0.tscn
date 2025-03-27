@@ -1,0 +1,774 @@
+[gd_scene load_steps=46 format=3 uid="uid://c1g7barmvp22f"]
+
+[ext_resource type="Texture2D" uid="uid://h8puviej5xq4" path="res://Assets/Tiles/Custom Tiles/Grass_SS.png" id="1_hn2vm"]
+[ext_resource type="Texture2D" uid="uid://dw2bwu214fica" path="res://Assets/A-Key.png" id="2_q74py"]
+[ext_resource type="Texture2D" uid="uid://bqpkyj61lm8jw" path="res://Assets/D-Key.png" id="3_p77p6"]
+[ext_resource type="Texture2D" uid="uid://cy7bpmrkd2trg" path="res://Assets/W-Key.png" id="4_1i3f4"]
+[ext_resource type="Script" path="res://StaticBody2D.gd" id="5_f5u2d"]
+[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/LockedDoor.tscn" id="6_7xgrb"]
+[ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="6_fr0u3"]
+[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="7_fji2q"]
+[ext_resource type="PackedScene" uid="uid://di051ae15i1oa" path="res://Objects/PushableBlockPhysicsTest.tscn" id="8_p3k3t"]
+[ext_resource type="PackedScene" uid="uid://cmys6qsrb7se1" path="res://Objects/Button.tscn" id="9_6ubdw"]
+[ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/MovingPlatform.tscn" id="10_0ukgo"]
+[ext_resource type="PackedScene" uid="uid://xko5xuiyxel6" path="res://Objects/Finish.tscn" id="12_rstu4"]
+[ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="13_702ev"]
+[ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="14_oiili"]
+[ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="14_x8w28"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nr2af"]
+load_path = "res://.godot/imported/Solaria Demo Update 01.png-122e9fc2614e47de6825073783eff486.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vph3"]
+texture = SubResource("CompressedTexture2D_nr2af")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+26:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+27:3/0 = 0
+0:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+27:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+26:5/0 = 0
+27:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+26:6/0 = 0
+27:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+26:7/0 = 0
+27:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+26:8/0 = 0
+27:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+21:9/0 = 0
+23:9/0 = 0
+24:9/0 = 0
+25:9/0 = 0
+26:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+26:10/0 = 0
+27:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+22:11/0 = 0
+23:11/0 = 0
+24:11/0 = 0
+25:11/0 = 0
+26:11/0 = 0
+27:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+17:12/0 = 0
+18:12/0 = 0
+19:12/0 = 0
+22:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+25:12/0 = 0
+27:12/0 = 0
+0:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+0:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u70hp"]
+texture = ExtResource("1_hn2vm")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cyqdx"]
+sources/0 = SubResource("TileSetAtlasSource_1vph3")
+sources/1 = SubResource("TileSetAtlasSource_u70hp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtjx4"]
+atlas = ExtResource("2_q74py")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s0nn"]
+atlas = ExtResource("2_q74py")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ss5r"]
+atlas = ExtResource("2_q74py")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clx3q"]
+atlas = ExtResource("3_p77p6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yduqa"]
+atlas = ExtResource("3_p77p6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjg2r"]
+atlas = ExtResource("3_p77p6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_135wf"]
+atlas = ExtResource("4_1i3f4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp0hv"]
+atlas = ExtResource("4_1i3f4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwtr"]
+atlas = ExtResource("4_1i3f4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_syqc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtjx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s0nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ss5r")
+}],
+"loop": true,
+"name": &"A",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clx3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yduqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjg2r")
+}],
+"loop": true,
+"name": &"D",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_135wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp0hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiwtr")
+}],
+"loop": true,
+"name": &"W",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgbv6"]
+size = Vector2(16, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urcxq"]
+size = Vector2(16, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoxuu"]
+size = Vector2(31.8681, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3ox5"]
+size = Vector2(528, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to67k"]
+size = Vector2(672, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5guy0"]
+size = Vector2(640, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trbel"]
+size = Vector2(496, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikrc6"]
+size = Vector2(31.8681, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sakvw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y65cd"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv0wk"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkn8m"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl5yk"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa7t"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo45o"]
+size = Vector2(16, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byjye"]
+size = Vector2(16, 144)
+
+[node name="Level_0" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(4.55, 4.55)
+tile_set = SubResource("TileSet_cyqdx")
+format = 2
+layer_0/tile_data = PackedInt32Array(720877, 131073, 1, 720878, 131073, 1, 720879, 131073, 1, 720880, 131073, 1, 720881, 131073, 1, 720882, 131073, 1, 720884, 131073, 1, 720885, 131073, 1, 720886, 131073, 1, 720887, 131073, 1, 720888, 131073, 1, 720889, 1, 0, 720890, 65537, 0, 720891, 131073, 1, 720893, 131073, 1, 720894, 131073, 1, 720895, 131073, 1, 655360, 131073, 1, 655361, 131073, 1, 655362, 131073, 1, 655363, 1, 0, 655364, 65537, 0, 655365, 131073, 1, 655366, 131073, 1, 655367, 131073, 1, 655368, 131073, 1, 655369, 131073, 1, 655370, 131073, 1, 655371, 131073, 1, 655372, 131073, 1, 655373, 131073, 1, 655374, 131073, 1, 655375, 1, 0, 655376, 65537, 1, 655377, 65537, 1, 655378, 65537, 1, 655379, 65537, 1, 786412, 65537, 1, 786413, 65537, 1, 786414, 65537, 1, 786415, 65537, 1, 786416, 65537, 1, 786417, 65537, 1, 786418, 65537, 1, 786419, 65537, 1, 786420, 65537, 1, 786421, 65537, 1, 786422, 65537, 1, 786423, 65537, 1, 786424, 65537, 1, 786425, 65537, 1, 786426, 65537, 1, 786427, 65537, 1, 786428, 65537, 1, 786429, 65537, 1, 786430, 65537, 1, 786431, 65537, 1, 720896, 65537, 1, 720897, 65537, 1, 720898, 65537, 1, 720899, 65537, 1, 720900, 65537, 1, 720901, 65537, 1, 720902, 65537, 1, 720903, 65537, 1, 720904, 65537, 1, 720905, 65537, 1, 720906, 65537, 1, 720907, 65537, 1, 720908, 65537, 1, 720909, 65537, 1, 720910, 65537, 1, 720911, 65537, 1, 720912, 65537, 1, 720913, 65537, 1, 720914, 65537, 1, 720915, 65537, 1, 589843, 65537, 1, 524307, 65537, 1, 458771, 65537, 1, 393235, 65537, 1, 327699, 1, 0, 262163, 327681, 0, 196627, 720896, 4, 131091, 720896, 4, 65555, 720896, 4, 19, 720896, 4, -65517, 720896, 4, -131053, 720896, 4, -196589, 720896, 4, -262125, 720896, 4, -327661, 1507328, 4, -393197, 1507328, 4, -458733, 1507328, 4, -524269, 1507328, 4, -589805, 1507328, 4, -655341, 1507328, 4, -720877, 1507328, 4, 655340, 196609, 1, 589804, 196609, 1, 524268, 196609, 1, 458732, 196609, 1, 393196, 196609, 1, 327660, 196609, 1, 262124, 720896, 4, 196588, 720896, 4, 131052, 720896, 4, 65516, 720896, 4, -20, 720896, 4, -65556, 720896, 4, -131092, 720896, 4, -196628, 720896, 4, -262164, 1507328, 4, -327700, 1507328, 4, -393236, 1507328, 4, -458772, 1507328, 4, -524308, 1507328, 4, -589844, 1507328, 4, -655380, 1507328, 4, -720916, 720896, 2, -720915, 720896, 2, -720914, 720896, 2, -720913, 720896, 2, -720912, 720896, 2, -720911, 720896, 2, -720910, 720896, 2, -720909, 720896, 2, -720908, 720896, 2, -720907, 720896, 2, -720906, 720896, 2, -720905, 720896, 2, -720904, 720896, 2, -720903, 720896, 2, -720902, 720896, 2, -720901, 720896, 2, -720900, 720896, 2, -720899, 720896, 2, -720898, 720896, 2, -720897, 720896, 2, -786432, 720896, 2, -786431, 720896, 2, -786430, 720896, 2, -786429, 720896, 2, -786428, 720896, 2, -786427, 720896, 2, -786426, 720896, 2, -786425, 720896, 2, -786424, 720896, 2, -786423, 720896, 2, -786422, 720896, 2, -786421, 720896, 2, -786420, 720896, 2, -786419, 720896, 2, -786418, 720896, 2, -786417, 720896, 2, -786416, 720896, 2, -786415, 720896, 2, -786414, 720896, 2, -786413, 720896, 2, 262125, 720896, 3, 262126, 720896, 3, 262127, 720896, 3, 262128, 720896, 3, 262129, 720896, 3, 262130, 720896, 3, 262131, 720896, 3, 262132, 720896, 3, 262133, 720896, 3, 262134, 720896, 3, 262135, 720896, 3, 262136, 720896, 3, 262137, 720896, 3, 262138, 720896, 3, 262139, 720896, 3, 262140, 720896, 3, 262141, 720896, 3, 262142, 720896, 3, 262143, 720896, 3, 196608, 720896, 3, 196609, 720896, 3, 196610, 720896, 3, 196611, 720896, 3, 196612, 720896, 3, 196613, 720896, 3, 196614, 720896, 3, 196615, 720896, 3, 196616, 720896, 3, 196617, 720896, 4, 196618, 720896, 3, 196619, 720896, 3, 196620, 720896, 3, -720917, 720896, 2, -786412, 720896, 2, -327662, 1507328, 4, -327663, 1507328, 4, -327664, 1507328, 4, -327665, 1507328, 4, -327666, 1507328, 4, -327667, 1507328, 4, -327668, 1507328, 4, -327669, 1507328, 4, -327670, 1507328, 4, -327671, 1507328, 4, -327672, 1507328, 4, -327673, 1507328, 4, -327674, 1507328, 4, -327675, 1507328, 4, -327676, 1507328, 4, -327677, 1507328, 4, -327678, 1507328, 4, -327679, 1507328, 4, -327680, 1507328, 4, -262145, 1507328, 4, -262146, 1507328, 4, -262147, 1507328, 4, -262148, 1507328, 4, -262149, 1507328, 4, -262150, 1507328, 4, -262151, 1507328, 4, -262152, 1507328, 4, -262153, 1507328, 4, -262154, 1507328, 4, -262155, 1507328, 4, 327698, 1, 1, 393233, 1, 1, 458768, 1, 1, 524304, 327681, 0, 589839, 1, 1, 589840, 1, 0, 589841, 65537, 1, 524305, 65537, 1, 524306, 65537, 1, 458770, 65537, 1, 458769, 1, 0, 589842, 65537, 1, 393234, 1, 0, 262153, 720896, 4, 327689, 720896, 4, 589828, 196609, 1, 524292, 196609, 1, 458756, 196609, 1, 393220, 131073, 0, 720892, 131073, 1, 720883, 131073, 1, 655354, 196609, 1, 589818, 131073, 0, 131081, 720896, 3, 589817, 1, 1, 655353, 327681, 0, 393219, 1, 1, 458755, 327681, 0, 524291, 327681, 0, 589827, 327681, 0, 720876, 65537, 0)
+
+[node name="Tutorial Text" type="Node2D" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial Text"]
+offset_left = 756.0
+offset_top = 348.0
+offset_right = 1272.0
+offset_bottom = 445.0
+
+[node name="Label" type="Label" parent="Tutorial Text/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "You have to collect all the coins
+to complete the level"
+
+[node name="Label" type="Label" parent="Tutorial Text"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 33
+text = "Move the box onto the button!"
+
+[node name="Label2" type="Label" parent="Tutorial Text"]
+offset_left = -1337.0
+offset_top = -654.0
+offset_right = -681.0
+offset_bottom = -605.0
+theme_override_font_sizes/font_size = 35
+text = "Jump ontop of the enemies to kill them"
+
+[node name="Label3" type="Label" parent="Tutorial Text"]
+offset_left = -195.0
+offset_top = -735.0
+offset_right = 154.0
+offset_bottom = -689.0
+theme_override_font_sizes/font_size = 33
+text = "Watch out for spikes!"
+
+[node name="Tutorial Keys" type="Node2D" parent="."]
+
+[node name="W" type="AnimatedSprite2D" parent="Tutorial Keys"]
+texture_filter = 1
+position = Vector2(-567, 459)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_syqc7")
+animation = &"W"
+autoplay = "W"
+frame_progress = 0.424068
+
+[node name="Double Jump" type="Control" parent="Tutorial Keys"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 156.0
+offset_top = 364.0
+offset_right = 196.0
+offset_bottom = 404.0
+
+[node name="W" type="AnimatedSprite2D" parent="Tutorial Keys/Double Jump"]
+texture_filter = 1
+position = Vector2(39, 22)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_syqc7")
+animation = &"W"
+autoplay = "W"
+frame_progress = 0.114203
+
+[node name="W2" type="AnimatedSprite2D" parent="Tutorial Keys/Double Jump"]
+texture_filter = 1
+position = Vector2(-107, 24)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_syqc7")
+animation = &"W"
+autoplay = "W"
+frame_progress = 0.114203
+
+[node name="A" type="AnimatedSprite2D" parent="Tutorial Keys"]
+texture_filter = 1
+position = Vector2(-1189, 477)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_syqc7")
+animation = &"A"
+autoplay = "A"
+frame_progress = 0.763815
+
+[node name="D" type="AnimatedSprite2D" parent="Tutorial Keys"]
+texture_filter = 1
+position = Vector2(-1025, 479)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_syqc7")
+animation = &"D"
+autoplay = "D"
+frame_progress = 0.0908868
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(4.55, 4.55)
+collision_layer = 2
+collision_mask = 657
+script = ExtResource("5_f5u2d")
+tilemap_nodepath = NodePath("../TileMap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-312, -64)
+shape = SubResource("RectangleShape2D_fgbv6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-312, 112)
+shape = SubResource("RectangleShape2D_urcxq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-95.9341, 144)
+shape = SubResource("RectangleShape2D_hoxuu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-56, 56)
+shape = SubResource("RectangleShape2D_m3ox5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -184)
+shape = SubResource("RectangleShape2D_to67k")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 176)
+shape = SubResource("RectangleShape2D_5guy0")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(72, -72)
+shape = SubResource("RectangleShape2D_trbel")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(64.0659, 128)
+shape = SubResource("RectangleShape2D_ikrc6")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(152, 40)
+shape = SubResource("RectangleShape2D_sakvw")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(152, 80)
+shape = SubResource("RectangleShape2D_y65cd")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(280, 152)
+shape = SubResource("RectangleShape2D_gv0wk")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(288, 128)
+shape = SubResource("RectangleShape2D_nkn8m")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(296, 104)
+shape = SubResource("RectangleShape2D_yl5yk")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(304, 88)
+shape = SubResource("RectangleShape2D_xwa7t")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(312, -128)
+shape = SubResource("RectangleShape2D_oo45o")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(312, 8)
+shape = SubResource("RectangleShape2D_byjye")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("6_fr0u3")]
+position = Vector2(934, 627)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("6_fr0u3")]
+position = Vector2(-350, 25)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("6_fr0u3")]
+position = Vector2(177, -559)
+
+[node name="Interactable Objects" type="Node2D" parent="."]
+
+[node name="LockedDoor" parent="Interactable Objects" instance=ExtResource("6_7xgrb")]
+z_index = -1
+position = Vector2(692, 582)
+
+[node name="Area2D" parent="Interactable Objects" instance=ExtResource("7_fji2q")]
+position = Vector2(486, 734)
+
+[node name="RigidBody2D" parent="Interactable Objects" instance=ExtResource("8_p3k3t")]
+position = Vector2(74, 133)
+
+[node name="Button" parent="Interactable Objects" instance=ExtResource("9_6ubdw")]
+position = Vector2(542, 226)
+
+[node name="MovingPlatform" parent="Interactable Objects" instance=ExtResource("10_0ukgo")]
+position = Vector2(-1101, -191)
+distance = Vector2(0, 300)
+movement = false
+debug = false
+
+[node name="Finish" parent="Interactable Objects" instance=ExtResource("12_rstu4")]
+position = Vector2(1191, -524)
+coinsToFinish = 3
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Goomba" parent="Enemies" instance=ExtResource("13_702ev")]
+position = Vector2(-558, -409)
+
+[node name="PeaShooter" parent="Enemies" instance=ExtResource("14_x8w28")]
+position = Vector2(859, -411)
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spike" parent="Spikes" instance=ExtResource("14_oiili")]
+position = Vector2(-100, -409)
+
+[node name="Spike2" parent="Spikes" instance=ExtResource("14_oiili")]
+position = Vector2(-51, -409)
+
+[node name="Spike3" parent="Spikes" instance=ExtResource("14_oiili")]
+position = Vector2(-2, -409)
+
+[node name="Spike4" parent="Spikes" instance=ExtResource("14_oiili")]
+position = Vector2(47, -409)
+
+[connection signal="body_entered" from="Interactable Objects/Area2D" to="Interactable Objects/LockedDoor" method="LeverSignal"]
+[connection signal="body_exited" from="Interactable Objects/Area2D" to="Interactable Objects/LockedDoor" method="LeverSignal"]
+[connection signal="body_entered" from="Interactable Objects/Button" to="Interactable Objects/MovingPlatform" method="OnButtonPressed"]
+[connection signal="body_exited" from="Interactable Objects/Button" to="Interactable Objects/MovingPlatform" method="OnButtonReleased"]

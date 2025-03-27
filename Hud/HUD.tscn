@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=3 uid="uid://d46gmqx82ji7"]
+
+[ext_resource type="Script" path="res://Hud/HUD.cs" id="1_dkwpp"]
+[ext_resource type="Texture2D" uid="uid://c3armo2bwvg2l" path="res://Assets/Coin.png" id="2_00wr8"]
+[ext_resource type="Script" path="res://Hud/StopWatchTimer.cs" id="4_h6l4k"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_dkwpp")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -0.0946181
+anchor_top = -0.149691
+anchor_right = -0.0946181
+anchor_bottom = -0.149691
+offset_left = 785.0
+offset_top = 95.0
+offset_right = 854.0
+offset_bottom = 161.0
+texture = ExtResource("2_00wr8")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="DeathCounter" type="Label" parent="."]
+offset_left = 1023.0
+offset_top = -6.0
+offset_right = 1184.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.144965
+anchor_right = -0.144965
+offset_left = 1018.0
+offset_top = -5.0
+offset_right = 1352.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 45
+text = "Deaths:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 750.0
+offset_top = 8.0
+offset_right = 801.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 28
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[node name="Coins" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0260417
+anchor_top = -0.0262346
+anchor_right = -0.0260417
+anchor_bottom = -0.0262346
+offset_left = 805.0
+offset_top = 5.0
+offset_right = 917.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(1, 0.854902, 0.290196, 1)
+theme_override_font_sizes/font_size = 56
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="StopWatchTimer" type="Timer" parent="."]
+wait_time = 86400.0
+script = ExtResource("4_h6l4k")
+
+[node name="Stopwatch" type="Panel" parent="StopWatchTimer"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 128.0
+offset_bottom = 41.0
+
+[node name="Label1" type="Label" parent="StopWatchTimer"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 24
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="StopWatchTimer"]
+offset_left = 40.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 24
+text = "00."
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="StopWatchTimer"]
+offset_left = 80.0
+offset_top = 5.0
+offset_right = 122.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 24
+text = "000"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="SaveTime" from="." to="StopWatchTimer" method="OnSaveTime"]

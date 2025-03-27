@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmys6qsrb7se1"]
+
+[ext_resource type="Texture2D" uid="uid://bwysom0nrqq1g" path="res://Assets/600px-Piste_Scandinavia_3_red_rectangle.svg.png" id="1_6fa6w"]
+[ext_resource type="Script" path="res://Objects/Button.cs" id="1_cf3y6"]
+[ext_resource type="AudioStream" uid="uid://cgydwmowytgoy" path="res://Assets/Sound Effects/ButtonPress.mp3" id="3_2emoi"]
+[ext_resource type="AudioStream" uid="uid://d3j2s7osc3bvx" path="res://Assets/Sound Effects/ButtonRelease.mp3" id="4_h7fgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iro8f"]
+size = Vector2(110, 22)
+
+[node name="Button" type="Area2D"]
+collision_layer = 8
+collision_mask = 513
+script = ExtResource("1_cf3y6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -19)
+scale = Vector2(0.2, 0.0733333)
+texture = ExtResource("1_6fa6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -19)
+shape = SubResource("RectangleShape2D_iro8f")
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2emoi")
+volume_db = -8.0
+
+[node name="ButtonRelease" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h7fgp")
+volume_db = -4.0
+
+[connection signal="body_entered" from="." to="." method="OnButtonPressed"]
+[connection signal="body_exited" from="." to="." method="OnButtonReleased"]

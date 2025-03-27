@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://cb8b3b0krf5eg"]
+
+[ext_resource type="Script" path="res://Levels/GameWorld.cs" id="1_nj6wc"]
+[ext_resource type="PackedScene" uid="uid://c1g7barmvp22f" path="res://Levels/Level_0.tscn" id="2_fg0u6"]
+[ext_resource type="PackedScene" uid="uid://7najwgjqvoxc" path="res://Levels/Level_1.tscn" id="2_vxikc"]
+[ext_resource type="PackedScene" uid="uid://bni3q08lk88m4" path="res://Characters/Player.tscn" id="3_c6240"]
+[ext_resource type="PackedScene" uid="uid://cwxkexaq8bns8" path="res://Levels/LevelTransition.tscn" id="4_11rni"]
+[ext_resource type="PackedScene" uid="uid://d46gmqx82ji7" path="res://Hud/HUD.tscn" id="5_72wjx"]
+[ext_resource type="PackedScene" path="res://LevelTimer.tscn" id="6_qmik2"]
+[ext_resource type="PackedScene" uid="uid://dx11rsc7wgm5u" path="res://Hud/MainMenu.tscn" id="7_qojn8"]
+[ext_resource type="PackedScene" uid="uid://cphu8gb84kkcm" path="res://Hud/LevelSelect.tscn" id="8_s03n7"]
+[ext_resource type="PackedScene" uid="uid://npt8taxn7pdq" path="res://Hud/LeaderBoard/Leaderboard.tscn" id="10_yqcyq"]
+
+[node name="GameWorld" type="Node2D"]
+position = Vector2(1, -2)
+script = ExtResource("1_nj6wc")
+tutorialLevel = ExtResource("2_fg0u6")
+startLevel = ExtResource("2_vxikc")
+levelTransition = ExtResource("4_11rni")
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_c6240")]
+visible = false
+position = Vector2(-1279, 632)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)
+
+[node name="HUD" parent="." instance=ExtResource("5_72wjx")]
+visible = false
+
+[node name="LevelTimer" parent="." instance=ExtResource("6_qmik2")]
+
+[node name="MainMenu" parent="." instance=ExtResource("7_qojn8")]
+offset_top = -84.0
+offset_bottom = -84.0
+scale = Vector2(2.5, 2.5)
+
+[node name="LevelSelect" parent="." instance=ExtResource("8_s03n7")]
+visible = false
+offset_left = 58.0
+offset_top = 4.0
+offset_right = 58.0
+offset_bottom = 4.0
+scale = Vector2(2.5, 2.5)
+
+[node name="Leaderboard" parent="." instance=ExtResource("10_yqcyq")]
+visible = false
+offset_left = -590.0
+offset_top = -300.0
+offset_right = -590.0
+offset_bottom = -300.0
+
+[connection signal="OnQuitPressed" from="CharacterBody2D" to="." method="OnQuitPressed"]
+[connection signal="RestartCurrentLevel" from="CharacterBody2D" to="." method="RestartCurrentLevel"]
+[connection signal="UpdateCoinCounter" from="CharacterBody2D" to="HUD" method="OnCoinCollected"]
+[connection signal="UpdateDeathCounter" from="CharacterBody2D" to="HUD" method="OnDeath"]
+[connection signal="OnPlayPressedPass" from="MainMenu" to="." method="OnStartPressed"]
+[connection signal="OnTutorialPressedPass" from="MainMenu" to="." method="OnTutorialPressed"]
+[connection signal="OnLevelSelected" from="LevelSelect" to="." method="OnLevelSelected"]
+[connection signal="OnLeaderboardPressed" from="Leaderboard" to="MainMenu" method="OnLeaderboardPressed"]

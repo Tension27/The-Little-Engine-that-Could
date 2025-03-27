@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=3 uid="uid://btqlpbydnsvpv"]
+
+[ext_resource type="PackedScene" uid="uid://ccrq5m6seybjm" path="res://Characters/Enemies/EnemyRoot.tscn" id="1_k3f5o"]
+[ext_resource type="Texture2D" uid="uid://bek07k4dchsqy" path="res://Assets/Zombie.png" id="3_sxt1t"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_og4q4"]
+script/source = "using Godot;
+using System;
+using System.Data.SqlTypes;
+
+public partial class zombie : EnemyRoot
+{
+    bool chasingPlayer = false;
+    int chaseMoveSpeed = 300;
+    Vector2 PlayerPos = Vector2.Zero;
+    public float moveSpeed = 80f;
+    public int direction = -1;
+
+    public override void _Ready()
+    {
+        Player player = GetParent().GetParent().GetParent().GetParent().GetChild(0).GetNode<Player>(\"CharacterBody2D\");
+        PlayerPos = player.Position;
+        
+        canTurn = true;
+        bodyHit = false;
+        headHit = false;
+    }
+
+    // get gravity from project settings 
+    public float gravity = ProjectSettings.GetSetting(\"physics/2d/default_gravity\").AsSingle();
+
+    public override async void _PhysicsProcess(double delta)
+    {
+        Vector2 velocity = Velocity;
+
+        // Flips the sprite and direction if the mob hits a wall or another sprite
+        if ((IsOnWall() || IsOnBlock()) && canTurn == true)
+        {
+            canTurn = false;
+            direction = direction * -1;
+
+            await ToSignal(GetTree().CreateTimer(.05f), SceneTreeTimer.SignalName.Timeout);
+            await ToSignal(GetTree().CreateTimer(.05f), SceneTreeTimer.SignalName.Timeout);
+            canTurn = true;
+        }
+
+        // Flips the sprite and direction if the mob reaches an edge
+        if (GetNode<RayCast2D>(\"FloorChecker\").IsColliding() == false && velocity.Y == 0)
+        {
+            direction = direction * -1;
+        }
+
+        if (!IsOnFloor())
+        {
+            velocity.Y += gravity * (float)delta;
+        }
+
+        velocity.X = moveSpeed * direction;
+
+        Velocity = velocity;
+        MoveAndSlide();
+    }
+
+    public bool IsOnBlock()
+    {
+        for (int i = 0; i < GetSlideCollisionCount(); i++)
+        {
+            KinematicCollision2D collision = GetSlideCollision(i);
+
+            if (collision.GetCollider() is RigidBody2D rb)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void OnPlayerCheckerEntered(Node2D body)
+    {
+        //if (body is Player player)
+        //{
+        //    chasingPlayer = true;
+        //    StartChasingPlayer(PlayerPos);
+        //}
+    }
+    public void OnPlayerCheckerExited(Node2D body)
+    {
+        //if (body is Player player)
+        //{
+        //    chasingPlayer = false;
+        //    StopChasingPlayer();
+        //}
+    }
+
+    public void StartChasingPlayer(Vector2 playerPosition)
+    {
+        //Vector2 test = playerPosition - Position;
+        //test.Normalized();
+        //Velocity = Velocity.MoveToward(test, chaseMoveSpeed);
+
+        //GD.PrintT(test);
+    }
+
+    public void StopChasingPlayer()
+    {
+        //moveSpeed = 80f;
+    }
+}
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xubi8"]
+size = Vector2(56, 172)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj8dg"]
+size = Vector2(72, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8j85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sxt1t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7hc4"]
+size = Vector2(62, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlhx2"]
+size = Vector2(816, 532)
+
+[node name="Zombie" instance=ExtResource("1_k3f5o")]
+script = SubResource("CSharpScript_og4q4")
+
+[node name="Hitbox" parent="." index="0"]
+shape = SubResource("RectangleShape2D_xubi8")
+
+[node name="HurtBox" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_hj8dg")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+texture_filter = 1
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_s8j85")
+
+[node name="SquashBox" parent="SquashZone" index="0"]
+position = Vector2(0, -80.5)
+shape = SubResource("RectangleShape2D_j7hc4")
+
+[node name="FloorChecker" type="RayCast2D" parent="." index="6"]
+position = Vector2(0, 51)
+collision_mask = 2
+
+[node name="PlayerChecker" type="Area2D" parent="." index="7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerChecker" index="0"]
+shape = SubResource("RectangleShape2D_wlhx2")
+
+[connection signal="body_entered" from="PlayerChecker" to="." method="OnPlayerCheckerEntered"]
+[connection signal="body_exited" from="PlayerChecker" to="." method="OnPlayerCheckerExited"]

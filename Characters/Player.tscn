@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bni3q08lk88m4"]
+
+[ext_resource type="Script" path="res://Characters/Player.cs" id="1_x4xak"]
+[ext_resource type="Texture2D" uid="uid://blw4r866u1hh1" path="res://Assets/GodotGuy.png" id="2_kldiu"]
+[ext_resource type="AudioStream" uid="uid://d3odl5t5ut848" path="res://Assets/Sound Effects/Jump.mp3" id="3_2da81"]
+[ext_resource type="AudioStream" uid="uid://cx4i82hwd36bn" path="res://Assets/Sound Effects/Squish Enemy.mp3" id="4_mfgov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbm11"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4nc8"]
+size = Vector2(32, 3)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 4718
+script = ExtResource("1_x4xak")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -9)
+scale = Vector2(5.25, 5.25)
+texture = ExtResource("2_kldiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 1)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_rbm11")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -33.5)
+shape = SubResource("RectangleShape2D_o4nc8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2da81")
+volume_db = -25.0
+pitch_scale = 1.42
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mfgov")
+pitch_scale = 0.8
+
+[connection signal="body_entered" from="Area2D" to="." method="OnCoinEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

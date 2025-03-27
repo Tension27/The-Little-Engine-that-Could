@@ -1,0 +1,191 @@
+[gd_scene load_steps=11 format=3 uid="uid://cphu8gb84kkcm"]
+
+[ext_resource type="Script" path="res://Hud/LevelSelect.cs" id="1_a7sd5"]
+
+[sub_resource type="Theme" id="Theme_872xf"]
+default_font_size = 88
+
+[sub_resource type="Theme" id="Theme_sjhfo"]
+default_font_size = 88
+
+[sub_resource type="Theme" id="Theme_6ecv6"]
+default_font_size = 88
+
+[sub_resource type="Theme" id="Theme_ffs30"]
+default_font_size = 88
+
+[sub_resource type="Theme" id="Theme_g1xc4"]
+default_font_size = 88
+
+[sub_resource type="Theme" id="Theme_74tgw"]
+default_font_size = 88
+
+[sub_resource type="Theme" id="Theme_n6vol"]
+default_font_size = 88
+
+[sub_resource type="Theme" id="Theme_xo54c"]
+default_font_size = 88
+
+[sub_resource type="Theme" id="Theme_8fkgo"]
+default_font_size = 88
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a7sd5")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -313.0
+offset_top = -65.0
+offset_right = -43.0
+offset_bottom = 65.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_872xf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -173.0
+offset_top = -65.0
+offset_right = -1.0
+offset_bottom = 201.0
+scale = Vector2(0.5, 0.5)
+tooltip_text = "
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Level1" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_sjhfo")
+text = "1"
+
+[node name="Level6" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_6ecv6")
+text = "6"
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -85.0
+offset_top = -65.0
+offset_right = 85.0
+offset_bottom = 201.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer4"]
+layout_mode = 2
+
+[node name="Level2" type="Button" parent="MarginContainer4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ffs30")
+text = "2	"
+
+[node name="Level7" type="Button" parent="MarginContainer4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_g1xc4")
+text = "7"
+
+[node name="MarginContainer5" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = -65.0
+offset_right = 350.0
+offset_bottom = 201.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer5"]
+layout_mode = 2
+
+[node name="Level5" type="Button" parent="MarginContainer5/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_74tgw")
+text = "5"
+
+[node name="Level10" type="Button" parent="MarginContainer5/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_n6vol")
+text = "10"
+
+[node name="MarginContainer6" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = -65.0
+offset_right = 262.0
+offset_bottom = 201.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer6"]
+layout_mode = 2
+
+[node name="Level4" type="Button" parent="MarginContainer6/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_xo54c")
+text = "4"
+
+[node name="Level9" type="Button" parent="MarginContainer6/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_8fkgo")
+text = "9"
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 2.0
+offset_top = -65.0
+offset_right = 174.0
+offset_bottom = 201.0
+scale = Vector2(0.5, 0.5)
+tooltip_text = "
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3"]
+layout_mode = 2
+
+[node name="Level3" type="Button" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_sjhfo")
+text = "3"
+
+[node name="Level8" type="Button" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_6ecv6")
+text = "8"
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Back" to="." method="OnBackPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level1" to="." method="OnLevel1Pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level6" to="." method="OnLevel6Pressed"]
+[connection signal="pressed" from="MarginContainer4/VBoxContainer/Level2" to="." method="OnLevel2Pressed"]
+[connection signal="pressed" from="MarginContainer4/VBoxContainer/Level7" to="." method="OnLevel7Pressed"]
+[connection signal="pressed" from="MarginContainer5/VBoxContainer/Level5" to="." method="OnLevel5Pressed"]
+[connection signal="pressed" from="MarginContainer5/VBoxContainer/Level10" to="." method="OnLevel10Pressed"]
+[connection signal="pressed" from="MarginContainer6/VBoxContainer/Level4" to="." method="OnLevel4Pressed"]
+[connection signal="pressed" from="MarginContainer6/VBoxContainer/Level9" to="." method="OnLevel9Pressed"]
+[connection signal="pressed" from="MarginContainer3/VBoxContainer/Level3" to="." method="OnLevel3Pressed"]
+[connection signal="pressed" from="MarginContainer3/VBoxContainer/Level8" to="." method="OnLevel8Pressed"]

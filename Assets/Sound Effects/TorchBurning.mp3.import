@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbswbdtvekku0"
+path="res://.godot/imported/TorchBurning.mp3-5e0858fb73fce8c176e98955a52f662a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/TorchBurning.mp3"
+dest_files=["res://.godot/imported/TorchBurning.mp3-5e0858fb73fce8c176e98955a52f662a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

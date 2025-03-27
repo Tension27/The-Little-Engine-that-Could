@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://npt8taxn7pdq"]
+
+[ext_resource type="Script" path="res://Hud/LeaderBoard/LeaderboardInfoReader.cs" id="1_6cuwa"]
+[ext_resource type="Texture2D" uid="uid://di8pjcm441nq0" path="res://Assets/background.svg" id="2_d153l"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -552.0
+offset_top = -290.0
+offset_right = -552.0
+offset_bottom = -290.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_6cuwa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(436.923, 239.231)
+scale = Vector2(4.95213, 4.42231)
+texture = ExtResource("2_d153l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -300.0
+offset_top = -167.692
+offset_right = 179.0
+offset_bottom = 552.308
+scale = Vector2(1.3, 1.3)
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 25.0296
+offset_top = 13.1953
+offset_right = 362.03
+offset_bottom = 68.1953
+scale = Vector2(1.3, 1.3)
+theme_override_font_sizes/font_size = 40
+text = "Best Overall Time"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 60.9468
+offset_top = 91.7157
+offset_right = 372.947
+offset_bottom = 518.716
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 40
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 514.0
+offset_top = -168.0
+offset_right = 1190.0
+offset_bottom = 604.0
+scale = Vector2(1.3, 1.3)
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 31.1243
+offset_top = 26.9822
+offset_right = 496.124
+offset_bottom = 81.9822
+scale = Vector2(1.3, 1.3)
+theme_override_font_sizes/font_size = 40
+text = "Best Time for Each Level"
+
+[node name="Label2" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 170.414
+offset_top = 89.9406
+offset_right = 621.414
+offset_bottom = 508.941
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 30

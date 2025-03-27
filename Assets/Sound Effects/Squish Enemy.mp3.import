@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cx4i82hwd36bn"
+path="res://.godot/imported/Squish Enemy.mp3-fe76a143b43d0178b6eff905cdbe1290.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Squish Enemy.mp3"
+dest_files=["res://.godot/imported/Squish Enemy.mp3-fe76a143b43d0178b6eff905cdbe1290.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

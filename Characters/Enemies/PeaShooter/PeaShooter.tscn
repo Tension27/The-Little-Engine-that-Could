@@ -1,0 +1,274 @@
+[gd_scene load_steps=15 format=3 uid="uid://7qskm4nl876x"]
+
+[ext_resource type="Script" path="res://Characters/Enemies/PeaShooter/PeaShooter.cs" id="1_08nyc"]
+[ext_resource type="PackedScene" uid="uid://btgnurlh65jc3" path="res://Characters/Enemies/PeaShooter/Pea.tscn" id="2_6bpaq"]
+[ext_resource type="Texture2D" uid="uid://d30550hyof0mb" path="res://Assets/Peashooter_Walk_SS.png" id="3_boibm"]
+[ext_resource type="Texture2D" uid="uid://b6mmm8hbs4mnn" path="res://Assets/Peashooter_Shoot_SpriteSheet.png" id="3_dne15"]
+[ext_resource type="Texture2D" uid="uid://conm3300ja7gl" path="res://Assets/PeaShooter8BitNewNew.png" id="4_wie64"]
+[ext_resource type="AudioStream" uid="uid://btbb4m4y4t4hl" path="res://Assets/Sound Effects/pop-39222.mp3" id="5_3ni5q"]
+[ext_resource type="AudioStream" uid="uid://bn4cp2qkpcfoc" path="res://Assets/Sound Effects/EnemySquashed01.mp3" id="7_vni6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cij2r"]
+size = Vector2(80, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6fho"]
+size = Vector2(80, 70)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vj7mf"]
+radius = 15.0
+height = 82.0
+
+[sub_resource type="Animation" id="Animation_a35oi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_dne15")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_nxcgi"]
+resource_name = "shooting"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_dne15")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_3ni5q")
+}],
+"times": PackedFloat32Array(1.3)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="Animation" id="Animation_qw230"]
+resource_name = "Walk"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_boibm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r63br"]
+_data = {
+"RESET": SubResource("Animation_a35oi"),
+"Shoot": SubResource("Animation_nxcgi"),
+"Walk": SubResource("Animation_qw230")
+}
+
+[node name="PeaShooter" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 530
+script = ExtResource("1_08nyc")
+PeaScene = ExtResource("2_6bpaq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3, -5)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_dne15")
+hframes = 8
+
+[node name="Squashed" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-1.90735e-06, 26.5)
+scale = Vector2(6.75, 2.3125)
+texture = ExtResource("4_wie64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(4, 5.5)
+shape = SubResource("RectangleShape2D_cij2r")
+
+[node name="FloorChecker" type="RayCast2D" parent="."]
+target_position = Vector2(0, 52)
+collision_mask = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 64
+
+[node name="KillZone" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 11)
+shape = SubResource("RectangleShape2D_c6fho")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="SquashZone" type="Area2D" parent="."]
+visible = false
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SquashZone"]
+position = Vector2(4, -35)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vj7mf")
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r63br")
+}
+autoplay = "Walk"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -18.0
+pitch_scale = 0.6
+
+[node name="ShotTimer" type="Timer" parent="."]
+
+[node name="EnemySquashed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vni6p")
+volume_db = 4.0
+pitch_scale = 0.6
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
+[connection signal="body_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
+[connection signal="timeout" from="QueueFreeTimer" to="." method="OnSquashTimeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]
+[connection signal="timeout" from="ShotTimer" to="." method="ShotTimerTimeout"]

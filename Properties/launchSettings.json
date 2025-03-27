@@ -1,0 +1,21 @@
+{
+  "profiles": {
+    "Test for c# auto complete": {
+      "commandName": "Project"
+    },
+    "Laptop": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Seth\\Documents\\Godot_v4.2-stable_mono_win64\\Godot_v4.2-stable_mono_win64\\Godot_v4.2-stable_mono_win64.exe",
+      "commandLineArgs": "--path.--verbose",
+      "workingDirectory": ".",
+      "nativeDebugging": true
+    },
+    "Desktop": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Seth Friebel\\Documents\\Godot_v4.1.2-stable_mono_win64\\Godot_v4.2.1-stable_mono_win64\\Godot_v4.2.1-stable_mono_win64.exe",
+      "commandLineArgs": "--path.--verbose",
+      "workingDirectory": ".",
+      "nativeDebugging": true
+    }
+  }
+}

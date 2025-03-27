@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmb1ekdudeknc"]
+
+[ext_resource type="Script" path="res://Objects/MovingPlatform.cs" id="1_4noxf"]
+[ext_resource type="Texture2D" uid="uid://d18b5oirblfkb" path="res://Assets/Brick.png" id="2_ylyex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1lqa"]
+size = Vector2(498, 72)
+
+[node name="MovingPlatform" type="AnimatableBody2D" groups=["MovedByButton"]]
+collision_layer = 2
+collision_mask = 145
+script = ExtResource("1_4noxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1.87755e-06)
+scale = Vector2(1.94531, 0.28125)
+texture = ExtResource("2_ylyex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i1lqa")

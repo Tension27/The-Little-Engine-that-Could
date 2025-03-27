@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://henw0jo66lir"]
+
+[ext_resource type="Script" path="res://Characters/Enemies/Goomba.cs" id="1_grlv8"]
+[ext_resource type="Texture2D" uid="uid://bogxn3hf05m5u" path="res://Assets/GoombaWalk4.png" id="3_m3mnm"]
+[ext_resource type="AudioStream" uid="uid://bn4cp2qkpcfoc" path="res://Assets/Sound Effects/EnemySquashed01.mp3" id="4_1rhwq"]
+[ext_resource type="Texture2D" uid="uid://5holrijj58ad" path="res://Assets/GoombaWalk3.png" id="4_wki0p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8feyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wki0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m3mnm")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfmjr"]
+size = Vector2(80, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kn2p"]
+size = Vector2(80, 62)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7t02"]
+radius = 18.0
+height = 80.0
+
+[node name="Goomba" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 16
+collision_mask = 530
+script = ExtResource("1_grlv8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.26498e-06, -0.999999)
+scale = Vector2(5.75, 5.625)
+sprite_frames = SubResource("SpriteFrames_8feyd")
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.290216
+
+[node name="Squashed" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(1.19209e-07, 23)
+scale = Vector2(6.8125, 2.625)
+texture = ExtResource("4_wki0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_jfmjr")
+
+[node name="FloorChecker" type="RayCast2D" parent="."]
+collision_mask = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 64
+
+[node name="KillZone" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_8kn2p")
+
+[node name="SquashZone" type="Area2D" parent="."]
+visible = false
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SquashZone"]
+position = Vector2(0, -24)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_d7t02")
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="EnemySquashed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1rhwq")
+volume_db = 4.0
+pitch_scale = 0.6
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
+[connection signal="timeout" from="QueueFreeTimer" to="." method="OnSquashTimeout"]

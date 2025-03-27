@@ -1,0 +1,247 @@
+[gd_scene load_steps=17 format=3 uid="uid://dfpha1hwxgfhc"]
+
+[ext_resource type="Script" path="res://Characters/Enemies/ZombieNew.cs" id="1_hbgmo"]
+[ext_resource type="Texture2D" uid="uid://c2qj7ffg5dqla" path="res://Assets/zombieAnimSS.png" id="2_oolsu"]
+[ext_resource type="Texture2D" uid="uid://beydiarwxchwa" path="res://Assets/ZombieChaseWalk2.png" id="3_lthue"]
+[ext_resource type="AudioStream" uid="uid://bn4cp2qkpcfoc" path="res://Assets/Sound Effects/EnemySquashed01.mp3" id="4_e5707"]
+[ext_resource type="AudioStream" uid="uid://cykmabjwsou1b" path="res://Assets/Sound Effects/Chase1.mp3" id="5_kqguk"]
+[ext_resource type="AudioStream" uid="uid://cxydlf8hdjlfs" path="res://Assets/Sound Effects/Chase2.mp3" id="6_54q78"]
+[ext_resource type="AudioStream" uid="uid://byymfedxtluob" path="res://Assets/Sound Effects/Chase3.mp3" id="7_lxf2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpmwy"]
+size = Vector2(73, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py5r3"]
+size = Vector2(65, 186)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm0yi"]
+size = Vector2(75, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykqvg"]
+size = Vector2(1085, 705)
+
+[sub_resource type="Animation" id="Animation_au8pr"]
+resource_name = "Walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkSS:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WalkSS:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkSS:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_43n2c"]
+resource_name = "LookUp"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkSS:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_fa0nk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkSS:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WalkSS:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkSS:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c01tb"]
+resource_name = "Walk"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkSS:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WalkSS:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkSS:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uoj7h"]
+_data = {
+"Chase": SubResource("Animation_au8pr"),
+"LookUp": SubResource("Animation_43n2c"),
+"RESET": SubResource("Animation_fa0nk"),
+"Walk": SubResource("Animation_c01tb")
+}
+
+[node name="ZombieNew" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 530
+script = ExtResource("1_hbgmo")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jpmwy")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="HurtBox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_py5r3")
+
+[node name="WalkSS" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.78814e-06, 1.04308e-06)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("2_oolsu")
+hframes = 6
+
+[node name="Squashed" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, 50.75)
+scale = Vector2(10.1875, 3.23438)
+texture = ExtResource("3_lthue")
+
+[node name="SquashZone" type="Area2D" parent="."]
+collision_layer = 256
+
+[node name="SquashBox" type="CollisionShape2D" parent="SquashZone"]
+position = Vector2(0.5, -84)
+shape = SubResource("RectangleShape2D_nm0yi")
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+
+[node name="FloorChecker" type="RayCast2D" parent="."]
+position = Vector2(0, 50)
+target_position = Vector2(0, 63)
+collision_mask = 3
+
+[node name="PlayerChecker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerChecker"]
+position = Vector2(0.5, -63.5)
+shape = SubResource("RectangleShape2D_ykqvg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uoj7h")
+}
+autoplay = "Walk"
+speed_scale = 1.5
+
+[node name="EnemySquashed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e5707")
+volume_db = 4.0
+pitch_scale = 0.6
+
+[node name="Chase1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kqguk")
+volume_db = -15.0
+
+[node name="Chase2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_54q78")
+volume_db = -15.0
+
+[node name="Chase3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_lxf2p")
+volume_db = -15.0
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
+[connection signal="timeout" from="QueueFreeTimer" to="." method="OnSquashTimeout"]
+[connection signal="body_entered" from="PlayerChecker" to="." method="PlayerCheckerEntered"]
+[connection signal="body_exited" from="PlayerChecker" to="." method="PlayerCheckerExited"]

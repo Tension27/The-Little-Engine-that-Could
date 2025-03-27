@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx11rsc7wgm5u"]
+
+[ext_resource type="Script" path="res://Hud/MainMenu.cs" id="1_lccli"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lccli")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = 20.0
+offset_right = -4.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Tutorial" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="Level Select" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Level Select"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -15.5
+offset_right = 289.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = 20.0
+offset_right = 289.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3"]
+layout_mode = 2
+
+[node name="Leaderboard" type="Button" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Leaderboard"
+
+[node name="Quit Game" type="Button" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Tutorial" to="." method="OnTutorialPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level Select" to="." method="OnLevelSelectPressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Play" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="MarginContainer3/VBoxContainer/Leaderboard" to="." method="OnLeaderboardPressed"]
+[connection signal="pressed" from="MarginContainer3/VBoxContainer/Quit Game" to="." method="OnQuitGamePressed"]

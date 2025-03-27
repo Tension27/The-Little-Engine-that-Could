@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://6vxigk7totn"]
+
+[ext_resource type="Texture2D" uid="uid://qllymm11rtxr" path="res://Assets/companion_cube.png" id="1_0uvad"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vukro"]
+friction = 0.5
+
+[node name="PushableBlock" type="RigidBody2D"]
+position = Vector2(1, 0)
+collision_layer = 512
+collision_mask = 667
+mass = 0.6
+physics_material_override = SubResource("PhysicsMaterial_vukro")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_0uvad")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-40, -44, -45, -38, -45, 39, -40, 44, 40, 44, 45, 39, 45, -38, 40, -44)

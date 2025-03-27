@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccrq5m6seybjm"]
+
+[ext_resource type="Script" path="res://EnemyRoot.cs" id="1_7i58j"]
+
+[node name="EnemyRoot" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 530
+script = ExtResource("1_7i58j")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="HurtBox" type="CollisionShape2D" parent="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Squashed" type="Sprite2D" parent="."]
+
+[node name="SquashZone" type="Area2D" parent="."]
+collision_layer = 256
+
+[node name="SquashBox" type="CollisionShape2D" parent="SquashZone"]
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
+[connection signal="timeout" from="QueueFreeTimer" to="." method="OnSquashTimeout"]

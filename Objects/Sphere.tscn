@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5brqspaq8om8"]
+
+[ext_resource type="Script" path="res://Objects/Sphere.cs" id="1_lhnku"]
+[ext_resource type="Texture2D" uid="uid://x04a4qqvf3u3" path="res://Assets/CompanionCircle.png" id="1_lwd08"]
+[ext_resource type="AudioStream" uid="uid://b5e08lcy4equj" path="res://Assets/Sound Effects/BallRolling.mp3" id="3_1s850"]
+[ext_resource type="AudioStream" uid="uid://cdy56n0i2kxpm" path="res://Assets/Sound Effects/SphereImpact1.mp3" id="4_5kj0h"]
+[ext_resource type="AudioStream" uid="uid://1y24hvspyp77" path="res://Assets/Sound Effects/FallingObject.mp3" id="5_fm381"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_expfk"]
+friction = 0.6
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opckh"]
+radius = 50.2494
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2(-1, 0)
+collision_layer = 512
+collision_mask = 1587
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_expfk")
+max_contacts_reported = 4
+contact_monitor = true
+angular_damp_mode = 1
+script = ExtResource("1_lhnku")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 0)
+scale = Vector2(6.25, 6.25)
+texture = ExtResource("1_lwd08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_opckh")
+
+[node name="Rolling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1s850")
+volume_db = 10.884
+pitch_scale = 0.7
+
+[node name="Impact" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5kj0h")
+volume_db = -30.0
+
+[node name="Falling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fm381")
+
+[connection signal="body_entered" from="." to="." method="BallIsOnSurface"]
+[connection signal="body_exited" from="." to="." method="BallIsOffSurface"]

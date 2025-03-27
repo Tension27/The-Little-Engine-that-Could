@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dc53t51384vun"
+path="res://.godot/imported/brick-on-soilwav-14757.mp3-3275c758b4277e578b9c289a854e791b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/brick-on-soilwav-14757.mp3"
+dest_files=["res://.godot/imported/brick-on-soilwav-14757.mp3-3275c758b4277e578b9c289a854e791b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

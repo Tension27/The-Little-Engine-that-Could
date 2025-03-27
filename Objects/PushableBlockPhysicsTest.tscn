@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://di051ae15i1oa"]
+
+[ext_resource type="Texture2D" uid="uid://qllymm11rtxr" path="res://Assets/companion_cube.png" id="1_1nbl4"]
+[ext_resource type="Script" path="res://Objects/PushableBlockPhysicsTest.cs" id="1_5wlrj"]
+[ext_resource type="AudioStream" uid="uid://1y24hvspyp77" path="res://Assets/Sound Effects/FallingObject.mp3" id="3_baigg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_expfk"]
+friction = 0.6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bybq8"]
+size = Vector2(90, 88)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2(-1, 0)
+collision_layer = 512
+collision_mask = 1587
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_expfk")
+max_contacts_reported = 4
+contact_monitor = true
+angular_damp_mode = 1
+script = ExtResource("1_5wlrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5.625, 5.5)
+texture = ExtResource("1_1nbl4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bybq8")
+
+[node name="Falling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_baigg")
+volume_db = -11.795
+
+[connection signal="body_entered" from="." to="." method="BoxIsOnSurface"]
+[connection signal="body_exited" from="." to="." method="BoxIsOffSurface"]
