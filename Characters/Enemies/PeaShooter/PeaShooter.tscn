@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Characters/Enemies/PeaShooter/PeaShooter.cs" id="1_08nyc"]
 [ext_resource type="PackedScene" uid="uid://btgnurlh65jc3" path="res://Characters/Enemies/PeaShooter/Pea.tscn" id="2_6bpaq"]
-[ext_resource type="Texture2D" uid="uid://d30550hyof0mb" path="res://Assets/Peashooter_Walk_SS.png" id="3_boibm"]
-[ext_resource type="Texture2D" uid="uid://b6mmm8hbs4mnn" path="res://Assets/Peashooter_Shoot_SpriteSheet.png" id="3_dne15"]
-[ext_resource type="Texture2D" uid="uid://conm3300ja7gl" path="res://Assets/PeaShooter8BitNewNew.png" id="4_wie64"]
+[ext_resource type="Texture2D" uid="uid://d30550hyof0mb" path="res://Assets/Characters/PeaShooter/Peashooter_Walk_SS.png" id="3_boibm"]
+[ext_resource type="Texture2D" uid="uid://b6mmm8hbs4mnn" path="res://Assets/Characters/PeaShooter/Peashooter_Shoot_SpriteSheet.png" id="3_dne15"]
+[ext_resource type="Texture2D" uid="uid://conm3300ja7gl" path="res://Assets/Characters/PeaShooter/PeaShooter8BitNewNew.png" id="4_wie64"]
 [ext_resource type="AudioStream" uid="uid://btbb4m4y4t4hl" path="res://Assets/Sound Effects/pop-39222.mp3" id="5_3ni5q"]
 [ext_resource type="AudioStream" uid="uid://bn4cp2qkpcfoc" path="res://Assets/Sound Effects/EnemySquashed01.mp3" id="7_vni6p"]
 

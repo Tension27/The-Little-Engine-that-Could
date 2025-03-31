@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://npt8taxn7pdq"]
 
 [ext_resource type="Script" path="res://Hud/LeaderBoard/LeaderboardInfoReader.cs" id="1_6cuwa"]
-[ext_resource type="Texture2D" uid="uid://di8pjcm441nq0" path="res://Assets/background.svg" id="2_d153l"]
+[ext_resource type="Texture2D" uid="uid://di8pjcm441nq0" path="res://Assets/Environment/Backgrounds/background.svg" id="2_d153l"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

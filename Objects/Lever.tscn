@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://cafi35quxn4b7"]
 
 [ext_resource type="Script" path="res://Objects/Lever.cs" id="1_c44xn"]
-[ext_resource type="Texture2D" uid="uid://3hc760nje26c" path="res://Assets/LeverBase.png" id="1_mfsdc"]
-[ext_resource type="Texture2D" uid="uid://bbt7m0ocp4ngr" path="res://Assets/LeverHandle.png" id="2_weunq"]
+[ext_resource type="Texture2D" uid="uid://3hc760nje26c" path="res://Assets/Objects/LeverBase.png" id="1_mfsdc"]
+[ext_resource type="Texture2D" uid="uid://bbt7m0ocp4ngr" path="res://Assets/Objects/LeverHandle.png" id="2_weunq"]
 [ext_resource type="AudioStream" uid="uid://dmpy5pvwx55qg" path="res://Assets/Sound Effects/Lever.mp3" id="4_3s87y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weds4"]

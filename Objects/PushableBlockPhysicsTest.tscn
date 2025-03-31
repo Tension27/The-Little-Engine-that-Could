@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://di051ae15i1oa"]
 
-[ext_resource type="Texture2D" uid="uid://qllymm11rtxr" path="res://Assets/companion_cube.png" id="1_1nbl4"]
+[ext_resource type="Texture2D" uid="uid://qllymm11rtxr" path="res://Assets/Objects/companion_cube.png" id="1_1nbl4"]
 [ext_resource type="Script" path="res://Objects/PushableBlockPhysicsTest.cs" id="1_5wlrj"]
 [ext_resource type="AudioStream" uid="uid://1y24hvspyp77" path="res://Assets/Sound Effects/FallingObject.mp3" id="3_baigg"]
 

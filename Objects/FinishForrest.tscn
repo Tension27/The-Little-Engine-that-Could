@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://blylgpfgbqxp5"]
 
-[ext_resource type="Texture2D" uid="uid://q8ye42jaig5c" path="res://Assets/Tiles/Custom Tiles/FinishForrestDoor.png" id="1_0mdmb"]
+[ext_resource type="Texture2D" uid="uid://q8ye42jaig5c" path="res://Assets/Environment/Custom Tiles/FinishForrestDoor.png" id="1_0mdmb"]
 [ext_resource type="Script" path="res://Objects/FinishForrest.cs" id="1_x513t"]
-[ext_resource type="Texture2D" uid="uid://c85osuekb1yu2" path="res://Assets/Tiles/Custom Tiles/FinishDoorForrest_SS.png" id="3_6t401"]
+[ext_resource type="Texture2D" uid="uid://c85osuekb1yu2" path="res://Assets/Environment/Custom Tiles/FinishDoorForrest_SS.png" id="3_6t401"]
 [ext_resource type="AudioStream" uid="uid://cra7g57g6sn77" path="res://Assets/Sound Effects/LeavesPoof.mp3" id="4_1750w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltmho"]

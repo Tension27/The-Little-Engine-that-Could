@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2i5gacr040vj"]
 
 [ext_resource type="Script" path="res://Objects/Spike.cs" id="1_144f2"]
-[ext_resource type="Texture2D" uid="uid://ciribwmpycn8c" path="res://Assets/4139931.png" id="1_too8e"]
+[ext_resource type="Texture2D" uid="uid://ciribwmpycn8c" path="res://Assets/Objects/4139931.png" id="1_too8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv0vw"]
 size = Vector2(58, 69)

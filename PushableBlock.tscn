@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6vxigk7totn"]
 
-[ext_resource type="Texture2D" uid="uid://qllymm11rtxr" path="res://Assets/companion_cube.png" id="1_0uvad"]
+[ext_resource type="Texture2D" uid="uid://qllymm11rtxr" path="res://Assets/Objects/companion_cube.png" id="1_0uvad"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vukro"]
 friction = 0.5

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d46gmqx82ji7"]
 
 [ext_resource type="Script" path="res://Hud/HUD.cs" id="1_dkwpp"]
-[ext_resource type="Texture2D" uid="uid://c3armo2bwvg2l" path="res://Assets/Coin.png" id="2_00wr8"]
+[ext_resource type="Texture2D" uid="uid://c3armo2bwvg2l" path="res://Assets/Objects/Coin.png" id="2_00wr8"]
 [ext_resource type="Script" path="res://Hud/StopWatchTimer.cs" id="4_h6l4k"]
 
 [node name="HUD" type="CanvasLayer"]

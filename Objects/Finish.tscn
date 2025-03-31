@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://xko5xuiyxel6"]
 
 [ext_resource type="Script" path="res://Objects/Finish.cs" id="1_56tqq"]
-[ext_resource type="Texture2D" uid="uid://ci6vyyundum3f" path="res://Assets/Tiles/Custom Tiles/FinishDoorCave.png" id="2_trb34"]
-[ext_resource type="Texture2D" uid="uid://bch7mgbxa1blo" path="res://Assets/Tiles/Custom Tiles/CaveDoorTorch_SS.png" id="3_gx6de"]
+[ext_resource type="Texture2D" uid="uid://ci6vyyundum3f" path="res://Assets/Environment/Custom Tiles/FinishDoorCave.png" id="2_trb34"]
+[ext_resource type="Texture2D" uid="uid://bch7mgbxa1blo" path="res://Assets/Environment/Custom Tiles/CaveDoorTorch_SS.png" id="3_gx6de"]
 [ext_resource type="AudioStream" uid="uid://dd8g70i1ycaub" path="res://Assets/Sound Effects/TorchLightUp.mp3" id="4_rvauh"]
 [ext_resource type="AudioStream" uid="uid://dbswbdtvekku0" path="res://Assets/Sound Effects/TorchBurning.mp3" id="5_3d0k7"]
 [ext_resource type="Script" path="res://Objects/FireLight.cs" id="6_ss8vi"]

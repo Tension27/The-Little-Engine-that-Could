@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c5brqspaq8om8"]
 
 [ext_resource type="Script" path="res://Objects/Sphere.cs" id="1_lhnku"]
-[ext_resource type="Texture2D" uid="uid://x04a4qqvf3u3" path="res://Assets/CompanionCircle.png" id="1_lwd08"]
+[ext_resource type="Texture2D" uid="uid://x04a4qqvf3u3" path="res://Assets/Objects/CompanionCircle.png" id="1_lwd08"]
 [ext_resource type="AudioStream" uid="uid://b5e08lcy4equj" path="res://Assets/Sound Effects/BallRolling.mp3" id="3_1s850"]
 [ext_resource type="AudioStream" uid="uid://cdy56n0i2kxpm" path="res://Assets/Sound Effects/SphereImpact1.mp3" id="4_5kj0h"]
 [ext_resource type="AudioStream" uid="uid://1y24hvspyp77" path="res://Assets/Sound Effects/FallingObject.mp3" id="5_fm381"]

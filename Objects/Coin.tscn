@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://brliqbk8a12ae"]
 
-[ext_resource type="Texture2D" uid="uid://c83un0x2acsfw" path="res://Assets/gold_1.png" id="1_3hess"]
+[ext_resource type="Texture2D" uid="uid://c83un0x2acsfw" path="res://Assets/Objects/gold_1.png" id="1_3hess"]
 [ext_resource type="Script" path="res://Objects/Coin.cs" id="1_o2k4v"]
-[ext_resource type="Texture2D" uid="uid://pnh5l12wfgt0" path="res://Assets/gold_2.png" id="2_n8e4q"]
-[ext_resource type="Texture2D" uid="uid://7esbv7to00pv" path="res://Assets/gold_3.png" id="3_hi61b"]
-[ext_resource type="Texture2D" uid="uid://c3armo2bwvg2l" path="res://Assets/Coin.png" id="5_5hqof"]
+[ext_resource type="Texture2D" uid="uid://pnh5l12wfgt0" path="res://Assets/Objects/gold_2.png" id="2_n8e4q"]
+[ext_resource type="Texture2D" uid="uid://7esbv7to00pv" path="res://Assets/Objects/gold_3.png" id="3_hi61b"]
+[ext_resource type="Texture2D" uid="uid://c3armo2bwvg2l" path="res://Assets/Objects/Coin.png" id="5_5hqof"]
 [ext_resource type="AudioStream" uid="uid://cv0p71g63q8ye" path="res://Assets/Sound Effects/CoinCollected.mp3" id="6_7vc8c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lmfgj"]

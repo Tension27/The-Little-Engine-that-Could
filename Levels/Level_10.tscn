@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://efsmy40g7pj2"]
 
-[ext_resource type="Texture2D" uid="uid://diopo1aaeragl" path="res://Assets/Tiles/Solaria Demo Update 01.png" id="1_8c4se"]
+[ext_resource type="Texture2D" uid="uid://diopo1aaeragl" path="res://Assets/Environment/Custom Tiles/Solaria Demo Update 01.png" id="1_8c4se"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="2_mao72"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="2_vuu6e"]
 [ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="4_tenmt"]

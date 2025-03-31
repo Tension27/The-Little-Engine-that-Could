@@ -1,9 +1,9 @@
 [gd_scene load_steps=46 format=3 uid="uid://c1g7barmvp22f"]
 
-[ext_resource type="Texture2D" uid="uid://h8puviej5xq4" path="res://Assets/Tiles/Custom Tiles/Grass_SS.png" id="1_hn2vm"]
-[ext_resource type="Texture2D" uid="uid://dw2bwu214fica" path="res://Assets/A-Key.png" id="2_q74py"]
-[ext_resource type="Texture2D" uid="uid://bqpkyj61lm8jw" path="res://Assets/D-Key.png" id="3_p77p6"]
-[ext_resource type="Texture2D" uid="uid://cy7bpmrkd2trg" path="res://Assets/W-Key.png" id="4_1i3f4"]
+[ext_resource type="Texture2D" uid="uid://h8puviej5xq4" path="res://Assets/Environment/Custom Tiles/Grass_SS.png" id="1_hn2vm"]
+[ext_resource type="Texture2D" uid="uid://dw2bwu214fica" path="res://Assets/Objects/A-Key.png" id="2_q74py"]
+[ext_resource type="Texture2D" uid="uid://bqpkyj61lm8jw" path="res://Assets/Environment/Custom Tiles/D-Key.png" id="3_p77p6"]
+[ext_resource type="Texture2D" uid="uid://cy7bpmrkd2trg" path="res://Assets/Environment/Custom Tiles/W-Key.png" id="4_1i3f4"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="5_f5u2d"]
 [ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/LockedDoor.tscn" id="6_7xgrb"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="6_fr0u3"]

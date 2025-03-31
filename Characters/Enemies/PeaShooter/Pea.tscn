@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://btgnurlh65jc3"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/PeaShooter/Pea.cs" id="1_663ju"]
-[ext_resource type="Texture2D" uid="uid://ct7o27ihvy7qe" path="res://Assets/Pea.png" id="1_k48uf"]
-[ext_resource type="Texture2D" uid="uid://blcwhdcsapaea" path="res://Assets/PeaPop_SS.png" id="3_gfmy6"]
+[ext_resource type="Texture2D" uid="uid://ct7o27ihvy7qe" path="res://Assets/Characters/PeaShooter/Pea.png" id="1_k48uf"]
+[ext_resource type="Texture2D" uid="uid://blcwhdcsapaea" path="res://Assets/Characters/PeaShooter/PeaPop_SS.png" id="3_gfmy6"]
 [ext_resource type="AudioStream" uid="uid://btbb4m4y4t4hl" path="res://Assets/Sound Effects/pop-39222.mp3" id="4_pk3de"]
 [ext_resource type="AudioStream" uid="uid://dc53t51384vun" path="res://Assets/Sound Effects/brick-on-soilwav-14757.mp3" id="5_psg8i"]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://henw0jo66lir"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/Goomba.cs" id="1_grlv8"]
-[ext_resource type="Texture2D" uid="uid://bogxn3hf05m5u" path="res://Assets/GoombaWalk4.png" id="3_m3mnm"]
+[ext_resource type="Texture2D" uid="uid://bogxn3hf05m5u" path="res://Assets/Characters/Goomba/GoombaWalk4.png" id="3_m3mnm"]
 [ext_resource type="AudioStream" uid="uid://bn4cp2qkpcfoc" path="res://Assets/Sound Effects/EnemySquashed01.mp3" id="4_1rhwq"]
-[ext_resource type="Texture2D" uid="uid://5holrijj58ad" path="res://Assets/GoombaWalk3.png" id="4_wki0p"]
+[ext_resource type="Texture2D" uid="uid://5holrijj58ad" path="res://Assets/Characters/Goomba/GoombaWalk3.png" id="4_wki0p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8feyd"]
 animations = [{

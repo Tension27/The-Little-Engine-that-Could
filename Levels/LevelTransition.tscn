@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwxkexaq8bns8"]
 
 [ext_resource type="Script" path="res://Levels/LevelTransition.cs" id="1_5fcts"]
-[ext_resource type="Texture2D" uid="uid://cqpnjg6aqdkvr" path="res://Assets/background with panels_Mesa de trabajo 1 copia.svg" id="2_d2wkr"]
+[ext_resource type="Texture2D" uid="uid://cqpnjg6aqdkvr" path="res://Assets/Environment/Backgrounds/background with panels_Mesa de trabajo 1 copia.svg" id="2_d2wkr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://dfpha1hwxgfhc"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/ZombieNew.cs" id="1_hbgmo"]
-[ext_resource type="Texture2D" uid="uid://c2qj7ffg5dqla" path="res://Assets/zombieAnimSS.png" id="2_oolsu"]
-[ext_resource type="Texture2D" uid="uid://beydiarwxchwa" path="res://Assets/ZombieChaseWalk2.png" id="3_lthue"]
+[ext_resource type="Texture2D" uid="uid://c2qj7ffg5dqla" path="res://Assets/Characters/Zombie/zombieAnimSS.png" id="2_oolsu"]
+[ext_resource type="Texture2D" uid="uid://beydiarwxchwa" path="res://Assets/Characters/Zombie/ZombieChaseWalk2.png" id="3_lthue"]
 [ext_resource type="AudioStream" uid="uid://bn4cp2qkpcfoc" path="res://Assets/Sound Effects/EnemySquashed01.mp3" id="4_e5707"]
 [ext_resource type="AudioStream" uid="uid://cykmabjwsou1b" path="res://Assets/Sound Effects/Chase1.mp3" id="5_kqguk"]
 [ext_resource type="AudioStream" uid="uid://cxydlf8hdjlfs" path="res://Assets/Sound Effects/Chase2.mp3" id="6_54q78"]
