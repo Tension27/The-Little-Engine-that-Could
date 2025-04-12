@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmb1ekdudeknc"]
+
+[ext_resource type="Script" path="res://Objects/Forrest/MovingPlatform.cs" id="1_4noxf"]
+[ext_resource type="Texture2D" uid="uid://dnylb2nqno0x6" path="res://Assets/Environment/Custom Tiles/Forest/RootMovingPlatform.png" id="2_7tbsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1lqa"]
+size = Vector2(498, 72)
+
+[node name="MovingPlatform" type="AnimatableBody2D" groups=["MovedByButton"]]
+collision_layer = 2
+collision_mask = 145
+script = ExtResource("1_4noxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.003454, -0.0135395)
+rotation = -6.28319
+scale = Vector2(6.2381, 4.5412)
+texture = ExtResource("2_7tbsr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i1lqa")

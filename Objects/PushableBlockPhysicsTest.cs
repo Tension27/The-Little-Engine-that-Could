@@ -21,7 +21,7 @@ public partial class PushableBlockPhysicsTest : RigidBody2D
     {
         
         float temp = rb.LinearVelocity.X + rb.LinearVelocity.Y;
-        falling.VolumeDb = LinearToDb(MathF.Abs(temp));
+        //falling.VolumeDb = LinearToDb(MathF.Abs(temp));
 
         if (onSurface < 1)
         {
@@ -62,6 +62,8 @@ public partial class PushableBlockPhysicsTest : RigidBody2D
             onSurface--;
         }
     }
+
+    //NOT WORKING RIGHT//
 
     private float LinearToDb(float linearValue)
     {

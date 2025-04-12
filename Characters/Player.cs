@@ -209,6 +209,7 @@ public partial class Player : CharacterBody2D
     {
         if (isDead == false)
         {
+            GetNode<AudioStreamPlayer>("Death").Play();
             isDead = true;
             coins = 0;
             Global.foundKeys.Clear();

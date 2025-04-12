@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bni3q08lk88m4"]
+[gd_scene load_steps=8 format=3 uid="uid://bni3q08lk88m4"]
 
 [ext_resource type="Script" path="res://Characters/Player.cs" id="1_x4xak"]
 [ext_resource type="Texture2D" uid="uid://blw4r866u1hh1" path="res://Assets/Characters/GodotGuy/GodotGuy.png" id="2_kldiu"]
 [ext_resource type="AudioStream" uid="uid://d3odl5t5ut848" path="res://Assets/Sound Effects/Jump.mp3" id="3_2da81"]
 [ext_resource type="AudioStream" uid="uid://cx4i82hwd36bn" path="res://Assets/Sound Effects/Squish Enemy.mp3" id="4_mfgov"]
+[ext_resource type="AudioStream" uid="uid://cw8j0r2yolcqw" path="res://Assets/Sound Effects/PlayerDeath.mp3" id="5_uk55c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbm11"]
 size = Vector2(16, 16)
@@ -46,6 +47,10 @@ pitch_scale = 1.42
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_mfgov")
 pitch_scale = 0.8
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uk55c")
+volume_db = -2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
 [connection signal="body_entered" from="Area2D" to="." method="OnCoinEntered"]
