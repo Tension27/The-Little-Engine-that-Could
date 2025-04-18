@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkckmy08cfaor"]
+
+[ext_resource type="Script" path="res://Objects/Base Class'/NewFinishBase.cs" id="1_e6no0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksgrf"]
+size = Vector2(75, 62)
+
+[node name="NewFinishBase" type="Area2D"]
+script = ExtResource("1_e6no0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ksgrf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

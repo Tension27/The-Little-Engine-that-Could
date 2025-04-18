@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bcl6gkqsbwrc4" path="res://Assets/Environment/Custom Tiles/Cave/CaveEnvironment_SS.png" id="2_twl02"]
 [ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/Forrest/MovingPlatform.tscn" id="3_ssbq7"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="4_jgxae"]
-[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Forrest/Lever.tscn" id="5_c36nh"]
+[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="5_c36nh"]
 [ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="5_xnh2e"]
 [ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="6_2tt10"]
-[ext_resource type="PackedScene" uid="uid://xko5xuiyxel6" path="res://Objects/Cave/Finish.tscn" id="7_563uc"]
+[ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="7_563uc"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="8_5j17f"]
 [ext_resource type="PackedScene" uid="uid://di051ae15i1oa" path="res://Objects/PushableBlockPhysicsTest.tscn" id="9_d3jx7"]
 
@@ -706,18 +706,18 @@ position = Vector2(406, 751)
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Finish" parent="Interactables" instance=ExtResource("7_563uc")]
-position = Vector2(1192, 424)
+position = Vector2(1224, 463)
 coinsToFinish = 1
 
 [node name="Area2D" parent="Interactables" instance=ExtResource("5_c36nh")]
 position = Vector2(-692, -575)
 
 [node name="LockedDoor" parent="Interactables" instance=ExtResource("6_2tt10")]
-position = Vector2(88, -474)
+position = Vector2(124, -476)
 rotation = 1.5708
 
 [node name="LockedDoor2" parent="Interactables" instance=ExtResource("6_2tt10")]
-position = Vector2(-160, -474)
+position = Vector2(-198, -474)
 rotation = -1.5708
 
 [node name="Blocks" type="Node2D" parent="."]

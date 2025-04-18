@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Levels/GameWorld.cs" id="1_nj6wc"]
 [ext_resource type="PackedScene" uid="uid://c1g7barmvp22f" path="res://Levels/Level_0.tscn" id="2_fg0u6"]
-[ext_resource type="PackedScene" uid="uid://7najwgjqvoxc" path="res://Levels/Level_1.tscn" id="2_vxikc"]
+[ext_resource type="PackedScene" uid="uid://dtak12qbvpkuj" path="res://Levels/Level_1.tscn" id="2_vxikc"]
 [ext_resource type="PackedScene" uid="uid://bni3q08lk88m4" path="res://Characters/Player.tscn" id="3_c6240"]
 [ext_resource type="PackedScene" uid="uid://cwxkexaq8bns8" path="res://Levels/LevelTransition.tscn" id="4_11rni"]
 [ext_resource type="PackedScene" uid="uid://d46gmqx82ji7" path="res://Hud/HUD.tscn" id="5_72wjx"]
-[ext_resource type="PackedScene" path="res://LevelTimer.tscn" id="6_qmik2"]
+[ext_resource type="PackedScene" uid="uid://dch3xbge4ycld" path="res://LevelTimer.tscn" id="6_qmik2"]
 [ext_resource type="PackedScene" uid="uid://dx11rsc7wgm5u" path="res://Hud/MainMenu.tscn" id="7_qojn8"]
 [ext_resource type="PackedScene" uid="uid://cphu8gb84kkcm" path="res://Hud/LevelSelect.tscn" id="8_s03n7"]
 [ext_resource type="PackedScene" uid="uid://npt8taxn7pdq" path="res://Hud/LeaderBoard/Leaderboard.tscn" id="10_yqcyq"]

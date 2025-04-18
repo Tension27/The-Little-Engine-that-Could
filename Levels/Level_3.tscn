@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/Forrest/MovingPlatform.tscn" id="4_nj281"]
 [ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="4_rxdm0"]
 [ext_resource type="Texture2D" uid="uid://bpr24fs7vyw3y" path="res://Assets/Environment/Backgrounds/ForrestBackground.png" id="9_lky41"]
-[ext_resource type="PackedScene" uid="uid://blylgpfgbqxp5" path="res://Objects/Forrest/FinishForrest.tscn" id="9_u37tg"]
+[ext_resource type="PackedScene" uid="uid://dvgyftwgkqx0u" path="res://Objects/Forrest/FinishForrest.tscn" id="9_u37tg"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="11_adkh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3q5ux"]
@@ -206,7 +206,6 @@ position = Vector2(0, 60)
 scale = Vector2(4.4389, 4.55208)
 texture = ExtResource("9_lky41")
 
-[node name="FinishForrest" parent="." instance=ExtResource("9_u37tg")]
-position = Vector2(-1234, -609)
-coinsToFinish = 4
+[node name="NewFinishForrest" parent="." instance=ExtResource("9_u37tg")]
+position = Vector2(-1217, -604)
 coinsToFinish = 4

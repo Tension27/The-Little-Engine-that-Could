@@ -55,31 +55,32 @@ public partial class Global : Node2D
     }
 
     //checks what scene is currently instanced, used to know what the next level is to be played
-    public static int GetCurrentSceneNumber()
-    {
-        string currentScene = Global.currentScene;
-        string nextLevelString = currentScene.ToString();
+    //public static int GetCurrentSceneNumber()
+    //{
+    //    string currentScene = Global.currentScene;
+    //    string nextLevelString = currentScene.ToString();
 
-        //pull the number out of the file path string
-        string a = nextLevelString;
-        string b = string.Empty;
-        int nextLevelNum = 0;
+    //    //pull the number out of the file path string
+    //    string a = nextLevelString;
+    //    string b = string.Empty;
+    //    int nextLevelNum = 0;
 
-        for (int i = 0; i < a.Length; i++)
-        {
-            if (Char.IsDigit(a[i]))
-            {
-                b += a[i];
-            }
-        }
+    //    for (int i = 0; i < a.Length; i++)
+    //    {
+    //        if (Char.IsDigit(a[i]))
+    //        {
+    //            b += a[i];
+    //        }
+    //    }
 
-        if (b.Length > 0)
-        {
-            nextLevelNum = int.Parse(b) + 1;
-        }
+    //    if (b.Length > 0)
+    //    {
+    //        nextLevelNum = int.Parse(b) + 1;
+    //    }
 
-        currentSceneNumber = nextLevelNum - 1;
+    //    currentSceneNumber = nextLevelNum - 1;
+    //    GD.Print(currentSceneNumber);
 
-        return nextLevelNum;
-    }
+    //    return nextLevelNum;
+    //}
 }

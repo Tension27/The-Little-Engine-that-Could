@@ -90,19 +90,25 @@ public partial class PeaShooter : CharacterBody2D
     }
 
     // Checks to see if the peashooter touched the player
-    public void OnBodyEntered(Player player)
+    public void OnBodyEntered(Node body)
     {
-        float realVelocity = player.Velocity.Y;
-        bodyHit = true;
-        Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred();
+        if (body is Player player)
+        {
+            float realVelocity = player.Velocity.Y;
+            bodyHit = true;
+            Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred();
+        }
     }
 
     // Checks to see if the player jumped on the peashooters head
-    public void OnSquashAreaEntered(Player player)
+    public void OnSquashAreaEntered(Node body)
     {
-        float realVelocity = player.Velocity.Y;
-        headHit = true;
-        Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred();
+        if (body is Player player)
+        {
+            float realVelocity = player.Velocity.Y;
+            headHit = true;
+            Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred(); 
+        }
     }
 
     // Instantiates and fires a pea in the direction that the peashooter is facing

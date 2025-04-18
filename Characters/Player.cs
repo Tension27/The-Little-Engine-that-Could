@@ -225,9 +225,10 @@ public partial class Player : CharacterBody2D
         Timer timer = (Timer)GetParent().GetChild(3).GetChild(5);
         if (Input.IsActionJustPressed("Quit"))
         {
-            Node transition = GetParent().GetChildOrNull<LevelTransition>(7);
+            Node transition = GetParent().GetChildOrNull<LevelTransition>(8);
             if (transition != null)
             {
+                GD.Print("Tets");
                 transition.QueueFree();
             }
             timer.Paused = false;

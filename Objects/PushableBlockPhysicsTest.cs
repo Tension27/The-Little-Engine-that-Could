@@ -12,7 +12,6 @@ public partial class PushableBlockPhysicsTest : RigidBody2D
 
     public override void _Ready()
     {
-        falling = GetNode<AudioStreamPlayer>("Falling");
         rb = this;
     }
 

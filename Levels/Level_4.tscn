@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="3_d5pnc"]
 [ext_resource type="Texture2D" uid="uid://bcl6gkqsbwrc4" path="res://Assets/Environment/Custom Tiles/Cave/CaveEnvironment_SS.png" id="3_x3e26"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="4_4758b"]
-[ext_resource type="PackedScene" uid="uid://xko5xuiyxel6" path="res://Objects/Cave/Finish.tscn" id="5_acir0"]
 [ext_resource type="PackedScene" uid="uid://cmys6qsrb7se1" path="res://Objects/Button.tscn" id="6_2y1yj"]
 [ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/Forrest/MovingPlatform.tscn" id="6_gorum"]
-[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Forrest/Lever.tscn" id="7_exggx"]
+[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="7_exggx"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="7_njtn6"]
 [ext_resource type="PackedScene" uid="uid://c5brqspaq8om8" path="res://Objects/Sphere.tscn" id="8_104gm"]
+[ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="12_e5cna"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pw7vb"]
 texture = ExtResource("1_qaaql")
@@ -651,8 +651,8 @@ shape = SubResource("RectangleShape2D_k0a4e")
 
 [node name="Objects" type="Node2D" parent="."]
 
-[node name="Finish" parent="Objects" instance=ExtResource("5_acir0")]
-position = Vector2(1198, -596)
+[node name="FinishCave" parent="Objects" instance=ExtResource("12_e5cna")]
+position = Vector2(1199, -559)
 coinsToFinish = 1
 
 [node name="Button" parent="Objects" instance=ExtResource("6_2y1yj")]

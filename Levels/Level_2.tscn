@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://h8puviej5xq4" path="res://Assets/Environment/Custom Tiles/Forest/Grass_SS.png" id="2_d67jj"]
 [ext_resource type="Texture2D" uid="uid://diopo1aaeragl" path="res://Assets/Environment/Custom Tiles/Solaria Demo Update 01.png" id="2_q6dm7"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="3_2n1ve"]
-[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Forrest/Lever.tscn" id="5_dwc6x"]
+[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="5_dwc6x"]
 [ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="6_mxo0r"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="7_mbgpk"]
 [ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="8_78sxo"]
-[ext_resource type="PackedScene" uid="uid://blylgpfgbqxp5" path="res://Objects/Forrest/FinishForrest.tscn" id="8_q8tvy"]
+[ext_resource type="PackedScene" uid="uid://dvgyftwgkqx0u" path="res://Objects/Forrest/FinishForrest.tscn" id="8_q8tvy"]
 [ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="9_f6tfp"]
 [ext_resource type="Texture2D" uid="uid://bpr24fs7vyw3y" path="res://Assets/Environment/Backgrounds/ForrestBackground.png" id="10_cctwt"]
 
@@ -486,7 +486,7 @@ position = Vector2(950, 677)
 position = Vector2(-1178, 300)
 
 [node name="Goomba2" parent="Enemies" instance=ExtResource("8_78sxo")]
-position = Vector2(936, -502)
+position = Vector2(911, -483)
 
 [node name="Goomba3" parent="Enemies" instance=ExtResource("8_78sxo")]
 position = Vector2(-1001, -53)
@@ -508,7 +508,7 @@ position = Vector2(-102, 423)
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Area2D" parent="Interactables" instance=ExtResource("5_dwc6x")]
-position = Vector2(621, 714)
+position = Vector2(620, 732)
 
 [node name="LockedDoor" parent="Interactables" instance=ExtResource("6_mxo0r")]
 position = Vector2(-614, 204)
@@ -517,15 +517,9 @@ position = Vector2(-614, 204)
 position = Vector2(619, -598)
 
 [node name="Area2D2" parent="Interactables" instance=ExtResource("5_dwc6x")]
-position = Vector2(1055, -452)
-
-[node name="FinishForrest" parent="Interactables" instance=ExtResource("8_q8tvy")]
-position = Vector2(-1217, 170)
-coinsToFinish = 4
-coinsToFinish = 4
+position = Vector2(1055, -443)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 scale = Vector2(4.55, 4.55)
 collision_layer = 2
 collision_mask = 665
@@ -626,6 +620,10 @@ texture_filter = 1
 position = Vector2(0.0416352, 2.14577e-05)
 scale = Vector2(4.4389, 4.55208)
 texture = ExtResource("10_cctwt")
+
+[node name="NewFinishForrest" parent="." instance=ExtResource("8_q8tvy")]
+position = Vector2(-1203, 166)
+coinsToFinish = 4
 
 [connection signal="body_entered" from="Interactables/Area2D" to="Interactables/LockedDoor2" method="LeverSignal"]
 [connection signal="body_exited" from="Interactables/Area2D" to="Interactables/LockedDoor2" method="LeverSignal"]

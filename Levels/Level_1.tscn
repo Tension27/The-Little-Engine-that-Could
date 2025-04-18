@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://7najwgjqvoxc"]
+[gd_scene load_steps=33 format=3 uid="uid://dtak12qbvpkuj"]
 
 [ext_resource type="Texture2D" uid="uid://diopo1aaeragl" path="res://Assets/Environment/Custom Tiles/Solaria Demo Update 01.png" id="1_1oxxr"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="2_u46t5"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bxi06e34jn8cb" path="res://Objects/DeathZone.tscn" id="5_1qtdb"]
 [ext_resource type="Texture2D" uid="uid://h8puviej5xq4" path="res://Assets/Environment/Custom Tiles/Forest/Grass_SS.png" id="5_b4gap"]
 [ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="8_a8f3y"]
+[ext_resource type="PackedScene" uid="uid://dvgyftwgkqx0u" path="res://Objects/Forrest/FinishForrest.tscn" id="11_7o73q"]
 [ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="11_toipo"]
-[ext_resource type="PackedScene" uid="uid://blylgpfgbqxp5" path="res://Objects/Forrest/FinishForrest.tscn" id="12_qvgr2"]
 [ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/Forrest/MovingPlatform.tscn" id="16_u3gyb"]
 [ext_resource type="Texture2D" uid="uid://bpr24fs7vyw3y" path="res://Assets/Environment/Backgrounds/ForrestBackground.png" id="17_ev0db"]
 
@@ -558,9 +558,9 @@ position = Vector2(1068, 176)
 distance = Vector2(0, 400)
 debug = false
 
-[node name="FinishForrest" parent="Interactables" instance=ExtResource("12_qvgr2")]
-z_index = -1
-position = Vector2(-961, -338)
+[node name="FinishForrest" parent="Interactables" instance=ExtResource("11_7o73q")]
+position = Vector2(-875, -344)
+coinsToFinish = 2
 
 [node name="DeathZone" parent="Interactables" instance=ExtResource("5_1qtdb")]
 position = Vector2(152, -28)

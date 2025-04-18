@@ -1,26 +1,34 @@
 using Godot;
+using Godot.NativeInterop;
 using System;
 
-public partial class Finish : Area2D
+public partial class NewFinishBase : Area2D
 {
     [Export]
     private int coinsToFinish = 0;
-    
-    private int coins= 0;
-    AnimationPlayer ap = null;
-    private Signals customSignals;
 
+    private int coins = 0;
+    public AnimationPlayer ap = null;
+    private Signals customSignals;
+    public string OpenDoorAnimation;
+    public string CloseDoorAnimation;
+    
+    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
-    {
+	{
         ap = GetNode<AnimationPlayer>("AnimationPlayer");
         customSignals = GetNode<Signals>("/root/Signals");
         customSignals.OnDoorShouldBeOpen += OpenDoor;
-        ap.Play("UnlitTorches");
     }
 
     public override void _ExitTree()
     {
         customSignals.OnDoorShouldBeOpen -= OpenDoor;
+    }
+
+    public void CloseDoorTest()
+    {
+        ap.Play(CloseDoorAnimation);
     }
 
     //checks to see if the player has enough coins to pass the level
@@ -36,20 +44,12 @@ public partial class Finish : Area2D
         }
     }
 
-    //public void OnAnimationFinished(string name)
-    //{
-    //    if (name == "LightingTorches")
-    //    {
-    //        ap.Play("LitTorches");
-    //    }
-    //}
-
     public void OpenDoor()
     {
         coins++;
         if (coins == coinsToFinish)
         {
-            ap.Play("LightingTorches");
+            ap.Play(OpenDoorAnimation);
         }
     }
 }

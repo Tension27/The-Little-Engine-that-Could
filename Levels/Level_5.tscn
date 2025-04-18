@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bcl6gkqsbwrc4" path="res://Assets/Environment/Custom Tiles/Cave/CaveEnvironment_SS.png" id="2_qt74c"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="3_8r7pd"]
 [ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="5_1oots"]
-[ext_resource type="PackedScene" uid="uid://xko5xuiyxel6" path="res://Objects/Cave/Finish.tscn" id="6_i7gcc"]
+[ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="6_i7gcc"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="7_tieue"]
 [ext_resource type="PackedScene" uid="uid://cmys6qsrb7se1" path="res://Objects/Button.tscn" id="9_yoh8q"]
 [ext_resource type="PackedScene" uid="uid://di051ae15i1oa" path="res://Objects/PushableBlockPhysicsTest.tscn" id="11_78r56"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dfpha1hwxgfhc" path="res://Characters/Enemies/ZombieNew.tscn" id="13_ynnf7"]
 [ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="15_h2lol"]
 [ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/Forrest/MovingPlatform.tscn" id="16_u3gyb"]
-[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Forrest/Lever.tscn" id="17_2epea"]
+[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="17_2epea"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nc3a"]
 texture = ExtResource("1_040lj")
@@ -2812,7 +2812,7 @@ position = Vector2(-1132, -509)
 position = Vector2(-1076, 596)
 
 [node name="Finish" parent="Interactables" instance=ExtResource("6_i7gcc")]
-position = Vector2(312, -585)
+position = Vector2(286, -551)
 scale = Vector2(0.9, 0.9)
 coinsToFinish = 5
 

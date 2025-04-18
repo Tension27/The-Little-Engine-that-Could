@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Runtime.InteropServices;
 
 //The majority of this method was taken from a youtube video I have very poor understanding of how it actually works
 
@@ -18,10 +19,34 @@ public partial class MovingPlatform : AnimatableBody2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
+        int currentLevel = Global.currentSceneNumber;
+        SetLevelSprite(currentLevel);
         pivot = GlobalPosition;
         SetProcess(debug);
 	}
-    
+
+    //Figures out which sprite needs to be displayed for the object depending on the level area i.e. forest, cave, or fortress
+    public void SetLevelSprite(int currentLevel)
+    {
+        Sprite2D forestSprite = GetNode<Sprite2D>("Sprite2D");
+        Sprite2D caveSprite = GetNode<Sprite2D>("Sprite2D2");
+
+        if (currentLevel > 0 && currentLevel < 4)
+        {
+            caveSprite.Visible = false;
+            forestSprite.Visible = true;
+        }
+        else if (currentLevel > 3 && currentLevel < 7)
+        {
+            caveSprite.Visible = true;
+            forestSprite.Visible = false;
+        }
+        else if (currentLevel > 6 && currentLevel < 10)
+        {
+            //
+        }
+    }
+
     public Vector2 GetPosition(float time)
     {
         Vector2 vector;
