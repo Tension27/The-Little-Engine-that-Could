@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Test for c# auto complete"
+config/name="The Little Engine that Could"
 run/main_scene="res://Levels/GameWorld.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
