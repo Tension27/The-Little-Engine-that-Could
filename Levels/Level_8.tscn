@@ -16,7 +16,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ul34"]
 size = Vector2(4673, 310)
 
-[node name="Level_1" type="Node2D"]
+[node name="Level_8" type="Node2D"]
 
 [node name="Floor&Walls" parent="." instance=ExtResource("1_kyofb")]
 position = Vector2(864, 746)

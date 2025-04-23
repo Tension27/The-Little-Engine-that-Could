@@ -28,7 +28,7 @@ public partial class LeaderboardInfoReader : Control
     //Pulls the data from the text file
     public string LoadOverall()
 	{
-        var file = FileAccess.Open("E:\\Auto Complete Test\\Hud\\LeaderBoard\\LeaderboardInfo.txt", FileAccess.ModeFlags.Read);
+        var file = FileAccess.Open("C:\\Users\\Seth Friebel\\Documents\\Documents\\Github\\Auto Complete Test\\Hud\\LeaderBoard\\LeaderboardInfo.txt", FileAccess.ModeFlags.Read);
 		string info = file.GetAsText();
 		return info;
     }
@@ -36,7 +36,7 @@ public partial class LeaderboardInfoReader : Control
     //Pulls the data from the text file
     public string LoadSegmented()
     {
-        var file = FileAccess.Open("E:\\Auto Complete Test\\Hud\\LeaderBoard\\LeaderboardInfoSegmented.txt", FileAccess.ModeFlags.Read);
+        var file = FileAccess.Open("C:\\Users\\Seth Friebel\\Documents\\Documents\\Github\\Auto Complete Test\\Hud\\LeaderBoard\\LeaderboardInfo.txt", FileAccess.ModeFlags.Read);
         string info = file.GetAsText();
         return info;
     }

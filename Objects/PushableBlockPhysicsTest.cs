@@ -18,24 +18,7 @@ public partial class PushableBlockPhysicsTest : RigidBody2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-        
         float temp = rb.LinearVelocity.X + rb.LinearVelocity.Y;
-        //falling.VolumeDb = LinearToDb(MathF.Abs(temp));
-
-        if (onSurface < 1)
-        {
-            currentlyFalling = true;
-        }
-        if (onSurface > 0)
-        {
-            falling.Stop();
-            currentlyFalling = false;
-        }
-
-        if (currentlyFalling == true && falling.Playing == false)
-        {
-            falling.Play();
-        }
     }
 
     public void BoxIsOnSurface(Node2D body)

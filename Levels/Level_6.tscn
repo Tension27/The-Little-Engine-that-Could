@@ -470,7 +470,7 @@ size = Vector2(32, 112)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1s8h"]
 size = Vector2(224.066, 31.978)
 
-[node name="Level_3" type="Node2D"]
+[node name="Level_6" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -713,7 +713,7 @@ coinsToFinish = 1
 position = Vector2(-692, -575)
 
 [node name="LockedDoor" parent="Interactables" instance=ExtResource("6_2tt10")]
-position = Vector2(124, -476)
+position = Vector2(124, -473)
 rotation = 1.5708
 
 [node name="LockedDoor2" parent="Interactables" instance=ExtResource("6_2tt10")]
@@ -723,46 +723,46 @@ rotation = -1.5708
 [node name="Blocks" type="Node2D" parent="."]
 
 [node name="RigidBody2D" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(-240, -880)
+position = Vector2(-240, -1066)
 
 [node name="RigidBody2D2" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(-137, -879)
+position = Vector2(-137, -1065)
 
 [node name="RigidBody2D3" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(-36, -879)
+position = Vector2(-36, -1065)
 
 [node name="RigidBody2D4" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(63, -880)
+position = Vector2(63, -1066)
 
 [node name="RigidBody2D5" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(163, -880)
+position = Vector2(163, -1066)
 
 [node name="RigidBody2D6" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(-342, -884)
+position = Vector2(-342, -1070)
 
 [node name="RigidBody2D7" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(-362, -972)
+position = Vector2(-362, -1158)
 
 [node name="RigidBody2D8" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(-266, -971)
+position = Vector2(-266, -1157)
 
 [node name="RigidBody2D9" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(-162, -968)
+position = Vector2(-162, -1154)
 
 [node name="RigidBody2D10" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(-60, -967)
+position = Vector2(-60, -1153)
 
 [node name="RigidBody2D11" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(40, -969)
+position = Vector2(40, -1155)
 
 [node name="RigidBody2D12" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(140, -967)
+position = Vector2(140, -1153)
 
 [node name="RigidBody2D13" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(272, -883)
+position = Vector2(272, -1069)
 
 [node name="RigidBody2D14" parent="Blocks" instance=ExtResource("9_d3jx7")]
-position = Vector2(236, -970)
+position = Vector2(236, -1156)
 
 [node name="Coin2" parent="." instance=ExtResource("4_jgxae")]
 position = Vector2(-3, 455)

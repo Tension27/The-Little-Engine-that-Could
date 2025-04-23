@@ -475,7 +475,7 @@ size = Vector2(32, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0a4e"]
 size = Vector2(32, 240)
 
-[node name="Level_7" type="Node2D"]
+[node name="Level_4" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2

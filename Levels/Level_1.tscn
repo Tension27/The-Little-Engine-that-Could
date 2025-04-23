@@ -459,7 +459,7 @@ size = Vector2(288, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofxw7"]
 size = Vector2(16, 320)
 
-[node name="Level_5" type="Node2D"]
+[node name="Level_1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
