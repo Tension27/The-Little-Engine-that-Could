@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="2_2ficc"]
 [ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="3_bi0xi"]
 [ext_resource type="Script" path="res://DeathZone.cs" id="3_m3gs2"]
-[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="3_muyx3"]
+[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Base Class'/LockedDoor.tscn" id="3_muyx3"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="4_wst7l"]
 [ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/Forrest/MovingPlatform.tscn" id="5_dlumq"]
 [ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="5_rn23s"]

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="4_jgxae"]
 [ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="5_c36nh"]
 [ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="5_xnh2e"]
-[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="6_2tt10"]
+[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Base Class'/LockedDoor.tscn" id="6_2tt10"]
 [ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="7_563uc"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="8_5j17f"]
 [ext_resource type="PackedScene" uid="uid://di051ae15i1oa" path="res://Objects/PushableBlockPhysicsTest.tscn" id="9_d3jx7"]

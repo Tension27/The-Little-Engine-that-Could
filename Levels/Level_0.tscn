@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqpkyj61lm8jw" path="res://Assets/Environment/Custom Tiles/D-Key.png" id="3_p77p6"]
 [ext_resource type="Texture2D" uid="uid://cy7bpmrkd2trg" path="res://Assets/Environment/Custom Tiles/W-Key.png" id="4_1i3f4"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="5_f5u2d"]
-[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="6_7xgrb"]
+[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Base Class'/LockedDoor.tscn" id="6_7xgrb"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="6_fr0u3"]
 [ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="7_fji2q"]
 [ext_resource type="PackedScene" uid="uid://di051ae15i1oa" path="res://Objects/PushableBlockPhysicsTest.tscn" id="8_p3k3t"]

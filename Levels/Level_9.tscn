@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="4_wemrh"]
 [ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="5_jgi5l"]
 [ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="6_j564j"]
-[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="7_m12iv"]
+[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Base Class'/LockedDoor.tscn" id="7_m12iv"]
 [ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="8_wiq5b"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="9_qeque"]
 [ext_resource type="PackedScene" uid="uid://bxi06e34jn8cb" path="res://Objects/DeathZone.tscn" id="11_0v7vk"]

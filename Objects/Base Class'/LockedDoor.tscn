@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://dql8a7rkbpx6s"]
 
-[ext_resource type="Script" path="res://Objects/Forrest/LockedDoor.cs" id="1_bo8bx"]
-[ext_resource type="Texture2D" uid="uid://fp5x8tgoh42" path="res://Assets/Environment/Custom Tiles/Forest/LockedDoor_Forrest_SS.png" id="2_1vdyy"]
-[ext_resource type="Texture2D" uid="uid://jqco5mi6vx56" path="res://Assets/Objects/LockedDoor_Cave_SS.png" id="3_7e1a8"]
-[ext_resource type="AudioStream" uid="uid://cq4x8e3xm5vas" path="res://Assets/Sound Effects/BrickDoorOpening.mp3" id="4_6dfo2"]
+[ext_resource type="Script" path="res://Objects/Base Class'/LockedDoor.cs" id="1_qg6o0"]
+[ext_resource type="Texture2D" uid="uid://fp5x8tgoh42" path="res://Assets/Environment/Custom Tiles/Forest/LockedDoor_Forrest_SS.png" id="2_gn6qk"]
+[ext_resource type="Texture2D" uid="uid://jqco5mi6vx56" path="res://Assets/Objects/LockedDoor_Cave_SS.png" id="3_1qhe7"]
+[ext_resource type="AudioStream" uid="uid://cq4x8e3xm5vas" path="res://Assets/Sound Effects/BrickDoorOpening.mp3" id="4_yei3b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fwos"]
 resource_local_to_scene = true
-size = Vector2(64.5, 234)
+size = Vector2(64.5, 323)
 
 [sub_resource type="Animation" id="Animation_u7abs"]
 resource_name = "Idle"
@@ -52,6 +52,57 @@ tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ey04o"]
+resource_name = "Idle_Cave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Closed:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_6fwos")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -126,144 +177,6 @@ tracks/4/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_s1r8p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Closed:shape")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("RectangleShape2D_6fwos")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Closed:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-0.25, -45)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Closed:shape:size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(64.5, 234)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D2:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite2D2:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Sprite2D:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_ey04o"]
-resource_name = "Idle_Cave"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Closed:shape")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("RectangleShape2D_6fwos")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="Animation" id="Animation_pugjr"]
 resource_name = "Open_Cave"
 length = 0.92
@@ -329,6 +242,93 @@ tracks/4/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_s1r8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Closed:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_6fwos")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Closed:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.25, -0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Closed:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64.5, 323)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_33mpg"]
 _data = {
 "Idle": SubResource("Animation_u7abs"),
@@ -341,24 +341,24 @@ _data = {
 [node name="LockedDoor" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 17
-script = ExtResource("1_bo8bx")
+script = ExtResource("1_qg6o0")
 
 [node name="Closed" type="CollisionShape2D" parent="."]
-position = Vector2(-0.25, -45)
+position = Vector2(-0.25, -0.5)
 shape = SubResource("RectangleShape2D_6fwos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 1)
 scale = Vector2(4, 4)
-texture = ExtResource("2_1vdyy")
+texture = ExtResource("2_gn6qk")
 hframes = 15
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("3_7e1a8")
+texture = ExtResource("3_1qhe7")
 hframes = 19
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -367,12 +367,12 @@ libraries = {
 }
 
 [node name="DoorOpening" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_6dfo2")
+stream = ExtResource("4_yei3b")
 volume_db = -25.0
 pitch_scale = 0.85
 
 [node name="DoorOpeningCave" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_6dfo2")
+stream = ExtResource("4_yei3b")
 volume_db = -25.0
 pitch_scale = 0.85
 

@@ -64,7 +64,8 @@ public partial class Pea : CharacterBody2D
 			moveSpeed = 0;
             canSpin = false;
             RotationDegrees = 0;
-			GetNode<Sprite2D>("Sprite2D").Visible = false;
+            GetNode<CollisionShape2D>("Area2D/CollisionShape2D").QueueFree();
+            GetNode<Sprite2D>("Sprite2D").Visible = false;
             GetNode<Sprite2D>("PeaPop").Visible = true;
             ap.Play("Pop");
         }

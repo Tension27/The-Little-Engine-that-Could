@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="11_toipo"]
 [ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="12_kl42x"]
 [ext_resource type="PackedScene" uid="uid://dfpha1hwxgfhc" path="res://Characters/Enemies/ZombieNew.tscn" id="13_ynnf7"]
-[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Forrest/LockedDoor.tscn" id="15_h2lol"]
+[ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Base Class'/LockedDoor.tscn" id="15_h2lol"]
 [ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/Forrest/MovingPlatform.tscn" id="16_u3gyb"]
 [ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="17_2epea"]
 
