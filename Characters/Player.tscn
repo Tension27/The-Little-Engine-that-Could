@@ -52,6 +52,6 @@ pitch_scale = 0.8
 stream = ExtResource("5_uk55c")
 volume_db = -2.0
 
-[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
 [connection signal="body_entered" from="Area2D" to="." method="OnCoinEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

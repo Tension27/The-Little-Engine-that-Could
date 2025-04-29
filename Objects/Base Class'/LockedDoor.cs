@@ -47,7 +47,9 @@ public partial class LockedDoor : StaticBody2D
         }
         else if (currentLevel > 6 && currentLevel < 10)
         {
-            //
+            correctDoorSound = "DoorOpeningFortress";
+            openAnimation = "Open_Fortress";
+            idleAnimation = "Idle_Fortress";
         }
     }
 

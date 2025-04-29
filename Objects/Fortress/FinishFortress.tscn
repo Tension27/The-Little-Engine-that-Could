@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://by7knbq61bmd1"]
+
+[ext_resource type="PackedScene" uid="uid://bkckmy08cfaor" path="res://Objects/Base Class'/NewFinishBase.tscn" id="1_p418m"]
+[ext_resource type="Script" path="res://Objects/Fortress/FinishFortress.cs" id="2_nx8i2"]
+[ext_resource type="Texture2D" uid="uid://byswx7knvr887" path="res://Assets/Environment/Custom Tiles/Fortress/FinishDoorFortress.png" id="2_up1wa"]
+[ext_resource type="AudioStream" uid="uid://8320a2gxx8x1" path="res://Assets/Sound Effects/FinishFortress.mp3" id="4_cl76x"]
+[ext_resource type="Texture2D" uid="uid://ctvabdlemdgby" path="res://Assets/Environment/Custom Tiles/Fortress/FinishDoorFortress_SS.png" id="4_iofxb"]
+[ext_resource type="AudioStream" uid="uid://11ftehi0me10" path="res://Assets/Sound Effects/FinishFortressDoorClose.mp3" id="6_m1ik1"]
+
+[sub_resource type="Animation" id="Animation_twjul"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_8rk5u"]
+resource_name = "Open"
+length = 2.015
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.95),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qir77"]
+_data = {
+"Idle": SubResource("Animation_twjul"),
+"Open": SubResource("Animation_8rk5u")
+}
+
+[node name="FinishFortress" instance=ExtResource("1_p418m")]
+script = ExtResource("2_nx8i2")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 124)
+
+[node name="Sprite2D" parent="." index="1"]
+visible = false
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_up1wa")
+hframes = 19
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_qir77")
+}
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("4_cl76x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("4_iofxb")
+hframes = 19
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource("6_m1ik1")
+volume_db = -20.0

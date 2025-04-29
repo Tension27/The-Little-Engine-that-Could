@@ -26,7 +26,7 @@ public partial class NewFinishBase : Area2D
         customSignals.OnDoorShouldBeOpen -= OpenDoor;
     }
 
-    public void CloseDoorTest()
+    public void CloseDoor()
     {
         ap.Play(CloseDoorAnimation);
     }
