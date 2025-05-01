@@ -168,6 +168,6 @@ pitch_scale = 0.6
 volume_db = -18.93
 pitch_scale = 2.0
 
-[connection signal="body_entered" from="Area2D" to="." method="OnWallEntered"]
 [connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="OnWallEntered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]

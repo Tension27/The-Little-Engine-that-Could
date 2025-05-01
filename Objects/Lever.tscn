@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cafi35quxn4b7"]
+[gd_scene load_steps=14 format=3 uid="uid://cafi35quxn4b7"]
 
 [ext_resource type="Script" path="res://Objects/Lever.cs" id="1_ujr4h"]
 [ext_resource type="Texture2D" uid="uid://cwp4inhqmfuln" path="res://Assets/Objects/LeverBaseForrest.png" id="2_44rtn"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://dmpy5pvwx55qg" path="res://Assets/Sound Effects/Lever.mp3" id="4_3s87y"]
 [ext_resource type="Texture2D" uid="uid://bbt7m0ocp4ngr" path="res://Assets/Objects/LeverHandle.png" id="4_iykv3"]
 [ext_resource type="Texture2D" uid="uid://3hc760nje26c" path="res://Assets/Objects/LeverBase.png" id="5_auf3p"]
+[ext_resource type="Texture2D" uid="uid://ddpngmeo3qvek" path="res://Assets/Environment/Custom Tiles/Fortress/LeverHandleFortress.png" id="6_yuhyo"]
+[ext_resource type="Texture2D" uid="uid://8wo3nxu04dta" path="res://Assets/Environment/Custom Tiles/Fortress/LeverBaseFortress.png" id="7_g5yhx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weds4"]
 size = Vector2(18, 2.25)
@@ -31,6 +33,8 @@ ForrestHandle = ExtResource("3_8bawk")
 ForrestBase = ExtResource("2_44rtn")
 CaveHandle = ExtResource("4_iykv3")
 CaveBase = ExtResource("5_auf3p")
+FortressHandle = ExtResource("6_yuhyo")
+FortressBase = ExtResource("7_g5yhx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-19, -21)

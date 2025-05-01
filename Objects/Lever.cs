@@ -51,7 +51,8 @@ public partial class Lever : Area2D
         }
         else if (currentLevel > 6 && currentLevel < 10)
         {
-            //
+            Base.Texture = FortressBase;
+            Handle.Texture = FortressHandle;
         }
     }
 }
