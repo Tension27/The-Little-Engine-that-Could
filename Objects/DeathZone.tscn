@@ -10,6 +10,7 @@ size = Vector2(4673, 310)
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-99, 975)
 collision_layer = 4
+collision_mask = 16384
 script = ExtResource("1_lvtip")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

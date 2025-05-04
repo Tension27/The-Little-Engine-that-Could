@@ -653,6 +653,7 @@ shape = SubResource("RectangleShape2D_k0a4e")
 
 [node name="FinishCave" parent="Objects" instance=ExtResource("12_e5cna")]
 position = Vector2(1199, -559)
+collision_mask = 1
 coinsToFinish = 1
 
 [node name="Button" parent="Objects" instance=ExtResource("6_2y1yj")]

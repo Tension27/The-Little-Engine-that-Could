@@ -94,7 +94,7 @@ Dash={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
+2d_physics/layer_1="Player Hurtbox"
 2d_physics/layer_2="Platform"
 2d_physics/layer_3="Fallzone"
 2d_physics/layer_4="Item"
@@ -108,6 +108,7 @@ Dash={
 2d_physics/layer_12="LeverStop"
 2d_physics/layer_13="Lever"
 2d_physics/layer_14="LeverOnCheck"
+2d_physics/layer_15="Player Hitbox"
 
 [rendering]
 

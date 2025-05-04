@@ -6,6 +6,7 @@
 size = Vector2(75, 62)
 
 [node name="NewFinishBase" type="Area2D"]
+collision_mask = 16384
 script = ExtResource("1_e6no0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -8,6 +8,5 @@ public partial class FinishFortress : NewFinishBase
         base._Ready();
         OpenDoorAnimation = "Open";
         CloseDoorAnimation = "Close";
-        CloseDoor();
     }
 }

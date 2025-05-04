@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dc53t51384vun" path="res://Assets/Sound Effects/brick-on-soilwav-14757.mp3" id="5_psg8i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqhnq"]
-radius = 16.0
+radius = 17.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8qep"]
 radius = 18.0278
@@ -168,6 +168,6 @@ pitch_scale = 0.6
 volume_db = -18.93
 pitch_scale = 2.0
 
-[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="area_entered" from="Area2D" to="." method="OnAreaEntered"]
 [connection signal="body_entered" from="Area2D" to="." method="OnWallEntered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]

@@ -208,4 +208,5 @@ texture = ExtResource("9_lky41")
 
 [node name="NewFinishForrest" parent="." instance=ExtResource("9_u37tg")]
 position = Vector2(-1217, -604)
+collision_mask = 1
 coinsToFinish = 4

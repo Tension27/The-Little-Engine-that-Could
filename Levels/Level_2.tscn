@@ -623,6 +623,7 @@ texture = ExtResource("10_cctwt")
 
 [node name="NewFinishForrest" parent="." instance=ExtResource("8_q8tvy")]
 position = Vector2(-1203, 166)
+collision_mask = 1
 coinsToFinish = 4
 
 [connection signal="body_entered" from="Interactables/Area2D" to="Interactables/LockedDoor2" method="LeverSignal"]

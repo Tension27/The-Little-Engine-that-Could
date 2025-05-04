@@ -8,7 +8,6 @@ public partial class FinishCave : NewFinishBase
         base._Ready();
         OpenDoorAnimation = "LightingTorches";
         CloseDoorAnimation = "UnlitTorches";
-        CloseDoor();
     }
 
     public void OnAnimationFinished(string name)

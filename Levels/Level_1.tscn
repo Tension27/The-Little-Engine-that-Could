@@ -560,6 +560,7 @@ debug = false
 
 [node name="FinishForrest" parent="Interactables" instance=ExtResource("11_7o73q")]
 position = Vector2(-875, -344)
+collision_mask = 1
 coinsToFinish = 2
 
 [node name="DeathZone" parent="Interactables" instance=ExtResource("5_1qtdb")]

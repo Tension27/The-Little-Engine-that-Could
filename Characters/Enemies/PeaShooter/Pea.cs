@@ -5,19 +5,19 @@ using System.Security.Cryptography;
 
 public partial class Pea : CharacterBody2D
 {
-	public float moveSpeed =  600f;
+	public float moveSpeed = 600f;
 	public int direction = -1;
 	public int pushForce = 40;
 	private bool canSpin = true;
-    AnimationPlayer ap = null;
+	AnimationPlayer ap = null;
 
-    //Kill the player if it collides with them
-    public void OnBodyEntered(Node2D body)
+	//Kill the player if it collides with them
+	public void OnAreaEntered(Node2D area)
 	{
-		if (body is Player player)
-		{
-			player.AddDeath();
-		}
+        if (area.Name == "Area2D2" && area.GetParent() is Player player)
+        {
+            player.AddDeath();
+        }
     }
 	
 	public override void _Ready()

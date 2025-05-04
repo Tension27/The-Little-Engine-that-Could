@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bni3q08lk88m4"]
+[gd_scene load_steps=9 format=3 uid="uid://bni3q08lk88m4"]
 
 [ext_resource type="Script" path="res://Characters/Player.cs" id="1_x4xak"]
 [ext_resource type="Texture2D" uid="uid://blw4r866u1hh1" path="res://Assets/Characters/GodotGuy/GodotGuy.png" id="2_kldiu"]
@@ -7,13 +7,17 @@
 [ext_resource type="AudioStream" uid="uid://cw8j0r2yolcqw" path="res://Assets/Sound Effects/PlayerDeath.mp3" id="5_uk55c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbm11"]
-size = Vector2(16, 16)
+size = Vector2(18, 16.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4nc8"]
 size = Vector2(32, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg6ws"]
+size = Vector2(64, 54)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_mask = 4718
+collision_layer = 16384
+collision_mask = 4874
 script = ExtResource("1_x4xak")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -24,7 +28,7 @@ texture = ExtResource("2_kldiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, 1)
+position = Vector2(0, -0.5)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_rbm11")
 
@@ -52,6 +56,13 @@ pitch_scale = 0.8
 stream = ExtResource("5_uk55c")
 volume_db = -2.0
 
-[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
+[node name="Area2D2" type="Area2D" parent="."]
+collision_mask = 228
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_hg6ws")
+
 [connection signal="body_entered" from="Area2D" to="." method="OnCoinEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

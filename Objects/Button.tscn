@@ -10,7 +10,7 @@ size = Vector2(110, 22)
 
 [node name="Button" type="Area2D"]
 collision_layer = 8
-collision_mask = 513
+collision_mask = 16896
 script = ExtResource("1_cf3y6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

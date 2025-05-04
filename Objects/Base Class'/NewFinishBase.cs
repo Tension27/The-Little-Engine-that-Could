@@ -26,10 +26,6 @@ public partial class NewFinishBase : Area2D
         customSignals.OnDoorShouldBeOpen -= OpenDoor;
     }
 
-    public void CloseDoor()
-    {
-        ap.Play(CloseDoorAnimation);
-    }
 
     //checks to see if the player has enough coins to pass the level
     public void OnBodyEntered(Node2D body)
@@ -38,8 +34,9 @@ public partial class NewFinishBase : Area2D
         {
             if (Player.coins == coinsToFinish)
             {
-                customSignals.EmitSignal(nameof(Signals.OnFinishReached));
-                Player.coins = 0;
+                player.TestAnim();
+                //customSignals.EmitSignal(nameof(Signals.OnFinishReached));
+                //Player.coins = 0;
             }
         }
     }

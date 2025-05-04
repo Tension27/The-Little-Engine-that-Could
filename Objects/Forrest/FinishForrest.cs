@@ -9,6 +9,5 @@ public partial class FinishForrest : NewFinishBase
         base._Ready();
         OpenDoorAnimation = "Leaves";
         CloseDoorAnimation = "Dead";
-        CloseDoor();
     }
 }

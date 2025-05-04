@@ -177,6 +177,7 @@ shape = SubResource("RectangleShape2D_jpmwy")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 64
+collision_mask = 16384
 
 [node name="HurtBox" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0)
@@ -199,6 +200,7 @@ texture = ExtResource("3_lthue")
 
 [node name="SquashZone" type="Area2D" parent="."]
 collision_layer = 256
+collision_mask = 16384
 
 [node name="SquashBox" type="CollisionShape2D" parent="SquashZone"]
 position = Vector2(0.5, -84)

@@ -33,8 +33,7 @@ public partial class Player : CharacterBody2D
     public int startPositionX = -1279;
     public int startPositionY = 632;
     public int i = 10;
-    public bool isMoveAllowed = true;
-    private bool canSlide = true;
+    public bool moveIsDisabled = true;
 
 
     public void ResetDeaths()
@@ -57,14 +56,29 @@ public partial class Player : CharacterBody2D
         customSignals = GetNode<Signals>("/root/Signals");
     }
 
+    public async void TestAnim()
+    {
+        await ToSignal(GetTree().CreateTimer(1f), SceneTreeTimer.SignalName.Timeout);
+        CollisionShape2D hitBox = GetNode<CollisionShape2D>("Area2D2/CollisionShape2D");
+        Sprite2D sprite = GetNode<Sprite2D>("Sprite2D");
+
+        hitBox.CallDeferred("set_disabled", true);
+        Tween exitLevelAnim = GetTree().CreateTween();
+        Color startColor = sprite.Modulate;
+        Color endColor = new Color(startColor.R, startColor.G, startColor.B, 0f);
+
+        exitLevelAnim.SetParallel(true);
+        exitLevelAnim.TweenProperty(sprite, "modulate", endColor, 2f);
+        exitLevelAnim.TweenProperty(sprite, "scale", new Vector2(1,1), 3f);
+        exitLevelAnim.TweenProperty(sprite, "position", new Vector2(0, 10), 3f);
+    }
+
     //checks if the player is moving left or right
     public Vector2 GetInput()
     {
         var inputDir = Vector2.Zero;
-        if (isMoveAllowed == true)
-        {
-            inputDir.X = Input.GetAxis("Move_Left", "Move_Right"); 
-        }
+        
+        inputDir.X = Input.GetAxis("Move_Left", "Move_Right"); 
 
         return inputDir;
     }

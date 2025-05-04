@@ -104,6 +104,7 @@ _data = {
 }
 
 [node name="FinishForrest" instance=ExtResource("1_bm4ve")]
+collision_mask = 16384
 script = ExtResource("2_uvcb4")
 
 [node name="CollisionShape2D" parent="." index="0"]

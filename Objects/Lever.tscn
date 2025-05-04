@@ -42,6 +42,7 @@ shape = SubResource("RectangleShape2D_weds4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, -22)
+collision_mask = 16384
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 22)
@@ -57,7 +58,7 @@ scale = Vector2(6.625, 5.48928)
 position = Vector2(10, -15)
 rotation = 0.785398
 collision_layer = 4096
-collision_mask = 10241
+collision_mask = 26624
 mass = 0.01
 physics_material_override = SubResource("PhysicsMaterial_gn15q")
 metadata/_edit_group_ = true

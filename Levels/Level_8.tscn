@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3rv0er4v0goq"]
+[gd_scene load_steps=15 format=3 uid="uid://d3rv0er4v0goq"]
 
 [ext_resource type="PackedScene" uid="uid://cgdvrqt8pbhj5" path="res://Assets/Environment/Custom Tiles/Fortress/FloorChunk.tscn" id="1_kyofb"]
+[ext_resource type="Texture2D" uid="uid://ciobs0et8wnpk" path="res://Assets/Environment/Backgrounds/FortressBackground.png" id="1_p481y"]
 [ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="2_2ficc"]
 [ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="3_bi0xi"]
 [ext_resource type="Script" path="res://DeathZone.cs" id="3_m3gs2"]
@@ -17,6 +18,11 @@
 size = Vector2(4673, 310)
 
 [node name="Level_8" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-36, 2)
+scale = Vector2(1.77474, 1.62305)
+texture = ExtResource("1_p481y")
 
 [node name="Floor&Walls" parent="." instance=ExtResource("1_kyofb")]
 position = Vector2(864, 746)

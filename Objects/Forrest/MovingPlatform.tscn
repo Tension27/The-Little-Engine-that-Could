@@ -9,7 +9,7 @@ size = Vector2(498, 72)
 
 [node name="MovingPlatform" type="AnimatableBody2D" groups=["MovedByButton"]]
 collision_layer = 2
-collision_mask = 145
+collision_mask = 16528
 script = ExtResource("1_4noxf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
