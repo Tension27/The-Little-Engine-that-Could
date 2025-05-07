@@ -28,15 +28,17 @@ public partial class NewFinishBase : Area2D
 
 
     //checks to see if the player has enough coins to pass the level
-    public void OnBodyEntered(Node2D body)
+    public async void OnBodyEntered(Node2D body)
     {
         if (body is Player player)
         {
             if (Player.coins == coinsToFinish)
             {
-                player.TestAnim();
-                //customSignals.EmitSignal(nameof(Signals.OnFinishReached));
-                //Player.coins = 0;
+                GD.Print("TestAnim");
+                await player.PlayerExitTweenAnim(this);
+
+                customSignals.EmitSignal(nameof(Signals.OnFinishReached));
+                Player.coins = 0;
             }
         }
     }

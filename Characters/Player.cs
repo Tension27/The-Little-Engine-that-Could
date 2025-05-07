@@ -1,6 +1,8 @@
 using Godot;
 using System;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
 using System.Transactions;
 
 public partial class Player : CharacterBody2D
@@ -33,7 +35,7 @@ public partial class Player : CharacterBody2D
     public int startPositionX = -1279;
     public int startPositionY = 632;
     public int i = 10;
-    public bool moveIsDisabled = true;
+    public bool canMove = true;
 
 
     public void ResetDeaths()
@@ -45,7 +47,10 @@ public partial class Player : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         PlayerMovement();
-        Jump();
+        if (canMove == true)
+        {
+            Jump();
+        }
         PushBlocks();
         ReturnToMenu();
         RestartLevel();
@@ -56,21 +61,47 @@ public partial class Player : CharacterBody2D
         customSignals = GetNode<Signals>("/root/Signals");
     }
 
-    public async void TestAnim()
+    public async Task PlayerExitTweenAnim(Area2D finishDoor)
     {
-        await ToSignal(GetTree().CreateTimer(1f), SceneTreeTimer.SignalName.Timeout);
+        //Gets the collision hitbox of the exit
+        CollisionShape2D exitHitBox = finishDoor.GetNode<CollisionShape2D>("CollisionShape2D");
+
+        // Gets the sprite and hitbox of the character for manipulation in the tween
         CollisionShape2D hitBox = GetNode<CollisionShape2D>("Area2D2/CollisionShape2D");
         Sprite2D sprite = GetNode<Sprite2D>("Sprite2D");
+        Player player = this;
 
-        hitBox.CallDeferred("set_disabled", true);
-        Tween exitLevelAnim = GetTree().CreateTween();
+        //saves all the original values that will be modified so they can be set back after the animation is done
+        bool StartHitBox = hitBox.Disabled;
         Color startColor = sprite.Modulate;
+        Vector2 startSpriteScale = sprite.Scale;
+        Vector2 startSpritePosition = sprite.Position;
+      
+        //disables movement, the hitbox of the player, and the hitbox of the exit so the player doesn't hit it twice
+        canMove = false;
+        hitBox.CallDeferred("set_disabled", true);
+        exitHitBox.CallDeferred("set_disabled", true);
+
+        //Waits for the players current movement to stop and then finds out how far the sprite is from the center of the exit
+        await ToSignal(GetTree().CreateTimer(1f), SceneTreeTimer.SignalName.Timeout);
+
+        //Moves the character to the bottom center of the exit
+        Tween moveCharacterToExit = GetTree().CreateTween();
+        moveCharacterToExit.TweenProperty(player, "position", new Vector2(finishDoor.Position.X, finishDoor.Position.Y + 128), 2f);
+
+        //Waits for the tween to get to the center of the exit and starts the next tween of the character leaving
+        await ToSignal(GetTree().CreateTimer(3f), SceneTreeTimer.SignalName.Timeout);
+
+        //Sets the transparent value for the sprite to fade to in the tween
         Color endColor = new Color(startColor.R, startColor.G, startColor.B, 0f);
 
+        //makes the sprite fade and shrink to dissapear into the exit.
+        Tween exitLevelAnim = GetTree().CreateTween();
         exitLevelAnim.SetParallel(true);
         exitLevelAnim.TweenProperty(sprite, "modulate", endColor, 2f);
-        exitLevelAnim.TweenProperty(sprite, "scale", new Vector2(1,1), 3f);
-        exitLevelAnim.TweenProperty(sprite, "position", new Vector2(0, 10), 3f);
+        exitLevelAnim.TweenProperty(sprite, "scale", new Vector2(1, 1), 3f);
+
+        await ToSignal(exitLevelAnim, "finished");
     }
 
     //checks if the player is moving left or right
@@ -126,6 +157,11 @@ public partial class Player : CharacterBody2D
     public void PlayerMovement()
     {
         Vector2 direction = GetInput();
+
+        if (canMove == false)
+        {
+            direction = Vector2.Zero;
+        }
 
         int localFriction = FRICTION;
 

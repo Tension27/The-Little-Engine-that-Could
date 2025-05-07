@@ -241,6 +241,7 @@ autostart = true
 [node name="SquashZone" type="Area2D" parent="."]
 visible = false
 collision_layer = 256
+collision_mask = 16384
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SquashZone"]
 position = Vector2(4, -35)
