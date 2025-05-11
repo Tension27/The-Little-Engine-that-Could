@@ -373,14 +373,14 @@ frequency = 0.4607
 noise = SubResource("FastNoiseLite_ekvle")
 
 [node name="FinishCave" instance=ExtResource("1_5l8o7")]
-collision_mask = 16384
 script = ExtResource("2_rl2h4")
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 89)
+position = Vector2(0, 129)
 
 [node name="Sprite2D" parent="." index="1"]
 texture_filter = 1
+position = Vector2(0, 40)
 scale = Vector2(5, 5)
 texture = ExtResource("3_8wtxa")
 
@@ -400,30 +400,30 @@ volume_db = -15.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="." index="5"]
 texture_filter = 1
-position = Vector2(-98, -75)
+position = Vector2(-95, -35)
 scale = Vector2(5, 5)
 texture = ExtResource("6_m3wyp")
 hframes = 16
 vframes = 2
-frame = 1
+frame = 17
 
 [node name="Sprite2D3" type="Sprite2D" parent="." index="6"]
 texture_filter = 1
-position = Vector2(98, -75)
+position = Vector2(100, -35)
 scale = Vector2(5, 5)
 texture = ExtResource("6_m3wyp")
 hframes = 16
 vframes = 2
-frame = 1
+frame = 17
 
 [node name="PointLight2D3" type="PointLight2D" parent="." index="7"]
-position = Vector2(121, -40)
+position = Vector2(109, -8)
 scale = Vector2(10, 10)
 color = Color(1, 0.560784, 0.298039, 1)
 texture = SubResource("GradientTexture2D_6hkij")
 
 [node name="PointLight2D4" type="PointLight2D" parent="." index="8"]
-position = Vector2(-112, -42)
+position = Vector2(-97, -11)
 scale = Vector2(10, 10)
 color = Color(1, 0.560784, 0.298039, 1)
 texture = SubResource("GradientTexture2D_6hkij")

@@ -726,8 +726,8 @@ position = Vector2(630, 632)
 position = Vector2(1238, -251)
 
 [node name="FinishFortress" parent="." instance=ExtResource("12_j5ror")]
-position = Vector2(-626, -161)
-coinsToFinish = 1
+position = Vector2(-910, 569)
+coinsToFinish = 4
 
 [connection signal="body_entered" from="Switches/Area2D2" to="Doors/LockedDoor" method="LeverSignal"]
 [connection signal="body_entered" from="Switches/Area2D2" to="Doors/LockedDoor2" method="LeverSignal"]

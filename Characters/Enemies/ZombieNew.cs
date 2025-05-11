@@ -74,7 +74,6 @@ public partial class ZombieNew : CharacterBody2D
             {
                 if (zombieIsDead == false)
                 {
-                    PlayChaseSound();
                     ap.Play("Chase");
                 }
                 if (player.Position.X > Position.X)
@@ -129,9 +128,9 @@ public partial class ZombieNew : CharacterBody2D
     }
 
     // Triggers when the player enters the zombies search area
-    public void PlayerCheckerEntered(Node2D body)
+    public void PlayerCheckerEntered(Node2D area)
     {
-        if(body is Player && zombieIsDead == false)
+        if (area.Name == "Area2D2" && area.GetParent() is Player player && zombieIsDead == false)
         {
             RandomNumberGenerator rng = new RandomNumberGenerator();
             int randomNumber = rng.RandiRange(1,3);
@@ -158,9 +157,9 @@ public partial class ZombieNew : CharacterBody2D
     }
 
     // Triggers when the player exits the zombies search area
-    public void PlayerCheckerExited(Node2D body)
+    public void PlayerCheckerExited(Node2D area)
     {
-        if (body is Player && zombieIsDead == false)
+        if (area.Name == "Area2D2" && area.GetParent() is Player player && zombieIsDead == false)
         {
             playerIsNear = false;
             ap.Play("Walk");
@@ -183,9 +182,9 @@ public partial class ZombieNew : CharacterBody2D
     }
 
     // Checks to see if the zombie touched the player
-    public void OnBodyEntered(Node2D body)
+    public void OnAreaEntered(Node2D area)
     {
-        if (body is Player player)
+        if (area.Name == "Area2D2" && area.GetParent() is Player player)
         {
             float realVelocity = player.Velocity.Y;
             bodyHit = true;
@@ -194,7 +193,7 @@ public partial class ZombieNew : CharacterBody2D
     }
 
     // Checks to see if the player jumped on the zombies head
-    public void OnSquashAreaEntered(Node2D body)
+    public void OnSquashAreaEntered(Node body)
     {
         if (body is Player player)
         {
@@ -229,11 +228,6 @@ public partial class ZombieNew : CharacterBody2D
                 GetNode<Sprite2D>("Squashed").FlipH = true;
             }
         }
-    }
-
-    public void PlayChaseSound()
-    {
-
     }
 
     // This was put in place to solve a bug where the player would collide with the hitbox and hurtbox in the same frame and

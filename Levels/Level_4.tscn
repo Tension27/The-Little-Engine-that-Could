@@ -651,11 +651,6 @@ shape = SubResource("RectangleShape2D_k0a4e")
 
 [node name="Objects" type="Node2D" parent="."]
 
-[node name="FinishCave" parent="Objects" instance=ExtResource("12_e5cna")]
-position = Vector2(1199, -559)
-collision_mask = 1
-coinsToFinish = 1
-
 [node name="Button" parent="Objects" instance=ExtResource("6_2y1yj")]
 position = Vector2(-395, 737)
 
@@ -676,6 +671,10 @@ position = Vector2(1, 734)
 
 [node name="RigidBody2D2" parent="Objects" instance=ExtResource("8_104gm")]
 position = Vector2(-1327, -743)
+
+[node name="FinishCave" parent="Objects" instance=ExtResource("12_e5cna")]
+position = Vector2(1213, -599)
+coinsToFinish = 1
 
 [node name="Coins" type="Node2D" parent="."]
 

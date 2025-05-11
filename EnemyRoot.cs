@@ -25,9 +25,9 @@ public partial class EnemyRoot : CharacterBody2D
         //MoveAndSlide();
     }
 
-    public void OnBodyEntered(Node2D body)
+    public void OnAreaEntered(Node2D area)
     {
-        if (body is Player player)
+        if (area.Name == "Area2D2" && area.GetParent() is Player player)
         {
             float realVelocity = player.Velocity.Y;
             bodyHit = true;

@@ -34,11 +34,11 @@ public partial class NewFinishBase : Area2D
         {
             if (Player.coins == coinsToFinish)
             {
-                GD.Print("TestAnim");
                 await player.PlayerExitTweenAnim(this);
 
                 customSignals.EmitSignal(nameof(Signals.OnFinishReached));
                 Player.coins = 0;
+
             }
         }
     }

@@ -26,6 +26,6 @@ collision_layer = 256
 [node name="QueueFreeTimer" type="Timer" parent="."]
 wait_time = 0.5
 
-[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="area_entered" from="Area2D" to="." method="OnAreaEntered"]
 [connection signal="body_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
 [connection signal="timeout" from="QueueFreeTimer" to="." method="OnSquashTimeout"]

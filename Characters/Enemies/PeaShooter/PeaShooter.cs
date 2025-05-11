@@ -90,9 +90,9 @@ public partial class PeaShooter : CharacterBody2D
     }
 
     // Checks to see if the peashooter touched the player
-    public void OnBodyEntered(Node body)
+    public void OnAreaEntered(Node2D area)
     {
-        if (body is Player player)
+        if (area.Name == "Area2D2" && area.GetParent() is Player player)
         {
             float realVelocity = player.Velocity.Y;
             bodyHit = true;

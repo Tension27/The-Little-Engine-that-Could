@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cgdvrqt8pbhj5" path="res://Assets/Environment/Custom Tiles/Fortress/FloorChunk.tscn" id="1_kyofb"]
 [ext_resource type="Texture2D" uid="uid://ciobs0et8wnpk" path="res://Assets/Environment/Backgrounds/FortressBackground.png" id="1_p481y"]
-[ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="2_2ficc"]
 [ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="3_bi0xi"]
 [ext_resource type="Script" path="res://DeathZone.cs" id="3_m3gs2"]
 [ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Base Class'/LockedDoor.tscn" id="3_muyx3"]
@@ -13,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="7_ueg52"]
 [ext_resource type="PackedScene" uid="uid://lea4mkpn668t" path="res://Objects/key.tscn" id="8_by857"]
 [ext_resource type="PackedScene" uid="uid://cio6ooqnjuxmp" path="res://Objects/DoorThatNeedsKey.tscn" id="9_5er1b"]
+[ext_resource type="PackedScene" uid="uid://by7knbq61bmd1" path="res://Objects/Fortress/FinishFortress.tscn" id="13_n8wjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ul34"]
 size = Vector2(4673, 310)
@@ -20,6 +20,7 @@ size = Vector2(4673, 310)
 [node name="Level_8" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-36, 2)
 scale = Vector2(1.77474, 1.62305)
 texture = ExtResource("1_p481y")
@@ -142,10 +143,6 @@ rotation = 1.5708
 [node name="Spike7" parent="Spike" instance=ExtResource("3_bi0xi")]
 position = Vector2(-27, -682)
 
-[node name="Finish" parent="." instance=ExtResource("2_2ficc")]
-position = Vector2(-1280, -502)
-coinsToFinish = 5
-
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Goomba2" parent="Enemies" instance=ExtResource("5_rn23s")]
@@ -197,15 +194,11 @@ position = Vector2(893, -369)
 modulate = Color(100, 100, 0.969, 1)
 self_modulate = Color(1, 1, 0, 1)
 light_mask = 0
-position = Vector2(-1023, -422)
+position = Vector2(-921, -443)
 
 [node name="BlueKey" parent="Doors&Keys" instance=ExtResource("8_by857")]
 modulate = Color(0.053, 0.167, 100, 1)
 position = Vector2(-203, 105)
-
-[node name="LockedDoor" parent="Doors&Keys" instance=ExtResource("3_muyx3")]
-z_index = -1
-position = Vector2(-1200, -54)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("5_dlumq")]
 position = Vector2(930, 88)
@@ -216,6 +209,12 @@ debug = false
 [node name="Area2D2" parent="." instance=ExtResource("7_ueg52")]
 position = Vector2(1158, 431)
 
+[node name="FinishFortress" parent="." instance=ExtResource("13_n8wjo")]
+position = Vector2(-1221, -502)
+coinsToFinish = 5
+
+[node name="LockedDoor" parent="." instance=ExtResource("3_muyx3")]
+z_index = -1
+position = Vector2(-1184, -80)
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="OnBodyEntered2D"]
-[connection signal="body_entered" from="Area2D2" to="Doors&Keys/LockedDoor" method="LeverSignal"]
-[connection signal="body_exited" from="Area2D2" to="Doors&Keys/LockedDoor" method="LeverSignal"]

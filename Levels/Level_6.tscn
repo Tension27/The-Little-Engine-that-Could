@@ -705,9 +705,8 @@ position = Vector2(406, 751)
 
 [node name="Interactables" type="Node2D" parent="."]
 
-[node name="Finish" parent="Interactables" instance=ExtResource("7_563uc")]
-position = Vector2(1224, 463)
-collision_mask = 1
+[node name="FinishCave" parent="Interactables" instance=ExtResource("7_563uc")]
+position = Vector2(1181, 422)
 coinsToFinish = 1
 
 [node name="Area2D" parent="Interactables" instance=ExtResource("5_c36nh")]

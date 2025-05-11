@@ -63,13 +63,13 @@ public partial class Goomba : CharacterBody2D
     }
 
     // Checks to see if the goomba touched the player
-    public void OnBodyEntered(Node2D body)
+    public void OnAreaEntered(Node2D area)
     {
-        if (body is Player player)
+        if (area.Name == "Area2D2" && area.GetParent() is Player player)
         {
             float realVelocity = player.Velocity.Y;
             bodyHit = true;
-            Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred(); 
+            Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred();
         }
     }
 

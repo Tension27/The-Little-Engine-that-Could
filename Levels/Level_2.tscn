@@ -470,6 +470,13 @@ size = Vector2(16, 240)
 
 [node name="Level_2" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+texture_filter = 1
+position = Vector2(0.0416352, 2.14577e-05)
+scale = Vector2(4.4389, 4.55208)
+texture = ExtResource("10_cctwt")
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(4.55, 4.55)
@@ -480,7 +487,7 @@ layer_0/tile_data = PackedInt32Array(720876, 65537, 0, 720877, 131073, 1, 720878
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="PeaShooter" parent="Enemies" instance=ExtResource("9_f6tfp")]
-position = Vector2(950, 677)
+position = Vector2(973, 676)
 
 [node name="Goomba" parent="Enemies" instance=ExtResource("8_78sxo")]
 position = Vector2(-1178, 300)
@@ -518,6 +525,10 @@ position = Vector2(619, -598)
 
 [node name="Area2D2" parent="Interactables" instance=ExtResource("5_dwc6x")]
 position = Vector2(1055, -443)
+
+[node name="FinishForrest" parent="Interactables" instance=ExtResource("8_q8tvy")]
+position = Vector2(-1212, 203)
+coinsToFinish = 4
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(4.55, 4.55)
@@ -613,18 +624,6 @@ shape = SubResource("RectangleShape2D_aso1o")
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(312, 40)
 shape = SubResource("RectangleShape2D_2egae")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -5
-texture_filter = 1
-position = Vector2(0.0416352, 2.14577e-05)
-scale = Vector2(4.4389, 4.55208)
-texture = ExtResource("10_cctwt")
-
-[node name="NewFinishForrest" parent="." instance=ExtResource("8_q8tvy")]
-position = Vector2(-1203, 166)
-collision_mask = 1
-coinsToFinish = 4
 
 [connection signal="body_entered" from="Interactables/Area2D" to="Interactables/LockedDoor2" method="LeverSignal"]
 [connection signal="body_exited" from="Interactables/Area2D" to="Interactables/LockedDoor2" method="LeverSignal"]

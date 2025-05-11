@@ -1,12 +1,13 @@
-[gd_scene load_steps=35 format=3 uid="uid://efsmy40g7pj2"]
+[gd_scene load_steps=36 format=3 uid="uid://efsmy40g7pj2"]
 
 [ext_resource type="Texture2D" uid="uid://diopo1aaeragl" path="res://Assets/Environment/Custom Tiles/Solaria Demo Update 01.png" id="1_8c4se"]
+[ext_resource type="Texture2D" uid="uid://ciobs0et8wnpk" path="res://Assets/Environment/Backgrounds/FortressBackground.png" id="1_sgs4b"]
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="2_mao72"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="2_vuu6e"]
 [ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="4_tenmt"]
-[ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="5_rx472"]
 [ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="6_snfsa"]
 [ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="7_3ase3"]
+[ext_resource type="PackedScene" uid="uid://by7knbq61bmd1" path="res://Objects/Fortress/FinishFortress.tscn" id="9_whmrj"]
 [ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Base Class'/LockedDoor.tscn" id="10_ac43p"]
 [ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="12_pant4"]
 
@@ -455,6 +456,12 @@ size = Vector2(32, 80)
 
 [node name="Level_10" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-9.99994, 52.0001)
+scale = Vector2(1.83724, 1.60742)
+texture = ExtResource("1_sgs4b")
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(4.55, 4.55)
@@ -680,10 +687,6 @@ noGravity = true
 
 [node name="Interactables" type="Node2D" parent="."]
 
-[node name="Finish" parent="Interactables" instance=ExtResource("5_rx472")]
-position = Vector2(-1, 276)
-coinsToFinish = 4
-
 [node name="LockedDoor" parent="Interactables" instance=ExtResource("10_ac43p")]
 position = Vector2(-542, 275)
 
@@ -712,6 +715,11 @@ position = Vector2(-162, 388)
 
 [node name="PeaShooter2" parent="." instance=ExtResource("7_3ase3")]
 position = Vector2(-1302, 393)
+
+[node name="FinishFortress" parent="." instance=ExtResource("9_whmrj")]
+z_index = -1
+position = Vector2(29, 277)
+coinsToFinish = 4
 
 [connection signal="body_entered" from="Interactables/Area2D" to="Interactables/LockedDoor" method="LeverSignal"]
 [connection signal="body_entered" from="Interactables/Area2D" to="Interactables/LockedDoor2" method="LeverSignal"]

@@ -36,6 +36,10 @@ public partial class Player : CharacterBody2D
     public int startPositionY = 632;
     public int i = 10;
     public bool canMove = true;
+    public bool StartHitBox;
+    public Color startColor;
+    public Vector2 startSpriteScale;
+    public Vector2 startSpritePosition;
 
 
     public void ResetDeaths()
@@ -72,10 +76,10 @@ public partial class Player : CharacterBody2D
         Player player = this;
 
         //saves all the original values that will be modified so they can be set back after the animation is done
-        bool StartHitBox = hitBox.Disabled;
-        Color startColor = sprite.Modulate;
-        Vector2 startSpriteScale = sprite.Scale;
-        Vector2 startSpritePosition = sprite.Position;
+        StartHitBox = hitBox.Disabled;
+        startColor = sprite.Modulate;
+        startSpriteScale = sprite.Scale;
+        startSpritePosition = sprite.Position;
       
         //disables movement, the hitbox of the player, and the hitbox of the exit so the player doesn't hit it twice
         canMove = false;
@@ -102,6 +106,12 @@ public partial class Player : CharacterBody2D
         exitLevelAnim.TweenProperty(sprite, "scale", new Vector2(1, 1), 3f);
 
         await ToSignal(exitLevelAnim, "finished");
+
+        player.canMove = true;
+        hitBox.Disabled = player.StartHitBox;
+        sprite.Modulate = player.startColor;
+        sprite.Scale = player.startSpriteScale;
+        sprite.Position = player.startSpritePosition;
     }
 
     //checks if the player is moving left or right
