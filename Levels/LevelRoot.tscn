@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu2oy2qm41qor"]
+
+[ext_resource type="Script" path="res://StaticBody2D.gd" id="1_bbvpw"]
+
+[node name="LevelRoot" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4.55, 4.55)
+format = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(4.55, 4.55)
+script = ExtResource("1_bbvpw")
+tilemap_nodepath = NodePath("../TileMap")
