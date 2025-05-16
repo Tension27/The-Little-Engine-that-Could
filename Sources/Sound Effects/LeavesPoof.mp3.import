@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2o8au2tgwefb"
+path="res://.godot/imported/LeavesPoof.mp3-91784e5f7d396fa21e8723263224630a.mp3str"
+
+[deps]
+
+source_file="res://Sources/Sound Effects/LeavesPoof.mp3"
+dest_files=["res://.godot/imported/LeavesPoof.mp3-91784e5f7d396fa21e8723263224630a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

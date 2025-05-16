@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcwaf43qufcgf"
+path="res://.godot/imported/EnemySquashed.mp3-d4cb46fefcda6b84706b3150f759c6b0.mp3str"
+
+[deps]
+
+source_file="res://Sources/Sound Effects/EnemySquashed.mp3"
+dest_files=["res://.godot/imported/EnemySquashed.mp3-d4cb46fefcda6b84706b3150f759c6b0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

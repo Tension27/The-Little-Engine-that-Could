@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccud8mbqgeq7n"
+path="res://.godot/imported/Lever.mp3-794dd0a9193e9e458ed7eb0cd8b10357.mp3str"
+
+[deps]
+
+source_file="res://Sources/Sound Effects/Lever.mp3"
+dest_files=["res://.godot/imported/Lever.mp3-794dd0a9193e9e458ed7eb0cd8b10357.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

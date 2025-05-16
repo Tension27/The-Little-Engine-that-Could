@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk0agsxxulmwp"
+path="res://.godot/imported/MovingPlatform.mp3-dfee3c4ad3ba1c07220bee9d49eef743.mp3str"
+
+[deps]
+
+source_file="res://Sources/Sound Effects/MovingPlatform.mp3"
+dest_files=["res://.godot/imported/MovingPlatform.mp3-dfee3c4ad3ba1c07220bee9d49eef743.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

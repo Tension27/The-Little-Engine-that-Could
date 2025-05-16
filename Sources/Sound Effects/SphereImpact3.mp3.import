@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://m843q8jauwhr"
+path="res://.godot/imported/SphereImpact3.mp3-190577366a629386c5929da98572cb31.mp3str"
+
+[deps]
+
+source_file="res://Sources/Sound Effects/SphereImpact3.mp3"
+dest_files=["res://.godot/imported/SphereImpact3.mp3-190577366a629386c5929da98572cb31.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

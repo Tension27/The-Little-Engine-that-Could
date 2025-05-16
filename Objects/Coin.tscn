@@ -1,31 +1,163 @@
 [gd_scene load_steps=9 format=3 uid="uid://brliqbk8a12ae"]
 
-[ext_resource type="Texture2D" uid="uid://c83un0x2acsfw" path="res://Assets/Objects/gold_1.png" id="1_3hess"]
 [ext_resource type="Script" path="res://Objects/Coin.cs" id="1_o2k4v"]
-[ext_resource type="Texture2D" uid="uid://pnh5l12wfgt0" path="res://Assets/Objects/gold_2.png" id="2_n8e4q"]
-[ext_resource type="Texture2D" uid="uid://7esbv7to00pv" path="res://Assets/Objects/gold_3.png" id="3_hi61b"]
-[ext_resource type="Texture2D" uid="uid://c3armo2bwvg2l" path="res://Assets/Objects/Coin.png" id="5_5hqof"]
+[ext_resource type="Texture2D" uid="uid://ba8wnjicbsm6a" path="res://Assets/Objects/Coin_SS.png" id="4_dml1c"]
 [ext_resource type="AudioStream" uid="uid://cv0p71g63q8ye" path="res://Assets/Sound Effects/CoinCollected.mp3" id="6_7vc8c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lmfgj"]
 radius = 29.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_eijed"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_3hess")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_n8e4q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_hi61b")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Animation" id="Animation_7ycfg"]
+resource_name = "CoinSpin"
+length = 1.6285
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_kar4r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pc062"]
+resource_name = "CoinGrab"
+length = 0.6
+step = 0.03
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.3, 0.33, 0.36, 0.39, 0.42, 0.45, 0.48, 0.51, 0.54, 0.57, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -40), Vector2(0, -75), Vector2(0, -105), Vector2(0, -125), Vector2(0, -135), Vector2(0, -140), Vector2(0, -135), Vector2(0, -125), Vector2(0, -105), Vector2(0, -75), Vector2(0, -40), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x38uy"]
+_data = {
+"CoinGrab": SubResource("Animation_pc062"),
+"CoinSpin": SubResource("Animation_7ycfg"),
+"RESET": SubResource("Animation_kar4r")
+}
 
 [node name="Coin" type="Area2D"]
 collision_layer = 8
@@ -35,22 +167,21 @@ script = ExtResource("1_o2k4v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lmfgj")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-scale = Vector2(0.690476, 0.690476)
-sprite_frames = SubResource("SpriteFrames_eijed")
-autoplay = "default"
-frame_progress = 0.885582
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-1.43051e-06, 1.07288e-06)
-scale = Vector2(4.25, 4.25)
-texture = ExtResource("5_5hqof")
-
 [node name="Collection" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7vc8c")
 volume_db = -12.698
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("4_dml1c")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x38uy")
+}
+autoplay = "CoinSpin"
+
 [connection signal="body_entered" from="." to="." method="OnBodyEntered2D"]
-[connection signal="finished" from="Collection" to="." method="OnSoundFinished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]

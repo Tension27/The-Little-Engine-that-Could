@@ -18,14 +18,21 @@ public partial  class Coin : Area2D
             customSignals.EmitSignal(nameof(Signals.OnDoorShouldBeOpen));
             //Calls a function in the player script that adds a coin
             player.OnCoinEntered();
+            GetNode<AnimationPlayer>("AnimationPlayer").Play("CoinGrab");
             GetNode<AudioStreamPlayer>("Collection").Play();
-            //makes the coin dissapear and not interact before it's deleted from the scene
-            Visible = false;
             GetNode<CollisionShape2D>("CollisionShape2D").QueueFree();
         }
 	}
 
-    private void OnSoundFinished()
+    private void OnAnimationFinished(string animName)
+    {
+        if (animName == "CoinGrab")
+        {
+            CoinReadyToBeDeleted();
+        }
+    }
+
+    private void CoinReadyToBeDeleted()
     {
         QueueFree();
     }
