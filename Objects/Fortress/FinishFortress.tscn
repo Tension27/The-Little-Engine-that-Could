@@ -92,7 +92,6 @@ visible = false
 texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("2_up1wa")
-hframes = 19
 
 [node name="AnimationPlayer" parent="." index="2"]
 libraries = {

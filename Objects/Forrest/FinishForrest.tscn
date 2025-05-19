@@ -131,3 +131,4 @@ position = Vector2(0, -39)
 scale = Vector2(5, 5)
 texture = ExtResource("2_qmnep")
 hframes = 6
+frame = 5

@@ -218,3 +218,5 @@ z_index = -1
 position = Vector2(-1184, -80)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="OnBodyEntered2D"]
+[connection signal="body_entered" from="Area2D2" to="LockedDoor" method="OperateDoor"]
+[connection signal="body_exited" from="Area2D2" to="LockedDoor" method="OperateDoor"]

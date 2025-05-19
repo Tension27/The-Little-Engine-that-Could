@@ -15,8 +15,8 @@ size = Vector2(80, 81)
 size = Vector2(80, 70)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vj7mf"]
-radius = 15.0
-height = 82.0
+radius = 39.0
+height = 78.0
 
 [sub_resource type="Animation" id="Animation_a35oi"]
 length = 0.001
@@ -217,7 +217,6 @@ scale = Vector2(6.75, 2.3125)
 texture = ExtResource("4_wie64")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(4, 5.5)
 shape = SubResource("RectangleShape2D_cij2r")
 
@@ -241,7 +240,7 @@ collision_layer = 256
 collision_mask = 16384
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SquashZone"]
-position = Vector2(4, -35)
+position = Vector2(4, -19)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vj7mf")
 

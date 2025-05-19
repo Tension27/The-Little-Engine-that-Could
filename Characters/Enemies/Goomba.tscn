@@ -20,14 +20,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfmjr"]
-size = Vector2(80, 88)
+size = Vector2(80, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kn2p"]
-size = Vector2(80, 62)
+size = Vector2(80, 49)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7t02"]
-radius = 18.0
-height = 80.0
+radius = 36.0
+height = 86.0
 
 [node name="Goomba" type="CharacterBody2D"]
 z_index = 1
@@ -52,27 +52,25 @@ scale = Vector2(6.8125, 2.625)
 texture = ExtResource("4_wki0p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(0, 13.5)
 shape = SubResource("RectangleShape2D_jfmjr")
 
 [node name="FloorChecker" type="RayCast2D" parent="."]
 collision_mask = 2
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 collision_layer = 64
 
 [node name="KillZone" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 13)
+position = Vector2(0, 19.5)
 shape = SubResource("RectangleShape2D_8kn2p")
 
 [node name="SquashZone" type="Area2D" parent="."]
-visible = false
 collision_layer = 256
 collision_mask = 16384
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SquashZone"]
-position = Vector2(0, -24)
+position = Vector2(0, -6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_d7t02")
 
@@ -85,5 +83,6 @@ volume_db = 4.0
 pitch_scale = 0.6
 
 [connection signal="area_entered" from="Area2D" to="." method="OnAreaEntered"]
+[connection signal="area_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
 [connection signal="body_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
 [connection signal="timeout" from="QueueFreeTimer" to="." method="OnSquashTimeout"]

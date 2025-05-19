@@ -1,9 +1,6 @@
 using Godot;
 using System;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
-using System.Transactions;
 
 public partial class Player : CharacterBody2D
 {
@@ -31,7 +28,7 @@ public partial class Player : CharacterBody2D
     public const int MAXJUMPS = 2;
     public const int GRAVITY = 100;
     public const int MAXSPEED = 700;
-    private int currentJumps = 1;
+    private int currentJumps = 0;
     public int startPositionX = -1279;
     public int startPositionY = 632;
     public int i = 10;
@@ -40,7 +37,7 @@ public partial class Player : CharacterBody2D
     public Color startColor;
     public Vector2 startSpriteScale;
     public Vector2 startSpritePosition;
-
+    private float timeSinceJump = 0f;
 
     public void ResetDeaths()
     {
@@ -50,6 +47,7 @@ public partial class Player : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
+        timeSinceJump += (float)delta;
         PlayerMovement();
         if (canMove == true)
         {
@@ -226,10 +224,12 @@ public partial class Player : CharacterBody2D
 
     public void Jump()
     {
+        
         Vector2 velocity = Velocity;
-
+        
         if (Input.IsActionJustPressed("Jump"))
         {
+            timeSinceJump = 0; //This is used to wait a little while before checking if the player is on the floor to reset the jumps. It was resetting jumps because the player was on the floor the same frame you jumped
             if (currentJumps < MAXJUMPS)
             {
                 velocity.Y = JUMPVELOCITY;
@@ -241,9 +241,9 @@ public partial class Player : CharacterBody2D
         {
             velocity.Y += GRAVITY;
         }
-        if (IsOnFloor() == true)
+        if (IsOnFloor() == true && timeSinceJump > .01f)
         {
-            currentJumps = 1;
+            currentJumps = 0;
         }
 
         Velocity = velocity;
@@ -288,7 +288,6 @@ public partial class Player : CharacterBody2D
             Node transition = GetParent().GetChildOrNull<LevelTransition>(8);
             if (transition != null)
             {
-                GD.Print("Tets");
                 transition.QueueFree();
             }
             timer.Paused = false;

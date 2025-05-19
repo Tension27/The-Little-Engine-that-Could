@@ -516,13 +516,13 @@ position = Vector2(399, -597)
 position = Vector2(801, -594)
 open = true
 
-[node name="LockedDoor7" parent="Doors" instance=ExtResource("4_n7x36")]
-position = Vector2(-692, 567)
-
 [node name="LockedDoor8" parent="Doors" instance=ExtResource("4_n7x36")]
 z_index = -1
 position = Vector2(-307, 549)
 rotation = -1.5708
+
+[node name="LockedDoor7" parent="Doors" instance=ExtResource("4_n7x36")]
+position = Vector2(-692, 567)
 
 [node name="HitBoxes" type="Node2D" parent="."]
 
@@ -763,5 +763,5 @@ coinsToFinish = 4
 [connection signal="body_exited" from="Switches/Area2D7" to="Doors/LockedDoor6" method="LeverSignal"]
 [connection signal="body_entered" from="Switches/Area2D" to="Doors/LockedDoor8" method="LeverSignal"]
 [connection signal="body_exited" from="Switches/Area2D" to="Doors/LockedDoor8" method="LeverSignal"]
-[connection signal="body_entered" from="Switches/Button" to="Doors/LockedDoor7" method="ButtonOn"]
-[connection signal="body_exited" from="Switches/Button" to="Doors/LockedDoor7" method="ButtonOff"]
+[connection signal="body_entered" from="Switches/Button" to="Doors/LockedDoor7" method="OperateDoor"]
+[connection signal="body_exited" from="Switches/Button" to="Doors/LockedDoor7" method="OperateDoor"]

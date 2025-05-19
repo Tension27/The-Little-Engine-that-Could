@@ -6,16 +6,15 @@
 [ext_resource type="AudioStream" uid="uid://cx4i82hwd36bn" path="res://Assets/Sound Effects/Squish Enemy.mp3" id="4_mfgov"]
 [ext_resource type="AudioStream" uid="uid://cw8j0r2yolcqw" path="res://Assets/Sound Effects/PlayerDeath.mp3" id="5_uk55c"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i41qv"]
-radius = 9.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ktgl"]
+size = Vector2(18.25, 18.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4nc8"]
 size = Vector2(32, 3)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kgck6"]
-radius = 34.0
-height = 72.0
+radius = 33.0
+height = 66.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 16384
@@ -30,9 +29,10 @@ texture = ExtResource("2_kldiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, -3)
+position = Vector2(0, -3.5)
+rotation = 1.5708
 scale = Vector2(4, 4)
-shape = SubResource("CapsuleShape2D_i41qv")
+shape = SubResource("RectangleShape2D_2ktgl")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 512
@@ -65,6 +65,9 @@ collision_mask = 228
 position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_kgck6")
 
-[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
+[node name="GraceTimer" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="body_entered" from="Area2D" to="." method="OnCoinEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

@@ -29,7 +29,7 @@ public partial class LevelTransition : Control
 
     public async void PlayNextLevel()
     {
-        await ToSignal(GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
+        await ToSignal(GetTree().CreateTimer(4f), SceneTreeTimer.SignalName.Timeout);
 
         //Set's the players position back to the starting position for the level
         HUD hud = (HUD)GetParent<Node2D>().GetChild(3);

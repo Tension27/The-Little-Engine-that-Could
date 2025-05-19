@@ -625,6 +625,9 @@ shape = SubResource("RectangleShape2D_aso1o")
 position = Vector2(312, 40)
 shape = SubResource("RectangleShape2D_2egae")
 
+[node name="Goomba" parent="." instance=ExtResource("8_78sxo")]
+position = Vector2(-61, 682)
+
 [connection signal="body_entered" from="Interactables/Area2D" to="Interactables/LockedDoor2" method="LeverSignal"]
 [connection signal="body_exited" from="Interactables/Area2D" to="Interactables/LockedDoor2" method="LeverSignal"]
 [connection signal="body_entered" from="Interactables/Area2D2" to="Interactables/LockedDoor" method="LeverSignal"]
