@@ -19,6 +19,7 @@ public partial class GameWorld : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
+        GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
         Signals customSignals = GetNode<Signals>("/root/Signals");
         customSignals.OnFinishReached += PlayNextLevel;
 		customSignals.ResetCurrentLevel += RestartCurrentLevel;

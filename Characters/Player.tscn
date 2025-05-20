@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cw8j0r2yolcqw" path="res://Assets/Sound Effects/PlayerDeath.mp3" id="5_uk55c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ktgl"]
-size = Vector2(18.25, 18.5)
+size = Vector2(18, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4nc8"]
 size = Vector2(32, 3)
@@ -29,7 +29,7 @@ texture = ExtResource("2_kldiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, -3.5)
+position = Vector2(-1.80999e-06, -3)
 rotation = 1.5708
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_2ktgl")
@@ -68,6 +68,6 @@ shape = SubResource("CapsuleShape2D_kgck6")
 [node name="GraceTimer" type="Timer" parent="."]
 wait_time = 0.2
 
-[connection signal="body_entered" from="Area2D" to="." method="OnCoinEntered"]
 [connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
+[connection signal="body_entered" from="Area2D" to="." method="OnCoinEntered"]
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

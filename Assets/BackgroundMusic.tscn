@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drf0bmjpqhepg"]
+
+[ext_resource type="AudioStream" uid="uid://dwihlatg3lpjp" path="res://Assets/Sound Effects/BackgroundMusic.mp3" id="1_3f1gp"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_3f1gp")
