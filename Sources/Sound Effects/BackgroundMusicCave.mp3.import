@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dspcqh74ccb5g"
+path="res://.godot/imported/BackgroundMusicCave.mp3-9724201013db8a3f2f09a115b54e5e55.mp3str"
+
+[deps]
+
+source_file="res://Sources/Sound Effects/BackgroundMusicCave.mp3"
+dest_files=["res://.godot/imported/BackgroundMusicCave.mp3-9724201013db8a3f2f09a115b54e5e55.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

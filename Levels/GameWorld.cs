@@ -15,11 +15,15 @@ public partial class GameWorld : Node2D
 
     public bool playerIsOnLevelSelect = false;
     public bool playerIsOnTutorial = false;
+    public AudioStreamPlayer BGMusicForest;
+    public AudioStreamPlayer BGMusicCave;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
+        BGMusicForest = GetNode<AudioStreamPlayer>("BackgroundMusicForest");
+        BGMusicCave = GetNode<AudioStreamPlayer>("BackgroundMusicCave");
+
         Signals customSignals = GetNode<Signals>("/root/Signals");
         customSignals.OnFinishReached += PlayNextLevel;
 		customSignals.ResetCurrentLevel += RestartCurrentLevel;
@@ -43,6 +47,7 @@ public partial class GameWorld : Node2D
     //starts the tutorial level
     public void OnTutorialPressed()
     {
+        BGMusicForest.Play();
         playerIsOnLevelSelect = false;
         playerIsOnTutorial = true;
         HUD deathCounter = GetNode<HUD>("HUD");
@@ -95,6 +100,7 @@ public partial class GameWorld : Node2D
         timer.GetChild<Label>(3).Visible = true;
 
         Global.currentSceneNumber = 1;
+        PlayMusic(Global.currentSceneNumber);
 
         Node level = startLevel.Instantiate();
 
@@ -133,11 +139,13 @@ public partial class GameWorld : Node2D
             Global.lastLevelTime.RemoveRange(0, listCount);
 
             GetNode<Node2D>("Level").GetChild(0).QueueFree();
+            BGMusicForest.Stop();
         }
         //If the player is on the main game it runs as normal
         else
         {
             Global.currentSceneNumber++;
+            PlayMusic(Global.currentSceneNumber);
 
             GetNode<CharacterBody2D>("CharacterBody2D").Visible = false;
             GetNode<HUD>("HUD").Visible = false;
@@ -196,6 +204,7 @@ public partial class GameWorld : Node2D
     //Called when the player presses the escape key. Backs out of menus or any level
 	public void OnQuitPressed()
 	{
+        PlayMenuMusic();
         Timer timer = (Timer)GetChild(3).GetChild(5);
         timer.WaitTime = 86400;
         timer.GetChild<Panel>(0).Visible = false;
@@ -220,6 +229,7 @@ public partial class GameWorld : Node2D
         playerIsOnTutorial = false;
         playerIsOnLevelSelect = true;
         Global.currentSceneNumber = levelSelected;
+        PlayMusic(levelSelected);
 
         GetNode<Control>("MainMenu").Visible = false;
         GetNode<HUD>("HUD").Visible = true;
@@ -250,5 +260,41 @@ public partial class GameWorld : Node2D
         var nextLevel = GD.Load<PackedScene>($"res://Levels/Level_{levelSelected}.tscn");
 
         GetChild<Node2D>(0).AddChild(nextLevel.Instantiate());
+    }
+
+    //Plays the music appropriate for each stage
+    private void PlayMusic(int currentLevel)
+    {
+        if (playerIsOnLevelSelect == true)
+        {
+            if (currentLevel >= 0 && currentLevel <= 3)
+            {
+                BGMusicForest.Play();
+            }
+            else if (currentLevel >= 4 && currentLevel <= 7)
+            {
+                BGMusicForest.Stop();
+                BGMusicCave.Play();
+            }
+        }
+        else
+        {
+            if (currentLevel == 0 || currentLevel == 1)
+            {
+                BGMusicForest.Play();
+            }
+            else if (currentLevel == 4)
+            {
+                BGMusicForest.Stop();
+                BGMusicCave.Play();
+            }
+        }
+    }
+
+    //STILL NEEDS TO BE IMPLEMENTED PROPERLY CURRENTLY THERE IS NO MENU MUSIC
+    private void PlayMenuMusic()
+    {
+        BGMusicForest.Stop();
+        BGMusicCave.Stop();
     }
 }

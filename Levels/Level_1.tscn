@@ -566,7 +566,7 @@ distance = Vector2(0, 400)
 debug = false
 
 [node name="DeathZone" parent="Interactables" instance=ExtResource("5_1qtdb")]
-position = Vector2(152, -28)
+position = Vector2(152, -35)
 
 [node name="Enemies" type="Node2D" parent="."]
 

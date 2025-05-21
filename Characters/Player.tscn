@@ -68,6 +68,6 @@ shape = SubResource("CapsuleShape2D_kgck6")
 [node name="GraceTimer" type="Timer" parent="."]
 wait_time = 0.2
 
-[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
 [connection signal="body_entered" from="Area2D" to="." method="OnCoinEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="BoxIsOnHead"]
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

@@ -392,7 +392,7 @@ autoplay = "UnlitTorches"
 
 [node name="AudioStreamPlayer" parent="." index="3"]
 stream = ExtResource("4_676fm")
-volume_db = -15.0
+volume_db = -25.0
 
 [node name="TorchLightUp" type="AudioStreamPlayer" parent="." index="4"]
 stream = ExtResource("5_2rf1y")
@@ -405,7 +405,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("6_m3wyp")
 hframes = 16
 vframes = 2
-frame = 17
+frame = 6
 
 [node name="Sprite2D3" type="Sprite2D" parent="." index="6"]
 texture_filter = 1
@@ -414,7 +414,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("6_m3wyp")
 hframes = 16
 vframes = 2
-frame = 17
+frame = 6
 
 [node name="PointLight2D3" type="PointLight2D" parent="." index="7"]
 position = Vector2(109, -8)

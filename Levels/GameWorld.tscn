@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cb8b3b0krf5eg"]
+[gd_scene load_steps=13 format=3 uid="uid://cb8b3b0krf5eg"]
 
 [ext_resource type="Script" path="res://Levels/GameWorld.cs" id="1_nj6wc"]
 [ext_resource type="PackedScene" uid="uid://c1g7barmvp22f" path="res://Levels/Level_0.tscn" id="2_fg0u6"]
@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dx11rsc7wgm5u" path="res://Hud/MainMenu.tscn" id="7_qojn8"]
 [ext_resource type="PackedScene" uid="uid://cphu8gb84kkcm" path="res://Hud/LevelSelect.tscn" id="8_s03n7"]
 [ext_resource type="PackedScene" uid="uid://npt8taxn7pdq" path="res://Hud/LeaderBoard/Leaderboard.tscn" id="10_yqcyq"]
-[ext_resource type="PackedScene" uid="uid://drf0bmjpqhepg" path="res://Assets/BackgroundMusic.tscn" id="11_vjg0l"]
+[ext_resource type="AudioStream" uid="uid://dwihlatg3lpjp" path="res://Assets/Sound Effects/BackgroundMusic.mp3" id="11_dbuxi"]
+[ext_resource type="AudioStream" uid="uid://dyw73mw4cpf7k" path="res://Assets/Sound Effects/BackgroundMusicCave.mp3" id="12_mt0ey"]
 
 [node name="GameWorld" type="Node2D"]
 position = Vector2(1, -2)
@@ -53,7 +54,13 @@ offset_top = -300.0
 offset_right = -590.0
 offset_bottom = -300.0
 
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("11_vjg0l")]
+[node name="BackgroundMusicForest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dbuxi")
+volume_db = -26.0
+
+[node name="BackgroundMusicCave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_mt0ey")
+volume_db = -25.0
 
 [connection signal="OnQuitPressed" from="CharacterBody2D" to="." method="OnQuitPressed"]
 [connection signal="RestartCurrentLevel" from="CharacterBody2D" to="." method="RestartCurrentLevel"]
