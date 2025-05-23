@@ -17,12 +17,14 @@ public partial class GameWorld : Node2D
     public bool playerIsOnTutorial = false;
     public AudioStreamPlayer BGMusicForest;
     public AudioStreamPlayer BGMusicCave;
+    public AudioStreamPlayer BGMusicFortress;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
         BGMusicForest = GetNode<AudioStreamPlayer>("BackgroundMusicForest");
         BGMusicCave = GetNode<AudioStreamPlayer>("BackgroundMusicCave");
+        BGMusicFortress = GetNode<AudioStreamPlayer>("BackgroundMusicFortress");
 
         Signals customSignals = GetNode<Signals>("/root/Signals");
         customSignals.OnFinishReached += PlayNextLevel;
@@ -271,10 +273,15 @@ public partial class GameWorld : Node2D
             {
                 BGMusicForest.Play();
             }
-            else if (currentLevel >= 4 && currentLevel <= 7)
+            else if (currentLevel >= 4 && currentLevel <= 6)
             {
                 BGMusicForest.Stop();
                 BGMusicCave.Play();
+            }
+            else if (currentLevel >= 7 && currentLevel <= 10)
+            {
+                BGMusicCave.Stop();
+                BGMusicFortress.Play();
             }
         }
         else
@@ -288,6 +295,11 @@ public partial class GameWorld : Node2D
                 BGMusicForest.Stop();
                 BGMusicCave.Play();
             }
+            else if (currentLevel == 7)
+            {
+                BGMusicCave.Stop();
+                BGMusicFortress.Play();
+            }
         }
     }
 
@@ -296,5 +308,6 @@ public partial class GameWorld : Node2D
     {
         BGMusicForest.Stop();
         BGMusicCave.Stop();
+        BGMusicFortress.Stop();
     }
 }
