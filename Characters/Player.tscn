@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bni3q08lk88m4"]
 
 [ext_resource type="Script" path="res://Characters/Player.cs" id="1_x4xak"]
-[ext_resource type="Texture2D" uid="uid://blw4r866u1hh1" path="res://Assets/Characters/GodotGuy/GodotGuy.png" id="2_kldiu"]
+[ext_resource type="Texture2D" uid="uid://duv7q3j3ydfdv" path="res://Assets/Characters/GodotGuy/GodotGal.png" id="2_nhsgl"]
 [ext_resource type="AudioStream" uid="uid://d3odl5t5ut848" path="res://Assets/Sound Effects/Jump.mp3" id="3_2da81"]
 [ext_resource type="AudioStream" uid="uid://cx4i82hwd36bn" path="res://Assets/Sound Effects/Squish Enemy.mp3" id="4_mfgov"]
 [ext_resource type="AudioStream" uid="uid://cw8j0r2yolcqw" path="res://Assets/Sound Effects/PlayerDeath.mp3" id="5_uk55c"]
@@ -25,7 +25,7 @@ script = ExtResource("1_x4xak")
 texture_filter = 1
 position = Vector2(0, -9)
 scale = Vector2(5.25, 5.25)
-texture = ExtResource("2_kldiu")
+texture = ExtResource("2_nhsgl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
