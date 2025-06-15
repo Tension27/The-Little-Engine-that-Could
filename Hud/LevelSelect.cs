@@ -74,6 +74,67 @@ public partial class LevelSelect : Control
         EmitSignal(SignalName.OnLevelSelected, 10);
     }
 
+    //The second set of levels in the select menu
+    public void OnForrestLevel1Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 11);
+    }
+
+    public void OnForrestLevel2Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 12);
+    }
+
+    public void OnForrestLevel3Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 13);
+    }
+
+    public void OnForrestLevel4Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 14);
+    }
+
+    public void OnForrestLevel5Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 15);
+    }
+
+    public void OnForrestLevel6Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 16);
+    }
+
+    public void OnForrestLevel7Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 17);
+    }
+
+    public void OnForrestLevel8Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 18);
+    }
+
+    public void OnForrestLevel9Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 19);
+    }
+
+    public void OnForrestLevel10Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 20);
+    }
+
     public void OnBackPressed()
     {
         MainMenu mainMenu = (MainMenu)GetParent().GetChild(5);

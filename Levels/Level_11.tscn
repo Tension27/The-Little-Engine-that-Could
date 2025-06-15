@@ -1,0 +1,355 @@
+[gd_scene load_steps=49 format=3 uid="uid://dv1lluyyg3fvp"]
+
+[ext_resource type="PackedScene" uid="uid://c722xx5yn2nk3" path="res://Levels/level_base.tscn" id="1_4i10k"]
+[ext_resource type="Texture2D" uid="uid://bpr24fs7vyw3y" path="res://Assets/Environment/Backgrounds/ForrestBackground.png" id="1_27sil"]
+[ext_resource type="Script" path="res://Levels/Level_11.cs" id="2_gehy7"]
+[ext_resource type="Texture2D" uid="uid://h8puviej5xq4" path="res://Assets/Environment/Custom Tiles/Forest/Grass_SS.png" id="2_oy8nn"]
+[ext_resource type="PackedScene" uid="uid://dvgyftwgkqx0u" path="res://Objects/Forrest/FinishForrest.tscn" id="4_flcn7"]
+[ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="5_egr07"]
+[ext_resource type="Texture2D" uid="uid://c8fbd0ut5wh0a" path="res://Assets/Objects/Tutorial Keys/Keyboard/W_Unpressed.png" id="6_bk0ng"]
+[ext_resource type="Texture2D" uid="uid://b68pgpeunjt4q" path="res://Assets/Objects/Tutorial Keys/Keyboard/W_Pressed.png" id="7_1j54l"]
+[ext_resource type="Texture2D" uid="uid://p11xvlunkahl" path="res://Assets/Objects/Tutorial Keys/Keyboard/A_Unpressed.png" id="8_pyffi"]
+[ext_resource type="Texture2D" uid="uid://b65h8rpjsj5ff" path="res://Assets/Objects/Tutorial Keys/Keyboard/A_Pressed.png" id="9_d3b5j"]
+[ext_resource type="Texture2D" uid="uid://cpbueqgvyhrub" path="res://Assets/Objects/Tutorial Keys/Keyboard/S_Unpressed.png" id="10_skn26"]
+[ext_resource type="Texture2D" uid="uid://do0yi6golxfi0" path="res://Assets/Objects/Tutorial Keys/Keyboard/S_Pressed.png" id="11_cxmah"]
+[ext_resource type="Texture2D" uid="uid://cwtvifrhvssvp" path="res://Assets/Objects/Tutorial Keys/Keyboard/D_Unpressed.png" id="12_01jeg"]
+[ext_resource type="Texture2D" uid="uid://bpc7djtjvlg88" path="res://Assets/Objects/Tutorial Keys/Keyboard/D_Pressed.png" id="13_lx82m"]
+[ext_resource type="Texture2D" uid="uid://baj5bhx4luoki" path="res://Assets/Objects/Tutorial Keys/Keyboard/UpArrow_Unpressed.png" id="14_qjafk"]
+[ext_resource type="Texture2D" uid="uid://bklw3tjqybrwu" path="res://Assets/Objects/Tutorial Keys/Keyboard/UpArrow_Pressed.png" id="15_c3vem"]
+[ext_resource type="Texture2D" uid="uid://r8tp0mfx5kmy" path="res://Assets/Objects/Tutorial Keys/Keyboard/LeftArrow_Unpressed.png" id="16_e5ewl"]
+[ext_resource type="Texture2D" uid="uid://dt6ue7jyg0e4g" path="res://Assets/Objects/Tutorial Keys/Keyboard/LeftArrow_Pressed.png" id="17_spnx7"]
+[ext_resource type="Texture2D" uid="uid://bt6ndghyjhyin" path="res://Assets/Objects/Tutorial Keys/Keyboard/RightArrow_Unpressed.png" id="18_0dnk6"]
+[ext_resource type="Texture2D" uid="uid://dhc0gjxcekgx0" path="res://Assets/Objects/Tutorial Keys/Keyboard/RightArrow_Pressed.png" id="19_vxxuk"]
+[ext_resource type="Texture2D" uid="uid://62pkd88rav8e" path="res://Assets/Objects/Tutorial Keys/Keyboard/DownArrow_Unpressed.png" id="20_hbo7j"]
+[ext_resource type="Texture2D" uid="uid://cf8xrriboqjam" path="res://Assets/Objects/Tutorial Keys/Keyboard/DownArrow_Pressed.png" id="21_8whvf"]
+[ext_resource type="Texture2D" uid="uid://b4m1v2rkhdwor" path="res://Assets/Objects/Tutorial Keys/Keyboard/Spacebar_Unpressed.png" id="22_11f7k"]
+[ext_resource type="Texture2D" uid="uid://bmxw2gk3nko4i" path="res://Assets/Objects/Tutorial Keys/Words/OR.png" id="22_fr3bo"]
+[ext_resource type="Texture2D" uid="uid://q27cvl2nllvl" path="res://Assets/Objects/Tutorial Keys/Keyboard/Spacebar_Pressed.png" id="23_gydut"]
+[ext_resource type="Texture2D" uid="uid://dje5uhqvpffk7" path="res://Assets/Objects/Tutorial Keys/Words/JUMP.png" id="23_wrjae"]
+[ext_resource type="Texture2D" uid="uid://bnm7gpo6ap64" path="res://Assets/Objects/Tutorial Keys/Words/LEFT.png" id="24_ve1p1"]
+[ext_resource type="Texture2D" uid="uid://c5ij0boibsll0" path="res://Assets/Objects/Tutorial Keys/Words/RIGHT.png" id="25_01snl"]
+[ext_resource type="Texture2D" uid="uid://cyn6kboncf2wo" path="res://Assets/Objects/Tutorial Keys/Words/Arrow.png" id="26_svvew"]
+[ext_resource type="Texture2D" uid="uid://ckfrxju6ag0gh" path="res://Assets/Objects/Tutorial Keys/Words/Arrow_2.png" id="27_t3sl5"]
+[ext_resource type="Texture2D" uid="uid://beenqq08d82ii" path="res://Assets/Objects/Tutorial Keys/Words/Arrow_3.png" id="28_fm2rm"]
+[ext_resource type="Texture2D" uid="uid://cn2wgtrho46j5" path="res://Assets/Objects/Tutorial Keys/Words/Arrow_4.png" id="31_imylo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqlbc"]
+texture = ExtResource("2_oy8nn")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o7mgx"]
+sources/1 = SubResource("TileSetAtlasSource_oqlbc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwiu2"]
+size = Vector2(16, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2dg2"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lssj"]
+size = Vector2(640, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx2pc"]
+size = Vector2(640, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcw3i"]
+size = Vector2(16, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oerqb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bk0ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1j54l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yoig0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pyffi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d3b5j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcn56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_skn26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cxmah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhsp0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_01jeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lx82m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.2
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfrwe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_qjafk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_c3vem")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70uxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_e5ewl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_spnx7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8t042"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_0dnk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vxxuk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.2
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igiqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_hbo7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8whvf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_duvtr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_11f7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gydut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Level_11" instance=ExtResource("1_4i10k")]
+script = ExtResource("2_gehy7")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 57)
+scale = Vector2(4.32162, 4.32161)
+texture = ExtResource("1_27sil")
+
+[node name="TileMap" parent="." index="1"]
+texture_filter = 1
+tile_set = SubResource("TileSet_o7mgx")
+layer_0/tile_data = PackedInt32Array(720876, 65537, 0, 720877, 131073, 1, 720878, 131073, 1, 720879, 131073, 1, 720880, 131073, 1, 720881, 131073, 1, 720882, 131073, 1, 720883, 131073, 1, 720884, 131073, 1, 720885, 131073, 1, 720886, 131073, 1, 720887, 131073, 1, 720888, 131073, 1, 720889, 131073, 1, 720890, 131073, 1, 720891, 131073, 1, 720892, 131073, 1, 720893, 1, 0, 720894, 65537, 0, 720895, 131073, 1, 655360, 131073, 1, 655361, 131073, 1, 655362, 131073, 1, 655363, 131073, 1, 655364, 131073, 1, 655365, 131073, 1, 655366, 131073, 1, 655367, 131073, 1, 655368, 131073, 1, 655369, 131073, 1, 655370, 131073, 1, 655371, 131073, 1, 655372, 131073, 1, 655373, 131073, 1, 655374, 131073, 1, 655375, 131073, 1, 655376, 131073, 1, 655377, 131073, 1, 655378, 131073, 1, 655379, 1, 0, 720915, 65537, 1, 720914, 65537, 1, 720913, 65537, 1, 720912, 65537, 1, 720911, 65537, 1, 720910, 65537, 1, 720909, 65537, 1, 720908, 65537, 1, 720907, 65537, 1, 720906, 65537, 1, 720905, 65537, 1, 720904, 65537, 1, 720903, 65537, 1, 720902, 65537, 1, 720901, 65537, 1, 720900, 65537, 1, 720899, 65537, 1, 720898, 65537, 1, 720897, 65537, 1, 720896, 65537, 1, 786431, 65537, 1, 786430, 65537, 1, 786429, 65537, 1, 786428, 65537, 1, 786427, 65537, 1, 786426, 65537, 1, 786425, 65537, 1, 786424, 65537, 1, 786423, 65537, 1, 786422, 65537, 1, 786421, 65537, 1, 786420, 65537, 1, 786419, 65537, 1, 786418, 65537, 1, 786417, 65537, 1, 786416, 65537, 1, 786415, 65537, 1, 786414, 65537, 1, 786413, 65537, 1, 786412, 65537, 1, 655340, 196609, 1, 589804, 196609, 1, 524268, 196609, 1, 458732, 196609, 1, 393196, 196609, 1, 327660, 196609, 1, 262124, 196609, 1, 196588, 196609, 1, 131052, 196609, 1, 65516, 196609, 1, -20, 196609, 1, -65556, 196609, 1, -131092, 196609, 1, -196628, 196609, 1, -262164, 196609, 1, -327700, 196609, 1, -393236, 196609, 1, -458772, 196609, 1, -524308, 196609, 1, -589844, 196609, 1, -655380, 327681, 1, -720916, 65537, 1, 589843, 327681, 0, 524307, 327681, 0, 458771, 327681, 0, 393235, 327681, 0, 327699, 327681, 0, 262163, 327681, 0, 196627, 327681, 0, 131091, 327681, 0, 65555, 327681, 0, 19, 327681, 0, -65517, 327681, 0, -131053, 327681, 0, -196589, 327681, 0, -262125, 327681, 0, -327661, 327681, 0, -393197, 327681, 0, -458733, 327681, 0, -524269, 327681, 0, -589805, 327681, 0, -655341, 327681, 0, -720877, 262145, 1, -786413, 65537, 1, -655379, 196609, 0, -655378, 196609, 0, -655377, 196609, 0, -655376, 196609, 0, -655375, 196609, 0, -655374, 196609, 0, -655373, 196609, 0, -655372, 196609, 0, -655371, 196609, 0, -655370, 196609, 0, -655369, 196609, 0, -655368, 196609, 0, -655367, 196609, 0, -655366, 196609, 0, -655365, 196609, 0, -655364, 196609, 0, -655363, 196609, 0, -655362, 196609, 0, -655361, 196609, 0, -720896, 196609, 0, -720895, 196609, 0, -720894, 196609, 0, -720893, 196609, 0, -720892, 196609, 0, -720891, 196609, 0, -720890, 196609, 0, -720889, 196609, 0, -720888, 196609, 0, -720887, 196609, 0, -720886, 196609, 0, -720885, 196609, 0, -720884, 196609, 0, -720883, 196609, 0, -720882, 196609, 0, -720881, 196609, 0, -720880, 196609, 0, -720879, 196609, 0, -720878, 196609, 0, -786414, 65537, 1, -786415, 65537, 1, -786416, 65537, 1, -786417, 65537, 1, -786418, 65537, 1, -786419, 65537, 1, -786420, 65537, 1, -786421, 65537, 1, -786422, 65537, 1, -786423, 65537, 1, -786424, 65537, 1, -786425, 65537, 1, -786426, 65537, 1, -786427, 65537, 1, -786428, 65537, 1, -786429, 65537, 1, -786430, 65537, 1, -786431, 65537, 1, -786432, 65537, 1, -720897, 65537, 1, -720898, 65537, 1, -720899, 65537, 1, -720900, 65537, 1, -720901, 65537, 1, -720902, 65537, 1, -720903, 65537, 1, -720904, 65537, 1, -720905, 65537, 1, -720906, 65537, 1, -720907, 65537, 1, -720908, 65537, 1, -720909, 65537, 1, -720910, 65537, 1, -720911, 65537, 1, -720912, 65537, 1, -720913, 65537, 1, -720914, 65537, 1, -720915, 65537, 1, 589821, 1, 1, 589822, 131073, 0, 655358, 196609, 1, 655357, 327681, 0)
+
+[node name="StaticBody2D" parent="." index="2"]
+tilemap_nodepath = NodePath("../TileMap")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-312, 0)
+shape = SubResource("RectangleShape2D_mwiu2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+position = Vector2(-32, 144)
+shape = SubResource("RectangleShape2D_n2dg2")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+position = Vector2(0, -176)
+shape = SubResource("RectangleShape2D_8lssj")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" index="3"]
+position = Vector2(0, 176)
+shape = SubResource("RectangleShape2D_nx2pc")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" index="4"]
+position = Vector2(312, 0)
+shape = SubResource("RectangleShape2D_qcw3i")
+
+[node name="FinishForrest" parent="." index="3" instance=ExtResource("4_flcn7")]
+position = Vector2(761, 567)
+coinsToFinish = 1
+
+[node name="Coin" parent="." index="4" instance=ExtResource("5_egr07")]
+position = Vector2(-149, 508)
+
+[node name="Keys" type="Node2D" parent="." index="5"]
+position = Vector2(-360, 167)
+scale = Vector2(0.7, 0.7)
+
+[node name="W" type="AnimatedSprite2D" parent="Keys" index="0"]
+texture_filter = 1
+position = Vector2(-841, -183.286)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_oerqb")
+frame_progress = 0.0342829
+
+[node name="A" type="AnimatedSprite2D" parent="Keys" index="1"]
+texture_filter = 1
+position = Vector2(-986.286, -48)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yoig0")
+frame_progress = 0.861969
+
+[node name="S" type="AnimatedSprite2D" parent="Keys" index="2"]
+visible = false
+texture_filter = 1
+position = Vector2(-841, -48)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_hcn56")
+frame_progress = 0.983554
+
+[node name="D" type="AnimatedSprite2D" parent="Keys" index="3"]
+texture_filter = 1
+position = Vector2(-695.714, -48)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_uhsp0")
+frame_progress = 0.468946
+
+[node name="Up" type="AnimatedSprite2D" parent="Keys" index="4"]
+texture_filter = 1
+position = Vector2(14.2857, -181.429)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_mfrwe")
+frame_progress = 0.300257
+
+[node name="Left" type="AnimatedSprite2D" parent="Keys" index="5"]
+texture_filter = 1
+position = Vector2(-131.429, -45.7143)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_70uxr")
+frame_progress = 0.399744
+
+[node name="Right" type="AnimatedSprite2D" parent="Keys" index="6"]
+texture_filter = 1
+position = Vector2(160, -45.7143)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_8t042")
+frame_progress = 0.323041
+
+[node name="Down" type="AnimatedSprite2D" parent="Keys" index="7"]
+visible = false
+texture_filter = 1
+position = Vector2(14.2857, -45.7143)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_igiqx")
+frame_progress = 0.570647
+
+[node name="SpaceBar" type="AnimatedSprite2D" parent="Keys" index="8"]
+texture_filter = 1
+position = Vector2(-840, -724.285)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_duvtr")
+
+[node name="Word_Arrows" type="Node2D" parent="." index="6"]
+
+[node name="Or" type="Sprite2D" parent="Word_Arrows" index="0"]
+texture_filter = 1
+position = Vector2(-639, 126)
+scale = Vector2(10.5556, 10.5556)
+texture = ExtResource("22_fr3bo")
+
+[node name="Jump" type="Sprite2D" parent="Word_Arrows" index="1"]
+texture_filter = 1
+position = Vector2(-945, -155)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("23_wrjae")
+
+[node name="Left" type="Sprite2D" parent="Word_Arrows" index="2"]
+texture_filter = 1
+position = Vector2(-1242, -34)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("24_ve1p1")
+
+[node name="Right" type="Sprite2D" parent="Word_Arrows" index="3"]
+texture_filter = 1
+position = Vector2(-616, -34)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("25_01snl")
+
+[node name="Arrow" type="Sprite2D" parent="Word_Arrows" index="4"]
+texture_filter = 1
+position = Vector2(-1092, 26)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("26_svvew")
+
+[node name="Arrow2" type="Sprite2D" parent="Word_Arrows" index="5"]
+texture_filter = 1
+position = Vector2(-807, 25)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("27_t3sl5")
+
+[node name="Arrow3" type="Sprite2D" parent="Word_Arrows" index="6"]
+texture_filter = 1
+position = Vector2(-948, -56)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("28_fm2rm")
+
+[node name="Arrow4" type="Sprite2D" parent="Word_Arrows" index="7"]
+texture_filter = 1
+position = Vector2(-948, -245)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("31_imylo")

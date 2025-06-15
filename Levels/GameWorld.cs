@@ -283,6 +283,10 @@ public partial class GameWorld : Node2D
                 BGMusicCave.Stop();
                 BGMusicFortress.Play();
             }
+            else if (currentLevel >= 11 && currentLevel <= 20)
+            {
+                BGMusicForest.Play();
+            }
         }
         else
         {
