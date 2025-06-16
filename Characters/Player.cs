@@ -15,7 +15,6 @@ public partial class Player : CharacterBody2D
 
     private Signals customSignals;
 
-    const float deadZone = .4f;
     int slideDirection = 0;
     public bool isDead = false;
     public bool hasWon = false;
@@ -39,7 +38,6 @@ public partial class Player : CharacterBody2D
     public Vector2 startSpriteScale;
     public Vector2 startSpritePosition;
     private float timeSinceJump = 0f;
-    private bool isMouseAndKeyboard;
 
     public void ResetDeaths()
     {
@@ -58,26 +56,11 @@ public partial class Player : CharacterBody2D
         PushBlocks();
         ReturnToMenu();
         RestartLevel();
-        GD.Print(isMouseAndKeyboard.ToString());
     }
 
     public override void _Ready()
     {
         customSignals = GetNode<Signals>("/root/Signals");
-    }
-
-    public override void _Input(InputEvent @event)
-    {
-        switch (@event)
-        {
-            case InputEventKey or InputEventMouse:
-                isMouseAndKeyboard = true;
-                break;
-            case InputEventJoypadButton:
-            case InputEventJoypadMotion { AxisValue: < -deadZone or > deadZone }:
-                isMouseAndKeyboard = false;
-                break;
-        }
     }
 
     public async Task PlayerExitTweenAnim(Area2D finishDoor)

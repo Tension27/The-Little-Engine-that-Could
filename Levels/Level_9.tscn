@@ -715,6 +715,7 @@ open = true
 position = Vector2(-29, -281)
 distance = Vector2(750, 0)
 phaseTime = 12.0
+debug = false
 
 [node name="DeathZone" parent="." instance=ExtResource("11_0v7vk")]
 position = Vector2(81, 43)
