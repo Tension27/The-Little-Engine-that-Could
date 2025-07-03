@@ -39,7 +39,7 @@ public partial class Lever : Area2D
         Sprite2D Base = GetNode<Sprite2D>("StaticBody2D/Sprite2D2");
         Sprite2D Handle = GetNode<Sprite2D>("RigidBody2D/Sprite2D");
 
-        if (currentLevel >= 0 && currentLevel < 4)
+        if ((currentLevel >= 0 && currentLevel < 4) || currentLevel >= 11 && currentLevel < 20)
         {
             Base.Texture = ForrestBase;
             Handle.Texture = ForrestHandle;

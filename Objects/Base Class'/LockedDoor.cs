@@ -33,7 +33,7 @@ public partial class LockedDoor : StaticBody2D
     //Figures out which sprite needs to be displayed for the object depending on the level area i.e. forest, cave, or fortress
     public void SetLevelSprite(int currentLevel)
     {
-        if (currentLevel >= 0 && currentLevel < 4)
+        if ((currentLevel >= 0 && currentLevel < 4) || currentLevel >= 11 && currentLevel < 20)
         {
             correctDoorSound = "DoorOpening";
             openAnimation = "Open";

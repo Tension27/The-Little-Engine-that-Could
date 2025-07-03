@@ -206,6 +206,7 @@ public partial class GameWorld : Node2D
     //Called when the player presses the escape key. Backs out of menus or any level
 	public void OnQuitPressed()
 	{
+        GetNode<Control>("MainMenu").GrabFocus();
         PlayMenuMusic();
         Timer timer = (Timer)GetChild(3).GetChild(5);
         timer.WaitTime = 86400;
@@ -265,7 +266,7 @@ public partial class GameWorld : Node2D
     }
 
     //Plays the music appropriate for each stage
-    private void PlayMusic(int currentLevel)
+    private async void PlayMusic(int currentLevel)
     {
         if (playerIsOnLevelSelect == true)
         {
@@ -296,11 +297,13 @@ public partial class GameWorld : Node2D
             }
             else if (currentLevel == 4)
             {
+                await ToSignal(GetTree().CreateTimer(4.1), SceneTreeTimer.SignalName.Timeout);
                 BGMusicForest.Stop();
                 BGMusicCave.Play();
             }
             else if (currentLevel == 7)
             {
+                await ToSignal(GetTree().CreateTimer(4.1), SceneTreeTimer.SignalName.Timeout);
                 BGMusicCave.Stop();
                 BGMusicFortress.Play();
             }

@@ -160,7 +160,6 @@ public partial class PeaShooter : CharacterBody2D
         }
     }
 
-    
     // This was put in place to solve a bug where the player would collide with the hitbox and hurtbox in the same frame and
     // die instead of killing the peashooter.
     public void ResolveFlagsAfterPhysicsOver(Player player, float realVelocity)
@@ -179,7 +178,7 @@ public partial class PeaShooter : CharacterBody2D
             moveSpeed = 0;
             return;
         }
-        else if(bodyHit == true)
+        else if (bodyHit == true)
         {
             player.AddDeath();
         }

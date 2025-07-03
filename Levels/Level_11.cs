@@ -5,9 +5,6 @@ public partial class Level_11 : Node2D
 {
     private bool isMouseAndKeyboard;
     const float deadZone = .4f;
-    Node2D Keys;
-	Node2D Word_Arrows;
-	Node2D wordOR;
 	AnimatedSprite2D Left;
     AnimatedSprite2D Right;
     AnimatedSprite2D Up;
@@ -16,20 +13,18 @@ public partial class Level_11 : Node2D
     AnimatedSprite2D W;
     AnimatedSprite2D D;
     AnimatedSprite2D SpaceBar;
-    AnimatedSprite2D Left_Joystick;
-    AnimatedSprite2D Right_Joystick;
-    AnimatedSprite2D DPad_Up;
-    AnimatedSprite2D DPad_Left;
-    AnimatedSprite2D DPad_Right;
+    AnimatedSprite2D Joystick;
+    AnimatedSprite2D DPad;
     AnimatedSprite2D Controller_A;
-
-
+    AnimatedSprite2D Controller_Y;
+    AnimatedSprite2D Main_Menu;
+    
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-		Keys = GetNode<Node2D>("Keyboard");
-		Word_Arrows = GetNode<Node2D>("Word_Arrows");
-        wordOR = GetNode<Sprite2D>("Word_Arrows/Or");
+		//Keys = GetNode<Node2D>("Keyboard");
+		//Word_Arrows = GetNode<Node2D>("Word_Arrows");
+        //wordOR = GetNode<Sprite2D>("Word_Arrows/Or");
         Left = GetNode<AnimatedSprite2D>("Keyboard/Left");
         Right = GetNode<AnimatedSprite2D>("Keyboard/Right"); ;
         Up = GetNode<AnimatedSprite2D>("Keyboard/Up"); ;
@@ -38,12 +33,11 @@ public partial class Level_11 : Node2D
         W = GetNode<AnimatedSprite2D>("Keyboard/W"); ;
         D = GetNode<AnimatedSprite2D>("Keyboard/D"); ;
         SpaceBar = GetNode<AnimatedSprite2D>("Keyboard/SpaceBar");
-        Left_Joystick = GetNode<AnimatedSprite2D>("Controller/Left_Joystick");
-        Right_Joystick = GetNode<AnimatedSprite2D>("Controller/Right_Joystick");
-        DPad_Up = GetNode<AnimatedSprite2D>("Controller/DPad_Up");
-        DPad_Left = GetNode<AnimatedSprite2D>("Controller/DPad_Left");
-        DPad_Right = GetNode<AnimatedSprite2D>("Controller/DPad_Right");
+        Joystick = GetNode<AnimatedSprite2D>("Controller/Joystick");
+        DPad = GetNode<AnimatedSprite2D>("Controller/DPad");
         Controller_A = GetNode<AnimatedSprite2D>("Controller/Controller_A");
+        Controller_Y = GetNode<AnimatedSprite2D>("Controller/Controller_Y");
+        Main_Menu = GetNode<AnimatedSprite2D>("Controller/Controller_Menu");
     }
 
     public override void _Input(InputEvent @event)
@@ -72,7 +66,7 @@ public partial class Level_11 : Node2D
             GetNode<Node2D>("Controller").Visible = true;
         }
 
-        //Shows the key pressed for whichever key the user is pressing on keyboard or controller
+        //Logic for showing Key Presses
         if (@event is InputEventKey keyEvent && keyEvent.Pressed)
         {
             if (keyEvent.Keycode == Key.Left)
@@ -109,6 +103,7 @@ public partial class Level_11 : Node2D
             }
 
         }
+        //Logic for showing Key Releases
         else if (@event is InputEventKey keyEvent2 && !keyEvent2.Pressed)
         {
             if (keyEvent2.Keycode == Key.Left)
@@ -144,61 +139,77 @@ public partial class Level_11 : Node2D
                 SpaceBar.Frame = 0;
             }
         }
+        //Logic for showing Joystick movement
         else if (@event is InputEventJoypadMotion joyStickEvent)
         {
             if (joyStickEvent.IsActionPressed("Move_Left"))
             {
-                Left_Joystick.Frame = 1;
+                Joystick.Frame = 1;
             }
-            else if (joyStickEvent.IsActionReleased("Move_Left"))
+            else if (joyStickEvent.IsActionPressed("Move_Right"))
             {
-                Left_Joystick.Frame = 0;
+                Joystick.Frame = 2;
             }
-            if (joyStickEvent.IsActionPressed("Move_Right"))
+            else if (joyStickEvent.IsActionReleased("Move_Right") || joyStickEvent.IsActionReleased("Move_Left"))
             {
-                Right_Joystick.Frame = 1;
-            }
-            else if (joyStickEvent.IsActionReleased("Move_Right"))
-            {
-                Right_Joystick.Frame = 0;
+                Joystick.Frame = 0;
             }
         }
+        //Logic for Controller Button Presses
         else if (@event is InputEventJoypadButton joyPadEvent && joyPadEvent.Pressed)
         {
             if (joyPadEvent.ButtonIndex == JoyButton.DpadUp)
             {
-                DPad_Up.Frame = 1;                         
+                DPad.Frame = 3;                         
             }
             else if (joyPadEvent.ButtonIndex == JoyButton.DpadLeft)
             {
-                DPad_Left.Frame = 1;
+                DPad.Frame = 1;
             }
             else if (joyPadEvent.ButtonIndex == JoyButton.DpadRight)
             {
-                DPad_Right.Frame = 1;
+                DPad.Frame = 2;
             }
             else if (joyPadEvent.ButtonIndex == JoyButton.A)
             {
                 Controller_A.Frame = 1;   
             }
+            else if (joyPadEvent.ButtonIndex == JoyButton.Start)
+            {
+                Main_Menu.Frame = 1;
+            }
+            else if (joyPadEvent.ButtonIndex == JoyButton.Y)
+            {
+                Controller_Y.Frame = 1;
+            }
+
         }
+        //Logic for Controller Button Releases
         else if (@event is InputEventJoypadButton joyPadEvent2 && !joyPadEvent2.Pressed)
         {
             if (joyPadEvent2.ButtonIndex == JoyButton.DpadUp)
             {
-                DPad_Up.Frame = 0;
+                DPad.Frame = 0;
             }
             else if (joyPadEvent2.ButtonIndex == JoyButton.DpadLeft)
             {
-                DPad_Left.Frame = 0;
+                DPad.Frame = 0;
             }
             else if (joyPadEvent2.ButtonIndex == JoyButton.DpadRight)
             {
-                DPad_Right.Frame = 0;
+                DPad.Frame = 0;
             }
             else if (joyPadEvent2.ButtonIndex == JoyButton.A)
             {
                 Controller_A.Frame = 0;
+            }
+            else if (joyPadEvent2.ButtonIndex == JoyButton.Start)
+            {
+                Main_Menu.Frame = 0;
+            }
+            else if (joyPadEvent2.ButtonIndex == JoyButton.Y)
+            {
+                Controller_Y.Frame = 0;
             }
         }
     }

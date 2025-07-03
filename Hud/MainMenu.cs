@@ -9,6 +9,10 @@ public partial class MainMenu : Control
     [Signal]
     public delegate void OnTutorialPressedPassEventHandler();
 
+    public override void _Ready()
+    {
+        GrabFocus();
+    }
     public void OnTutorialPressed()
     {
         EmitSignal(SignalName.OnTutorialPressedPass);

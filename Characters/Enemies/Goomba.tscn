@@ -23,7 +23,7 @@ animations = [{
 size = Vector2(80, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kn2p"]
-size = Vector2(80, 49)
+size = Vector2(80, 50)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7t02"]
 radius = 36.0
@@ -32,7 +32,7 @@ height = 86.0
 [node name="Goomba" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 16
-collision_mask = 530
+collision_mask = 4626
 script = ExtResource("1_grlv8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -62,7 +62,7 @@ collision_mask = 2
 collision_layer = 64
 
 [node name="KillZone" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 19.5)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_8kn2p")
 
 [node name="SquashZone" type="Area2D" parent="."]
@@ -83,6 +83,5 @@ volume_db = 4.0
 pitch_scale = 0.6
 
 [connection signal="area_entered" from="Area2D" to="." method="OnAreaEntered"]
-[connection signal="area_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
 [connection signal="body_entered" from="SquashZone" to="." method="OnSquashAreaEntered"]
 [connection signal="timeout" from="QueueFreeTimer" to="." method="OnSquashTimeout"]

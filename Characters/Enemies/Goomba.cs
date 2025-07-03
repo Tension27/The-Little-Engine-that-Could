@@ -105,13 +105,15 @@ public partial class Goomba : CharacterBody2D
     {
         if (headHit == true && realVelocity > 120)
         {
+            GetNode<Area2D>("Area2D").QueueFree();
             player.Bounce();
             GetNode<AudioStreamPlayer>("EnemySquashed").Play();
             GetNode<Timer>("QueueFreeTimer").Start();
             GetNode<AnimatedSprite2D>("AnimatedSprite2D").Visible = false;
             GetNode<Sprite2D>("Squashed").Visible = true;
-            GetNode<Area2D>("Area2D").QueueFree();
+
             GetNode<Area2D>("SquashZone").QueueFree();
+
             moveSpeed = 0;
             return;
         }

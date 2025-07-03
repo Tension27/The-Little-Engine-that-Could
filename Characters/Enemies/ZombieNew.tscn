@@ -168,7 +168,7 @@ _data = {
 
 [node name="ZombieNew" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 530
+collision_mask = 4626
 script = ExtResource("1_hbgmo")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
