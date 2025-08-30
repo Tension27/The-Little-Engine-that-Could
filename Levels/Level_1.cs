@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Level_11 : Node2D
+public partial class Level_1 : Node2D
 {
     private bool isMouseAndKeyboard;
     const float deadZone = .4f;
@@ -22,9 +22,6 @@ public partial class Level_11 : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-		//Keys = GetNode<Node2D>("Keyboard");
-		//Word_Arrows = GetNode<Node2D>("Word_Arrows");
-        //wordOR = GetNode<Sprite2D>("Word_Arrows/Or");
         Left = GetNode<AnimatedSprite2D>("Keyboard/Left");
         Right = GetNode<AnimatedSprite2D>("Keyboard/Right"); ;
         Up = GetNode<AnimatedSprite2D>("Keyboard/Up"); ;

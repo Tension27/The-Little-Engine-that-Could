@@ -135,6 +135,67 @@ public partial class LevelSelect : Control
         EmitSignal(SignalName.OnLevelSelected, 20);
     }
 
+    //The third set of levels in the select menu
+    public void OnFortessLevel1Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 21);
+    }
+
+    public void OnFortessLevel2Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 22);
+    }
+
+    public void OnFortessLevel3Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 23);
+    }
+
+    public void OnFortessLevel4Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 24);
+    }
+
+    public void OnFortessLevel5Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 25);
+    }
+
+    public void OnFortessLevel6Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 26);
+    }
+
+    public void OnFortessLevel7Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 27);
+    }
+
+    public void OnFortessLevel8Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 28);
+    }
+
+    public void OnFortessLevel9Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 29);
+    }
+
+    public void OnFortessLevel10Pressed()
+    {
+        Visible = false;
+        EmitSignal(SignalName.OnLevelSelected, 30);
+    }
+
     public void OnBackPressed()
     {
         MainMenu mainMenu = (MainMenu)GetParent().GetChild(5);

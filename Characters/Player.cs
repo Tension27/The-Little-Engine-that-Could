@@ -63,8 +63,16 @@ public partial class Player : CharacterBody2D
         customSignals = GetNode<Signals>("/root/Signals");
     }
 
+    //Creates and plays the animation for the player exiting a level
     public async Task PlayerExitTweenAnim(Area2D finishDoor)
     {
+        //Used to just restart the level instead of playing the exit animation when in level select so that if you're practicing a level you don't have to sit and wait for the anim every time
+        if (Global.isOnLevelSelect)
+        {
+            RestartLevel();
+            return;
+        }
+
         //Gets the collision hitbox of the exit
         CollisionShape2D exitHitBox = finishDoor.GetNode<CollisionShape2D>("CollisionShape2D");
 

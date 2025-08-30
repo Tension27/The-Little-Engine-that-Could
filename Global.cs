@@ -14,6 +14,7 @@ public partial class Global : Node2D
     public static string currentScene = "";
     public static int currentSceneNumber = 0;
     public static int testDeaths = 0;
+    public static bool isOnLevelSelect = false;
 
     //whenever called adds the current time on the stopwatch to min, sec, msec
 	public static void addToTotalTime(string d, string e, string f)

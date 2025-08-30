@@ -1,7 +1,7 @@
 [gd_scene load_steps=77 format=3 uid="uid://bvdrg6xwp4rbd"]
 
 [ext_resource type="PackedScene" uid="uid://c722xx5yn2nk3" path="res://Levels/level_base.tscn" id="1_mwo1f"]
-[ext_resource type="Script" path="res://Levels/Level_11.cs" id="2_863j4"]
+[ext_resource type="Script" path="res://Levels/Level_1.cs" id="2_1j22a"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="3_8r7pd"]
 [ext_resource type="Texture2D" uid="uid://h8puviej5xq4" path="res://Assets/Environment/Custom Tiles/Forest/Grass_SS.png" id="5_b4gap"]
 [ext_resource type="Texture2D" uid="uid://c8fbd0ut5wh0a" path="res://Assets/Objects/Tutorial Keys/Keyboard/W_Unpressed.png" id="7_1o68f"]
@@ -321,8 +321,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Level_11" instance=ExtResource("1_mwo1f")]
-script = ExtResource("2_863j4")
+[node name="Level_1" instance=ExtResource("1_mwo1f")]
+script = ExtResource("2_1j22a")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, 57)

@@ -44,7 +44,7 @@ size = Vector2(224, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdm32"]
 size = Vector2(16, 224)
 
-[node name="Level_13" instance=ExtResource("1_l1e77")]
+[node name="Level_3" instance=ExtResource("1_l1e77")]
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, 7.62939e-06)

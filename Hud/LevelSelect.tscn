@@ -42,10 +42,10 @@ script = ExtResource("1_a7sd5")
 
 [node name="Back" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = -313.0
-offset_top = -65.0
-offset_right = -43.0
-offset_bottom = 65.0
+offset_left = -357.0
+offset_top = -213.0
+offset_right = -87.0
+offset_bottom = -83.0
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_872xf")
 
@@ -60,10 +60,10 @@ text = "Back"
 [node name="1&6" type="MarginContainer" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = -173.0
-offset_top = -65.0
-offset_right = -1.0
-offset_bottom = 201.0
+offset_left = -217.0
+offset_top = -213.0
+offset_right = -45.0
+offset_bottom = 53.0
 scale = Vector2(0.5, 0.5)
 tooltip_text = "
 "
@@ -85,10 +85,10 @@ text = "6"
 
 [node name="2&7" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = -85.0
-offset_top = -65.0
-offset_right = 85.0
-offset_bottom = 201.0
+offset_left = -129.0
+offset_top = -213.0
+offset_right = 41.0
+offset_bottom = 53.0
 scale = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="2&7"]
@@ -109,10 +109,10 @@ text = "7"
 [node name="3&8" type="MarginContainer" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 2.0
-offset_top = -65.0
-offset_right = 174.0
-offset_bottom = 201.0
+offset_left = -42.0
+offset_top = -213.0
+offset_right = 130.0
+offset_bottom = 53.0
 scale = Vector2(0.5, 0.5)
 tooltip_text = "
 "
@@ -134,10 +134,10 @@ text = "8"
 
 [node name="4&9" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 90.0
-offset_top = -65.0
-offset_right = 262.0
-offset_bottom = 201.0
+offset_left = 46.0
+offset_top = -213.0
+offset_right = 218.0
+offset_bottom = 53.0
 scale = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="4&9"]
@@ -157,10 +157,10 @@ text = "9"
 
 [node name="5&10" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 178.0
-offset_top = -65.0
-offset_right = 350.0
-offset_bottom = 201.0
+offset_left = 134.0
+offset_top = -213.0
+offset_right = 306.0
+offset_bottom = 53.0
 scale = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="5&10"]
@@ -178,122 +178,243 @@ size_flags_vertical = 3
 theme = SubResource("Theme_n6vol")
 text = "10"
 
-[node name="1&6 New" type="MarginContainer" parent="."]
+[node name="1&6 - 2nd" type="MarginContainer" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = -173.0
-offset_top = 82.0
-offset_right = -1.0
-offset_bottom = 348.0
+offset_left = -217.0
+offset_top = -66.0
+offset_right = -45.0
+offset_bottom = 200.0
 scale = Vector2(0.5, 0.5)
 tooltip_text = "
 "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="1&6 New"]
+[node name="VBoxContainer" type="VBoxContainer" parent="1&6 - 2nd"]
 layout_mode = 2
 
-[node name="Level1" type="Button" parent="1&6 New/VBoxContainer"]
+[node name="Level1" type="Button" parent="1&6 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_sjhfo")
 text = "1"
 
-[node name="Level6" type="Button" parent="1&6 New/VBoxContainer"]
+[node name="Level6" type="Button" parent="1&6 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_6ecv6")
 text = "6"
 
-[node name="2&7 New" type="MarginContainer" parent="."]
+[node name="2&7 - 2nd" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = -85.0
-offset_top = 82.0
-offset_right = 85.0
-offset_bottom = 348.0
+offset_left = -129.0
+offset_top = -66.0
+offset_right = 41.0
+offset_bottom = 200.0
 scale = Vector2(0.5, 0.5)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="2&7 New"]
+[node name="VBoxContainer" type="VBoxContainer" parent="2&7 - 2nd"]
 layout_mode = 2
 
-[node name="Level2" type="Button" parent="2&7 New/VBoxContainer"]
+[node name="Level2" type="Button" parent="2&7 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_ffs30")
 text = "2	"
 
-[node name="Level7" type="Button" parent="2&7 New/VBoxContainer"]
+[node name="Level7" type="Button" parent="2&7 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_g1xc4")
 text = "7"
 
-[node name="3&8 New" type="MarginContainer" parent="."]
+[node name="3&8 - 2nd" type="MarginContainer" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 2.0
-offset_top = 82.0
-offset_right = 174.0
-offset_bottom = 348.0
+offset_left = -42.0
+offset_top = -66.0
+offset_right = 130.0
+offset_bottom = 200.0
 scale = Vector2(0.5, 0.5)
 tooltip_text = "
 "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="3&8 New"]
+[node name="VBoxContainer" type="VBoxContainer" parent="3&8 - 2nd"]
 layout_mode = 2
 
-[node name="Level3" type="Button" parent="3&8 New/VBoxContainer"]
+[node name="Level3" type="Button" parent="3&8 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_sjhfo")
 text = "3"
 
-[node name="Level8" type="Button" parent="3&8 New/VBoxContainer"]
+[node name="Level8" type="Button" parent="3&8 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_6ecv6")
 text = "8"
 
-[node name="MarginContainer10" type="MarginContainer" parent="."]
+[node name="4&9 - 2nd" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 82.0
-offset_right = 262.0
-offset_bottom = 348.0
+offset_left = 46.0
+offset_top = -66.0
+offset_right = 218.0
+offset_bottom = 200.0
 scale = Vector2(0.5, 0.5)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer10"]
+[node name="VBoxContainer" type="VBoxContainer" parent="4&9 - 2nd"]
 layout_mode = 2
 
-[node name="Level4" type="Button" parent="MarginContainer10/VBoxContainer"]
+[node name="Level4" type="Button" parent="4&9 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_xo54c")
 text = "4"
 
-[node name="Level9" type="Button" parent="MarginContainer10/VBoxContainer"]
+[node name="Level9" type="Button" parent="4&9 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_8fkgo")
 text = "9"
 
-[node name="MarginContainer9" type="MarginContainer" parent="."]
+[node name="5&10 - 2nd" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 178.0
-offset_top = 82.0
-offset_right = 350.0
-offset_bottom = 348.0
+offset_left = 134.0
+offset_top = -66.0
+offset_right = 306.0
+offset_bottom = 200.0
 scale = Vector2(0.5, 0.5)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer9"]
+[node name="VBoxContainer" type="VBoxContainer" parent="5&10 - 2nd"]
 layout_mode = 2
 
-[node name="Level5" type="Button" parent="MarginContainer9/VBoxContainer"]
+[node name="Level5" type="Button" parent="5&10 - 2nd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_74tgw")
 text = "5"
 
-[node name="Level10" type="Button" parent="MarginContainer9/VBoxContainer"]
+[node name="Level10" type="Button" parent="5&10 - 2nd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_n6vol")
+text = "10"
+
+[node name="1&6 - 3rd" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -217.0
+offset_top = 81.0
+offset_right = -45.0
+offset_bottom = 347.0
+scale = Vector2(0.5, 0.5)
+tooltip_text = "
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="1&6 - 3rd"]
+layout_mode = 2
+
+[node name="Level1" type="Button" parent="1&6 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_sjhfo")
+text = "1"
+
+[node name="Level6" type="Button" parent="1&6 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_6ecv6")
+text = "6"
+
+[node name="2&7 - 3rd" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -128.0
+offset_top = 81.0
+offset_right = 42.0
+offset_bottom = 347.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="2&7 - 3rd"]
+layout_mode = 2
+
+[node name="Level2" type="Button" parent="2&7 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ffs30")
+text = "2	"
+
+[node name="Level7" type="Button" parent="2&7 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_g1xc4")
+text = "7"
+
+[node name="3&8 - 3rd" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -42.0
+offset_top = 81.0
+offset_right = 130.0
+offset_bottom = 347.0
+scale = Vector2(0.5, 0.5)
+tooltip_text = "
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="3&8 - 3rd"]
+layout_mode = 2
+
+[node name="Level3" type="Button" parent="3&8 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_sjhfo")
+text = "3"
+
+[node name="Level8" type="Button" parent="3&8 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_6ecv6")
+text = "8"
+
+[node name="4&9 - 3rd" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 81.0
+offset_right = 218.0
+offset_bottom = 347.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="4&9 - 3rd"]
+layout_mode = 2
+
+[node name="Level4" type="Button" parent="4&9 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_xo54c")
+text = "4"
+
+[node name="Level9" type="Button" parent="4&9 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_8fkgo")
+text = "9"
+
+[node name="5&10 - 3rd" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 81.0
+offset_right = 306.0
+offset_bottom = 347.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="5&10 - 3rd"]
+layout_mode = 2
+
+[node name="Level5" type="Button" parent="5&10 - 3rd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_74tgw")
+text = "5"
+
+[node name="Level10" type="Button" parent="5&10 - 3rd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_n6vol")
@@ -310,13 +431,23 @@ text = "10"
 [connection signal="pressed" from="4&9/VBoxContainer/Level9" to="." method="OnLevel9Pressed"]
 [connection signal="pressed" from="5&10/VBoxContainer/Level5" to="." method="OnLevel5Pressed"]
 [connection signal="pressed" from="5&10/VBoxContainer/Level10" to="." method="OnLevel10Pressed"]
-[connection signal="pressed" from="1&6 New/VBoxContainer/Level1" to="." method="OnForrestLevel1Pressed"]
-[connection signal="pressed" from="1&6 New/VBoxContainer/Level6" to="." method="OnForrestLevel6Pressed"]
-[connection signal="pressed" from="2&7 New/VBoxContainer/Level2" to="." method="OnForrestLevel2Pressed"]
-[connection signal="pressed" from="2&7 New/VBoxContainer/Level7" to="." method="OnForrestLevel7Pressed"]
-[connection signal="pressed" from="3&8 New/VBoxContainer/Level3" to="." method="OnForrestLevel3Pressed"]
-[connection signal="pressed" from="3&8 New/VBoxContainer/Level8" to="." method="OnForrestLevel8Pressed"]
-[connection signal="pressed" from="MarginContainer10/VBoxContainer/Level4" to="." method="OnForrestLevel4Pressed"]
-[connection signal="pressed" from="MarginContainer10/VBoxContainer/Level9" to="." method="OnForrestLevel9Pressed"]
-[connection signal="pressed" from="MarginContainer9/VBoxContainer/Level5" to="." method="OnForrestLevel5Pressed"]
-[connection signal="pressed" from="MarginContainer9/VBoxContainer/Level10" to="." method="OnForrestLevel10Pressed"]
+[connection signal="pressed" from="1&6 - 2nd/VBoxContainer/Level1" to="." method="OnForrestLevel1Pressed"]
+[connection signal="pressed" from="1&6 - 2nd/VBoxContainer/Level6" to="." method="OnForrestLevel6Pressed"]
+[connection signal="pressed" from="2&7 - 2nd/VBoxContainer/Level2" to="." method="OnForrestLevel2Pressed"]
+[connection signal="pressed" from="2&7 - 2nd/VBoxContainer/Level7" to="." method="OnForrestLevel7Pressed"]
+[connection signal="pressed" from="3&8 - 2nd/VBoxContainer/Level3" to="." method="OnForrestLevel3Pressed"]
+[connection signal="pressed" from="3&8 - 2nd/VBoxContainer/Level8" to="." method="OnForrestLevel8Pressed"]
+[connection signal="pressed" from="4&9 - 2nd/VBoxContainer/Level4" to="." method="OnForrestLevel4Pressed"]
+[connection signal="pressed" from="4&9 - 2nd/VBoxContainer/Level9" to="." method="OnForrestLevel9Pressed"]
+[connection signal="pressed" from="5&10 - 2nd/VBoxContainer/Level5" to="." method="OnForrestLevel5Pressed"]
+[connection signal="pressed" from="5&10 - 2nd/VBoxContainer/Level10" to="." method="OnForrestLevel10Pressed"]
+[connection signal="pressed" from="1&6 - 3rd/VBoxContainer/Level1" to="." method="OnFortessLevel1Pressed"]
+[connection signal="pressed" from="1&6 - 3rd/VBoxContainer/Level6" to="." method="OnFortessLevel6Pressed"]
+[connection signal="pressed" from="2&7 - 3rd/VBoxContainer/Level2" to="." method="OnFortessLevel2Pressed"]
+[connection signal="pressed" from="2&7 - 3rd/VBoxContainer/Level7" to="." method="OnFortessLevel7Pressed"]
+[connection signal="pressed" from="3&8 - 3rd/VBoxContainer/Level3" to="." method="OnFortessLevel3Pressed"]
+[connection signal="pressed" from="3&8 - 3rd/VBoxContainer/Level8" to="." method="OnFortessLevel8Pressed"]
+[connection signal="pressed" from="4&9 - 3rd/VBoxContainer/Level4" to="." method="OnFortessLevel4Pressed"]
+[connection signal="pressed" from="4&9 - 3rd/VBoxContainer/Level9" to="." method="OnFortessLevel9Pressed"]
+[connection signal="pressed" from="5&10 - 3rd/VBoxContainer/Level5" to="." method="OnFortessLevel5Pressed"]
+[connection signal="pressed" from="5&10 - 3rd/VBoxContainer/Level10" to="." method="OnFortessLevel10Pressed"]

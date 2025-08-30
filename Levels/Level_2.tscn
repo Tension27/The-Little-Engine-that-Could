@@ -366,7 +366,7 @@ _data = {
 "RESET": SubResource("Animation_43eqh")
 }
 
-[node name="Level_12" instance=ExtResource("1_ikjia")]
+[node name="Level_2" instance=ExtResource("1_ikjia")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("10_cctwt")

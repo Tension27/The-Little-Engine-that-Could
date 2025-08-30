@@ -31,19 +31,20 @@ public partial class MovingPlatform : AnimatableBody2D
         Sprite2D forestSprite = GetNode<Sprite2D>("Sprite2D");
         Sprite2D caveSprite = GetNode<Sprite2D>("Sprite2D2");
 
-        if (currentLevel > 0 && currentLevel < 4)
+        if (currentLevel >= 1  && currentLevel <= 10)
         {
             caveSprite.Visible = false;
             forestSprite.Visible = true;
         }
-        else if (currentLevel > 3 && currentLevel < 7)
+        else if (currentLevel >= 11 && currentLevel <= 20)
         {
             caveSprite.Visible = true;
             forestSprite.Visible = false;
         }
-        else if (currentLevel > 6 && currentLevel < 10)
+        else if (currentLevel >= 21 && currentLevel <= 30)
         {
-            //
+            caveSprite.Visible = false;
+            forestSprite.Visible = false;
         }
     }
 

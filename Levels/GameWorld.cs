@@ -72,6 +72,7 @@ public partial class GameWorld : Node2D
     //starts the game at the first level and automatically plays through them all
     public void OnStartPressed()
 	{
+        Global.isOnLevelSelect = false;
         playerIsOnLevelSelect = false;
         playerIsOnTutorial = false;
 		GetNode<Control>("MainMenu").Visible = false;
@@ -229,6 +230,7 @@ public partial class GameWorld : Node2D
     //Used in the level select method plays whatever level the player chooses in the menu
     public void OnLevelSelected(int levelSelected)
     {
+        Global.isOnLevelSelect = true;
         playerIsOnTutorial = false;
         playerIsOnLevelSelect = true;
         Global.currentSceneNumber = levelSelected;
@@ -270,38 +272,34 @@ public partial class GameWorld : Node2D
     {
         if (playerIsOnLevelSelect == true)
         {
-            if (currentLevel >= 0 && currentLevel <= 3)
+            if (currentLevel >= 1 && currentLevel <= 10 )
             {
                 BGMusicForest.Play();
             }
-            else if (currentLevel >= 4 && currentLevel <= 6)
+            else if (currentLevel >= 11 && currentLevel <= 20)
             {
                 BGMusicForest.Stop();
                 BGMusicCave.Play();
             }
-            else if (currentLevel >= 7 && currentLevel <= 10)
+            else if (currentLevel >= 21 && currentLevel <= 30)
             {
                 BGMusicCave.Stop();
                 BGMusicFortress.Play();
             }
-            else if (currentLevel >= 11 && currentLevel <= 20)
-            {
-                BGMusicForest.Play();
-            }
         }
         else
         {
-            if (currentLevel == 0 || currentLevel == 1)
+            if (currentLevel == 1)
             {
                 BGMusicForest.Play();
             }
-            else if (currentLevel == 4)
+            else if (currentLevel == 11)
             {
                 await ToSignal(GetTree().CreateTimer(4.1), SceneTreeTimer.SignalName.Timeout);
                 BGMusicForest.Stop();
                 BGMusicCave.Play();
             }
-            else if (currentLevel == 7)
+            else if (currentLevel == 21)
             {
                 await ToSignal(GetTree().CreateTimer(4.1), SceneTreeTimer.SignalName.Timeout);
                 BGMusicCave.Stop();
