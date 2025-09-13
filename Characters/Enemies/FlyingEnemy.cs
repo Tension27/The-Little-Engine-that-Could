@@ -4,11 +4,13 @@ using System.Reflection.PortableExecutable;
 
 public partial class FlyingEnemy : EnemyRoot
 {
+    Sprite2D sprite;
     public override void _Ready()
     {
+        sprite = GetNode<Sprite2D>("Sprite2D");
         RandomizeColor();
         direction = Vector2.One;
-        moveSpeed = 200;
+        moveSpeed = 300;
     }
 
     public override async void _PhysicsProcess(double delta)
@@ -24,15 +26,33 @@ public partial class FlyingEnemy : EnemyRoot
         {
             if (IsOnWall())
             {
+                if ((direction.X == -1 && direction.Y == -1) ||
+                     direction.X == 1 && direction.Y == 1)
+                {
+                    sprite.RotationDegrees += 90;
+                }
+                else
+                {
+                    sprite.RotationDegrees -= 90;
+                }
                 direction.X *= -1;
             }
             else
             {
+                if ((direction.X == 1 && direction.Y == -1) ||
+                     direction.X == -1 && direction.Y == 1)
+                {
+                    sprite.RotationDegrees += 90;
+                }
+                else
+                {
+                    sprite.RotationDegrees -= 90;
+                }
                 direction.Y *= -1;
             }
             canTurn = false;
 
-            RandomizeColor();
+            //RandomizeColor();
 
             await ToSignal(GetTree().CreateTimer(.05f), SceneTreeTimer.SignalName.Timeout);
             canTurn = true;
@@ -48,6 +68,6 @@ public partial class FlyingEnemy : EnemyRoot
         byte rNum2 = (byte)rng.RandfRange(1, 255);
         byte rNum3 = (byte)rng.RandfRange(1, 255);
 
-        GetNode<Sprite2D>("Sprite2D").SelfModulate = Color.Color8(rNum1, rNum2, rNum3);
+        sprite.SelfModulate = Color.Color8(rNum1, rNum2, rNum3);
     }
 }

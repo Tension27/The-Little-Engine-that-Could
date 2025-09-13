@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://du8flt7vk742m"]
+[gd_scene load_steps=9 format=3 uid="uid://du8flt7vk742m"]
 
 [ext_resource type="PackedScene" uid="uid://ccrq5m6seybjm" path="res://Characters/Enemies/EnemyRoot.tscn" id="1_7kayn"]
 [ext_resource type="Script" path="res://Characters/Enemies/FlyingEnemy.cs" id="2_qwi64"]
+[ext_resource type="Texture2D" uid="uid://b5akflhpe7lwx" path="res://Assets/Characters/Bat/Bat.png" id="3_0hjes"]
 [ext_resource type="Texture2D" uid="uid://bsyyhhssgaett" path="res://Assets/Characters/DVDLogo/DVDLogoWhite.png" id="3_1f2ct"]
 [ext_resource type="AudioStream" uid="uid://cx4i82hwd36bn" path="res://Assets/Sound Effects/Squish Enemy.mp3" id="4_lvqqp"]
 
@@ -33,8 +34,9 @@ scale = Vector2(8.09, 8.09)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="3"]
 texture_filter = 1
-scale = Vector2(8, 8)
-texture = ExtResource("3_1f2ct")
+rotation = 2.35619
+scale = Vector2(0.0470429, 0.0470429)
+texture = ExtResource("3_0hjes")
 
 [node name="Squashed" parent="." index="4"]
 visible = false
