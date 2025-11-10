@@ -5,10 +5,11 @@ using System.Reflection.PortableExecutable;
 public partial class FlyingEnemy : EnemyRoot
 {
     Sprite2D sprite;
+    CollisionShape2D hitBox;
+    CollisionShape2D hurtBox;
+    CollisionShape2D squashBox;
     public override void _Ready()
     {
-        sprite = GetNode<Sprite2D>("Sprite2D");
-        RandomizeColor();
         direction = Vector2.One;
         moveSpeed = 300;
     }
@@ -29,11 +30,11 @@ public partial class FlyingEnemy : EnemyRoot
                 if ((direction.X == -1 && direction.Y == -1) ||
                      direction.X == 1 && direction.Y == 1)
                 {
-                    sprite.RotationDegrees += 90;
+                    RotationDegrees += 90;
                 }
                 else
                 {
-                    sprite.RotationDegrees -= 90;
+                    RotationDegrees -= 90;
                 }
                 direction.X *= -1;
             }
@@ -42,32 +43,19 @@ public partial class FlyingEnemy : EnemyRoot
                 if ((direction.X == 1 && direction.Y == -1) ||
                      direction.X == -1 && direction.Y == 1)
                 {
-                    sprite.RotationDegrees += 90;
+                    RotationDegrees += 90;
                 }
                 else
                 {
-                    sprite.RotationDegrees -= 90;
+                    RotationDegrees -= 90;
                 }
                 direction.Y *= -1;
             }
             canTurn = false;
 
-            //RandomizeColor();
-
             await ToSignal(GetTree().CreateTimer(.05f), SceneTreeTimer.SignalName.Timeout);
             canTurn = true;
         }
         MoveAndSlide();
-    }
-
-    private void RandomizeColor()
-    {
-        var rng = new RandomNumberGenerator();
-
-        byte rNum1 = (byte)rng.RandfRange(1, 255);
-        byte rNum2 = (byte)rng.RandfRange(1, 255);
-        byte rNum3 = (byte)rng.RandfRange(1, 255);
-
-        sprite.SelfModulate = Color.Color8(rNum1, rNum2, rNum3);
     }
 }

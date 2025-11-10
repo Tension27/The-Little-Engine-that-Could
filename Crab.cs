@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Drawing;
 
-public partial class Goomba : CharacterBody2D
+public partial class Crab : CharacterBody2D
 {
     public float moveSpeed = 100f;
     [Export]
@@ -67,62 +67,7 @@ public partial class Goomba : CharacterBody2D
     {
         if (area.GetParent() is Player player)
         {
-            if (player.Velocity.Y > 2500)
-            {
-                float realVelocity = player.Velocity.Y;
-                headHit = true;
-                Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred();
-            }
-            else if (area.Name == "Area2D2")
-            {
-                float realVelocity = player.Velocity.Y;
-                bodyHit = true;
-                Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred();
-            }
-        }
-    }
-
-    // Checks to see if the player jumped on the goombas head
-    public void OnSquashAreaEntered(Node2D body)
-    {
-        if (body is Player player)
-        {
-            float realVelocity = player.Velocity.Y;
-            headHit = true;
-            Callable.From(() => ResolveFlagsAfterPhysicsOver(player, realVelocity)).CallDeferred(); 
-        }
-    }
-
-    // Deletes the mob if they have been jumped on
-    public void OnSquashTimeout()
-    {
-        QueueFree();
-    }
-
-    // This was put in place to solve a bug where the player would collide with the hitbox and hurtbox in the same frame and
-    // die instead of killing the goomba.
-    public void ResolveFlagsAfterPhysicsOver(Player player, float realVelocity)
-    {
-        if (headHit == true && realVelocity > 120)
-        {
-            GetNode<Area2D>("Area2D").QueueFree();
-            player.Bounce();
-            GetNode<AudioStreamPlayer>("EnemySquashed").Play();
-            GetNode<Timer>("QueueFreeTimer").Start();
-            GetNode<AnimatedSprite2D>("AnimatedSprite2D").Visible = false;
-            GetNode<Sprite2D>("Squashed").Visible = true;
-
-            GetNode<Area2D>("SquashZone").QueueFree();
-
-            moveSpeed = 0;
-            return;
-        }
-        else if (bodyHit == true)
-        {
             player.AddDeath();
         }
-
-        bodyHit = false;
-        headHit = false;
     }
 }

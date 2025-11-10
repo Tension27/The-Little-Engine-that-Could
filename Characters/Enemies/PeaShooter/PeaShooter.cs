@@ -10,7 +10,7 @@ public partial class PeaShooter : CharacterBody2D
     [Export]
     public float moveSpeed = 100f;
     [Export]
-    public  int direction = -1;
+    public int direction = -1;
     [Export]
     private float fireRate = 2.4f;
     [Export]

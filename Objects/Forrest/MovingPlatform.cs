@@ -30,20 +30,24 @@ public partial class MovingPlatform : AnimatableBody2D
     {
         Sprite2D forestSprite = GetNode<Sprite2D>("Sprite2D");
         Sprite2D caveSprite = GetNode<Sprite2D>("Sprite2D2");
+        Sprite2D FortressSprite= GetNode<Sprite2D>("Sprite2D3");
 
         if (currentLevel >= 1  && currentLevel <= 10)
         {
             caveSprite.Visible = false;
+            FortressSprite.Visible = false;
             forestSprite.Visible = true;
         }
         else if (currentLevel >= 11 && currentLevel <= 20)
         {
             caveSprite.Visible = true;
+            FortressSprite.Visible = false;
             forestSprite.Visible = false;
         }
         else if (currentLevel >= 21 && currentLevel <= 30)
         {
             caveSprite.Visible = false;
+            FortressSprite.Visible = true;
             forestSprite.Visible = false;
         }
     }

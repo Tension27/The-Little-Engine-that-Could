@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkljmmxeo77mq"]
+
+[ext_resource type="Script" path="res://Crab.cs" id="1_xeqe1"]
+[ext_resource type="Texture2D" uid="uid://oi1t8c3iwkvd" path="res://Assets/Characters/Crab/CrabWalk_SS.png" id="2_6pxb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qunwt"]
+size = Vector2(96, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxm3g"]
+size = Vector2(80.7143, 53.5714)
+
+[sub_resource type="Animation" id="Animation_68gk2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qnkjm"]
+resource_name = "Walk"
+length = 0.872
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8ho4"]
+_data = {
+"RESET": SubResource("Animation_68gk2"),
+"Walk": SubResource("Animation_qnkjm")
+}
+
+[node name="Crab" type="CharacterBody2D"]
+scale = Vector2(1.4, 1.4)
+collision_layer = 16
+collision_mask = 4626
+script = ExtResource("1_xeqe1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("2_6pxb5")
+hframes = 4
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_qunwt")
+
+[node name="FloorChecker" type="RayCast2D" parent="."]
+target_position = Vector2(0, 53)
+collision_mask = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="KillZone" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.35715, 4.64286)
+shape = SubResource("RectangleShape2D_nxm3g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f8ho4")
+}
+autoplay = "Walk"
+
+[connection signal="area_entered" from="Area2D" to="." method="OnAreaEntered"]

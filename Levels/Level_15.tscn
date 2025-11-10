@@ -1,222 +1,250 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3rv0er4v0goq"]
+[gd_scene load_steps=34 format=3 uid="uid://c5q608kwnwf4c"]
 
-[ext_resource type="Texture2D" uid="uid://ciobs0et8wnpk" path="res://Assets/Environment/Backgrounds/FortressBackground.png" id="1_lk73g"]
-[ext_resource type="PackedScene" uid="uid://cgdvrqt8pbhj5" path="res://Assets/Environment/Custom Tiles/Fortress/FloorChunk.tscn" id="2_hmfoq"]
-[ext_resource type="Script" path="res://DeathZone.cs" id="4_hm30k"]
-[ext_resource type="PackedScene" uid="uid://d2i5gacr040vj" path="res://Objects/Spike.tscn" id="5_k2pie"]
-[ext_resource type="PackedScene" uid="uid://dmb1ekdudeknc" path="res://Objects/Forrest/MovingPlatform.tscn" id="5_kvt6d"]
-[ext_resource type="PackedScene" uid="uid://7qskm4nl876x" path="res://Characters/Enemies/PeaShooter/PeaShooter.tscn" id="6_ajl80"]
-[ext_resource type="PackedScene" uid="uid://cafi35quxn4b7" path="res://Objects/Lever.tscn" id="7_nvm74"]
+[ext_resource type="PackedScene" uid="uid://c722xx5yn2nk3" path="res://Levels/level_base.tscn" id="1_dt02u"]
+[ext_resource type="Texture2D" uid="uid://cismqu0txlyq8" path="res://Assets/Environment/Backgrounds/CaveBackground.png" id="2_gmp73"]
+[ext_resource type="Texture2D" uid="uid://bcl6gkqsbwrc4" path="res://Assets/Environment/Custom Tiles/Cave/CaveEnvironment_SS.png" id="3_gnluq"]
+[ext_resource type="PackedScene" uid="uid://00yrvyuitjsb" path="res://Objects/Cave/FinishCave.tscn" id="4_3qhaj"]
+[ext_resource type="PackedScene" uid="uid://cmys6qsrb7se1" path="res://Objects/Button.tscn" id="5_cdirh"]
+[ext_resource type="PackedScene" uid="uid://di051ae15i1oa" path="res://Objects/PushableBlockPhysicsTest.tscn" id="6_yjmil"]
 [ext_resource type="PackedScene" uid="uid://brliqbk8a12ae" path="res://Objects/Coin.tscn" id="8_kf4jj"]
-[ext_resource type="PackedScene" uid="uid://lea4mkpn668t" path="res://Objects/key.tscn" id="8_ruhbj"]
-[ext_resource type="PackedScene" uid="uid://henw0jo66lir" path="res://Characters/Enemies/Goomba.tscn" id="9_hg4ja"]
-[ext_resource type="PackedScene" uid="uid://cio6ooqnjuxmp" path="res://Objects/DoorThatNeedsKey.tscn" id="9_jocs6"]
-[ext_resource type="PackedScene" uid="uid://by7knbq61bmd1" path="res://Objects/Fortress/FinishFortress.tscn" id="12_5on33"]
+[ext_resource type="PackedScene" uid="uid://du8flt7vk742m" path="res://Characters/Enemies/FlyingEnemy.tscn" id="9_ibfhn"]
+[ext_resource type="PackedScene" uid="uid://bkljmmxeo77mq" path="res://Characters/Enemies/Crab.tscn" id="10_l2jln"]
 [ext_resource type="PackedScene" uid="uid://dql8a7rkbpx6s" path="res://Objects/Base Class'/LockedDoor.tscn" id="13_12ku8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ul34"]
-size = Vector2(4673, 310)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rv0yw"]
+texture = ExtResource("3_gnluq")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
 
-[node name="Level_8" type="Node2D"]
+[sub_resource type="TileSet" id="TileSet_bo740"]
+sources/0 = SubResource("TileSetAtlasSource_rv0yw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(-36, 2)
-scale = Vector2(1.77474, 1.62305)
-texture = ExtResource("1_lk73g")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8xdp"]
+size = Vector2(16, 329.451)
 
-[node name="Floor&Walls" parent="." instance=ExtResource("2_hmfoq")]
-position = Vector2(864, 746)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glsvh"]
+size = Vector2(640, 22.989)
 
-[node name="FloorChunk2" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-512, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wfdf"]
+size = Vector2(640, 32)
 
-[node name="FloorChunk3" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-2560, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8jgq"]
+size = Vector2(16, 330.549)
 
-[node name="FloorChunk4" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-1920, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fav03"]
+size = Vector2(16, 144)
 
-[node name="FloorChunk5" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-1280, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_treal"]
+size = Vector2(16, 48)
 
-[node name="FloorChunk6" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(0, -1492)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kilhf"]
+size = Vector2(16, 48)
 
-[node name="FloorChunk7" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-640, -1492)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ums5"]
+size = Vector2(32.8326, 16)
 
-[node name="FloorChunk8" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-2560, -1492)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kjt"]
+size = Vector2(128, 20.6154)
 
-[node name="FloorChunk9" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-1920, -1492)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wckh"]
+size = Vector2(128, 21.0549)
 
-[node name="FloorChunk10" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-1280, -1492)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmnta"]
+size = Vector2(112, 21.3626)
 
-[node name="FloorChunk11" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(512, -128)
-rotation = -1.5708
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf4ca"]
+size = Vector2(640, 32)
 
-[node name="FloorChunk12" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(512, -1408)
-rotation = -1.5708
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7lp5"]
+size = Vector2(640, 32)
 
-[node name="FloorChunk13" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-2304, -1920)
-rotation = 1.5708
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tepsl"]
+size = Vector2(112, 20.7033)
 
-[node name="FloorChunk14" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-2304, -640)
-rotation = 1.5708
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48u06"]
+size = Vector2(95.6483, 20.3956)
 
-[node name="FloorChunk15" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-2304, -1280)
-rotation = 1.5708
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u67n"]
+size = Vector2(16, 20)
 
-[node name="FloorChunk17" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-2176, -1024)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opybs"]
+size = Vector2(128, 21.0549)
 
-[node name="FloorChunk18" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-2176, -684)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2mfw"]
+size = Vector2(32, 19.4286)
 
-[node name="FloorChunk19" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-1119, -515)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wcfs"]
+size = Vector2(32, 16)
 
-[node name="FloorChunk20" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-1285, -940)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqrnh"]
+size = Vector2(16, 192)
 
-[node name="FloorChunk" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-128, -256)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oollj"]
+size = Vector2(16, 48)
 
-[node name="FloorChunk16" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(512, -768)
-rotation = -1.5708
+[node name="Level_22" instance=ExtResource("1_dt02u")]
 
-[node name="FloorChunk21" parent="Floor&Walls" instance=ExtResource("2_hmfoq")]
-position = Vector2(-128, -950)
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 49)
+scale = Vector2(4.82281, 4.48633)
+texture = ExtResource("2_gmp73")
 
-[node name="Coin4" parent="." instance=ExtResource("8_kf4jj")]
-position = Vector2(-5, 93)
+[node name="TileMap" parent="." index="1"]
+tile_set = SubResource("TileSet_bo740")
+layer_0/tile_data = PackedInt32Array(-589844, 262144, 0, -655341, 262144, 0, -524308, 262144, 0, -458772, 262144, 0, -393236, 262144, 0, -327700, 262144, 0, -262164, 262144, 0, -196628, 262144, 0, -131092, 262144, 0, -65556, 262144, 0, -20, 262144, 0, 65516, 262144, 0, 131052, 262144, 0, 196588, 262144, 0, 262124, 262144, 0, 327660, 262144, 0, 393196, 262144, 0, 458732, 262144, 0, 524268, 262144, 0, -589805, 262144, 0, -524269, 262144, 0, -458733, 262144, 0, -393197, 262144, 0, -327661, 262144, 0, 196627, 262144, 0, 131091, 262144, 0, 65555, 262144, 0, 19, 262144, 0, -65517, 262144, 0, -131053, 262144, 0, -196589, 262144, 0, -262125, 262144, 0, 393235, 262144, 0, 327699, 262144, 0, 262163, 262144, 0, 458771, 262144, 0, 720876, 0, 1, 786412, 65536, 0, 720877, 65536, 1, 786413, 0, 0, 720878, 65536, 1, 786414, 65536, 0, 720879, 0, 1, 786415, 0, 0, 720880, 65536, 1, 786416, 65536, 0, 720881, 0, 1, 786417, 0, 0, 720882, 65536, 1, 786418, 65536, 0, 720883, 0, 1, 786419, 0, 0, 720884, 65536, 1, 786420, 65536, 0, 720885, 0, 1, 786421, 0, 0, 720886, 65536, 1, 786422, 65536, 0, 720887, 0, 1, 786423, 0, 0, 720888, 65536, 1, 786424, 65536, 0, 720889, 0, 1, 786425, 0, 0, 720890, 65536, 1, 786426, 65536, 0, 720891, 0, 1, 786427, 0, 0, 720892, 65536, 1, 786428, 65536, 0, 720893, 0, 1, 786429, 0, 0, 720894, 65536, 1, 786430, 65536, 0, 720895, 0, 1, 786431, 0, 0, 655360, 65536, 1, 720896, 65536, 0, 655361, 0, 1, 720897, 0, 0, 655362, 65536, 1, 720898, 65536, 0, 655363, 0, 1, 720899, 0, 0, 655364, 65536, 1, 720900, 65536, 0, 655365, 0, 1, 720901, 0, 0, 655366, 65536, 1, 720902, 65536, 0, 655367, 0, 1, 720903, 0, 0, 655368, 65536, 1, 720904, 65536, 0, 655369, 0, 1, 720905, 0, 0, 655370, 65536, 1, 720906, 65536, 0, 655371, 0, 1, 720907, 0, 0, 655372, 65536, 1, 720908, 65536, 0, 655373, 0, 1, 720909, 0, 0, 655374, 65536, 1, 720910, 65536, 0, 655375, 0, 1, 720911, 0, 0, 655376, 65536, 1, 720912, 65536, 0, 655377, 0, 1, 720913, 0, 0, 655378, 0, 1, 720914, 0, 0, 655379, 65536, 1, 720915, 65536, 0, 524307, 262144, 0, 589843, 262144, 0, 589804, 262144, 0, 655340, 262144, 0, -655380, 262144, 0, -720877, 262144, 0, -786413, 262144, 0, -720916, 262144, 0, -655379, 0, 0, -655378, 65536, 0, -655377, 0, 0, -655376, 65536, 0, -655375, 0, 0, -655374, 65536, 0, -655373, 0, 0, -655372, 65536, 0, -655371, 0, 0, -655370, 0, 0, -655369, 65536, 0, -655368, 0, 0, -655367, 65536, 0, -655366, 0, 0, -655365, 65536, 0, -655364, 0, 0, -655363, 65536, 0, -655362, 0, 0, -655361, 65536, 0, -720896, 65536, 0, -720895, 0, 0, -720894, 65536, 0, -720893, 65536, 0, -720892, 0, 0, -720891, 65536, 0, -720890, 0, 0, -720889, 0, 0, -720888, 65536, 0, -720887, 0, 0, -720886, 65536, 0, -720885, 0, 0, -720884, 65536, 0, -720883, 0, 0, -720882, 65536, 0, -720881, 0, 0, -720880, 65536, 0, -720879, 65536, 0, -720878, 0, 0, -720915, 0, 1, -720914, 65536, 1, -720913, 0, 1, -720912, 65536, 1, -720911, 0, 1, -720910, 65536, 1, -720909, 0, 1, -720908, 65536, 1, -720907, 0, 1, -720906, 65536, 1, -720905, 0, 1, -720904, 65536, 1, -720903, 0, 1, -720902, 65536, 1, -720901, 0, 1, -720900, 65536, 1, -720899, 0, 1, -720898, 65536, 1, -720897, 0, 1, -786432, 65536, 1, -786431, 0, 1, -786430, 65536, 1, -786429, 0, 1, -786428, 65536, 1, -786427, 0, 1, -786426, 65536, 1, -786425, 0, 1, -786424, 65536, 1, -786423, 0, 1, -786422, 65536, 1, -786421, 0, 1, -786420, 65536, 1, -786419, 0, 1, -786418, 65536, 1, -786417, 0, 1, -786416, 65536, 1, -786415, 0, 1, -786414, 65536, 1, 655341, 196608, 0, 589842, 131072, 0, 393197, 0, 0, 393198, 65536, 0, 393199, 0, 0, 393200, 0, 0, 393201, 65536, 0, 327661, 0, 1, 327662, 65536, 1, 327663, 0, 1, 327664, 0, 1, 327665, 65536, 1, 327666, 0, 1, 327667, 65536, 1, 393202, 0, 0, 393203, 65536, 0, 262156, 0, 1, 327692, 0, 0, 262157, 65536, 1, 327693, 65536, 0, 262158, 0, 1, 327694, 0, 0, 262159, 0, 1, 327695, 0, 0, 262160, 65536, 1, 327696, 65536, 0, 262161, 0, 1, 327697, 0, 0, 262162, 65536, 1, 327698, 65536, 0, -19, 0, 1, 65517, 0, 0, -18, 65536, 1, 65518, 65536, 0, -17, 0, 1, 65519, 0, 0, -16, 0, 1, 65520, 0, 0, -15, 65536, 1, 65521, 65536, 0, -14, 0, 1, 65522, 0, 0, -13, 65536, 1, 65523, 65536, 0, 458742, 0, 1, 524278, 0, 0, 458743, 65536, 1, 524279, 65536, 0, 458744, 0, 1, 524280, 0, 0, 458745, 0, 1, 524281, 0, 0, 458746, 65536, 1, 524282, 65536, 0, 458747, 0, 1, 524283, 0, 0, 458748, 65536, 1, 524284, 65536, 0, 393219, 0, 1, 458755, 0, 0, 393220, 65536, 1, 458756, 65536, 0, 393221, 0, 1, 458757, 0, 0, 393222, 0, 1, 458758, 0, 0, 393223, 65536, 1, 458759, 65536, 0, 393224, 0, 1, 458760, 0, 0, 393225, 65536, 1, 458761, 65536, 0, -65524, 0, 1, 12, 0, 0, -65523, 65536, 1, 13, 65536, 0, 131090, 0, 1, 15, 0, 1, 196626, 0, 0, 65551, 0, 0, -65526, 0, 1, 10, 0, 0, -65525, 65536, 1, 11, 65536, 0, -65528, 0, 1, 8, 0, 0, -65527, 65536, 1, 9, 65536, 0)
 
-[node name="Coin" parent="." instance=ExtResource("8_kf4jj")]
-position = Vector2(1244, 618)
+[node name="StaticBody2D" parent="." index="2"]
+texture_filter = 1
+tilemap_nodepath = NodePath("../TileMap")
+delete_children_on_run = false
 
-[node name="Coin2" parent="." instance=ExtResource("8_kf4jj")]
-position = Vector2(-1306, -98)
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-312, -4.72527)
+shape = SubResource("RectangleShape2D_f8xdp")
 
-[node name="Coin3" parent="." instance=ExtResource("8_kf4jj")]
-position = Vector2(679, -5)
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+position = Vector2(0, -180.506)
+shape = SubResource("RectangleShape2D_glsvh")
 
-[node name="Coins" parent="." instance=ExtResource("8_kf4jj")]
-position = Vector2(-1046, 605)
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+position = Vector2(0, 176)
+shape = SubResource("RectangleShape2D_8wfdf")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-99, 975)
-collision_layer = 4
-script = ExtResource("4_hm30k")
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" index="3"]
+position = Vector2(312, -5.27473)
+shape = SubResource("RectangleShape2D_f8jgq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(63.5, 90)
-shape = SubResource("RectangleShape2D_6ul34")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="4"]
+position = Vector2(-312, -88)
+shape = SubResource("RectangleShape2D_fav03")
 
-[node name="Spike" parent="." instance=ExtResource("5_k2pie")]
-position = Vector2(-929, 628)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="5"]
+position = Vector2(-312, 40)
+shape = SubResource("RectangleShape2D_treal")
 
-[node name="Spike2" parent="Spike" instance=ExtResource("5_k2pie")]
-position = Vector2(1052, -2)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="6"]
+position = Vector2(-312, 120)
+shape = SubResource("RectangleShape2D_kilhf")
 
-[node name="Spike3" parent="Spike" instance=ExtResource("5_k2pie")]
-position = Vector2(1248, 1)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" index="7"]
+position = Vector2(-300.07, 159.711)
+rotation = 0.785397
+shape = SubResource("RectangleShape2D_2ums5")
 
-[node name="Spike4" parent="Spike" instance=ExtResource("5_k2pie")]
-position = Vector2(1818, -255)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" index="8"]
+position = Vector2(-256, -5.69231)
+shape = SubResource("RectangleShape2D_w7kjt")
 
-[node name="Spike5" parent="Spike" instance=ExtResource("5_k2pie")]
-position = Vector2(1867, -255)
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" index="9"]
+position = Vector2(-256, 74.5275)
+shape = SubResource("RectangleShape2D_6wckh")
 
-[node name="Spike6" parent="Spike" instance=ExtResource("5_k2pie")]
-position = Vector2(242, -939)
-rotation = 1.5708
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" index="10"]
+position = Vector2(-104, 106.681)
+shape = SubResource("RectangleShape2D_tmnta")
 
-[node name="Spike7" parent="Spike" instance=ExtResource("5_k2pie")]
-position = Vector2(-27, -682)
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" index="11"]
+position = Vector2(0, -176)
+shape = SubResource("RectangleShape2D_jf4ca")
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" index="12"]
+position = Vector2(0, 176)
+shape = SubResource("RectangleShape2D_g7lp5")
 
-[node name="Goomba2" parent="Enemies" instance=ExtResource("9_hg4ja")]
-position = Vector2(-141, 528)
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" index="13"]
+position = Vector2(104, 106.352)
+shape = SubResource("RectangleShape2D_tepsl")
 
-[node name="Goomba" parent="Enemies" instance=ExtResource("9_hg4ja")]
-position = Vector2(-783, 600)
-direction = 1
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" index="14"]
+position = Vector2(176.176, -5.8022)
+shape = SubResource("RectangleShape2D_48u06")
 
-[node name="Gooma3" parent="Enemies" instance=ExtResource("9_hg4ja")]
-direction = 1
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D" index="15"]
+position = Vector2(248, 10)
+shape = SubResource("RectangleShape2D_8u67n")
 
-[node name="CharacterBody2D" parent="Enemies" instance=ExtResource("9_hg4ja")]
-position = Vector2(1139, 618)
-direction = 1
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D" index="16"]
+position = Vector2(256, 74.5275)
+shape = SubResource("RectangleShape2D_opybs")
 
-[node name="CharacterBody2D2" parent="Enemies" instance=ExtResource("9_hg4ja")]
-position = Vector2(1006, 343)
-direction = 1
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D" index="17"]
+position = Vector2(304, 41.7143)
+shape = SubResource("RectangleShape2D_c2mfw")
 
-[node name="CharacterBody2D3" parent="Enemies" instance=ExtResource("9_hg4ja")]
-position = Vector2(-786, -404)
-direction = 1
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D" index="18"]
+position = Vector2(302.857, 156.703)
+rotation = -0.785397
+shape = SubResource("RectangleShape2D_6wcfs")
 
-[node name="CharacterBody2D4" parent="Enemies" instance=ExtResource("6_ajl80")]
-position = Vector2(-349, -324)
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D" index="19"]
+position = Vector2(312, -64)
+shape = SubResource("RectangleShape2D_hqrnh")
 
-[node name="CharacterBody2D5" parent="Enemies" instance=ExtResource("6_ajl80")]
-position = Vector2(-395, 589)
-direction = 1
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D" index="20"]
+position = Vector2(312, 120)
+shape = SubResource("RectangleShape2D_oollj")
 
-[node name="CharacterBody2D6" parent="Enemies" instance=ExtResource("6_ajl80")]
-position = Vector2(-1089, -68)
+[node name="FinishCave" parent="." index="3" instance=ExtResource("4_3qhaj")]
+position = Vector2(0, 568)
+coinsToFinish = 3
 
-[node name="CharacterBody2D7" parent="Enemies" instance=ExtResource("6_ajl80")]
-position = Vector2(1043, -78)
+[node name="Button" parent="." index="4" instance=ExtResource("5_cdirh")]
+position = Vector2(-999, 736)
 
-[node name="Doors&Keys" type="Node" parent="."]
+[node name="Button2" parent="." index="5" instance=ExtResource("5_cdirh")]
+position = Vector2(985, 736)
 
-[node name="YellowKey" parent="Doors&Keys" instance=ExtResource("8_ruhbj")]
-position = Vector2(1125, -375)
+[node name="RigidBody2D" parent="." index="6" instance=ExtResource("6_yjmil")]
+position = Vector2(1, 669)
 
-[node name="BlueKeyDoor" parent="Doors&Keys" instance=ExtResource("9_jocs6")]
-modulate = Color(0.027451, 0.121569, 1, 1)
-self_modulate = Color(0.027451, 0.121569, 1, 1)
-position = Vector2(893, -369)
+[node name="LockedDoor" parent="." index="7" instance=ExtResource("13_12ku8")]
+position = Vector2(-950, 132)
 
-[node name="YellowKeyDoor" parent="Doors&Keys" instance=ExtResource("9_jocs6")]
-modulate = Color(100, 100, 0.969, 1)
-self_modulate = Color(1, 1, 0, 1)
-light_mask = 0
-position = Vector2(-921, -443)
+[node name="LockedDoor2" parent="." index="8" instance=ExtResource("13_12ku8")]
+position = Vector2(-1106, 132)
 
-[node name="BlueKey" parent="Doors&Keys" instance=ExtResource("8_ruhbj")]
-modulate = Color(0.053, 0.167, 100, 1)
-position = Vector2(-203, 105)
+[node name="LockedDoor3" parent="." index="9" instance=ExtResource("13_12ku8")]
+position = Vector2(952, 132)
 
-[node name="MovingPlatform" parent="." instance=ExtResource("5_kvt6d")]
-position = Vector2(930, 88)
-phaseOffset = 0.22
-distance = Vector2(0, 90)
-debug = false
+[node name="Coin" parent="." index="10" instance=ExtResource("8_kf4jj")]
+position = Vector2(-1275, 217)
 
-[node name="Area2D2" parent="." instance=ExtResource("7_nvm74")]
-position = Vector2(1158, 431)
+[node name="Coin2" parent="." index="11" instance=ExtResource("8_kf4jj")]
+position = Vector2(-2, 450)
 
-[node name="FinishFortress" parent="." instance=ExtResource("12_5on33")]
-position = Vector2(-1221, -502)
-coinsToFinish = 5
+[node name="Coin3" parent="." index="12" instance=ExtResource("8_kf4jj")]
+position = Vector2(501, -123)
 
-[node name="LockedDoor" parent="." instance=ExtResource("13_12ku8")]
-z_index = -1
-position = Vector2(-1184, -80)
+[node name="RigidBody2D2" parent="." index="13" instance=ExtResource("6_yjmil")]
+position = Vector2(893, -124)
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="OnBodyEntered2D"]
-[connection signal="body_entered" from="Area2D2" to="LockedDoor" method="OperateDoor"]
-[connection signal="body_exited" from="Area2D2" to="LockedDoor" method="OperateDoor"]
+[node name="FlyingEnemy" parent="." index="14" instance=ExtResource("9_ibfhn")]
+position = Vector2(-621, -589)
+
+[node name="FlyingEnemy3" parent="." index="15" instance=ExtResource("9_ibfhn")]
+position = Vector2(1299, -650)
+
+[node name="FlyingEnemy4" parent="." index="16" instance=ExtResource("9_ibfhn")]
+position = Vector2(-1001, -124)
+direction = Vector2(1, 0)
+
+[node name="FlyingEnemy5" parent="." index="17" instance=ExtResource("9_ibfhn")]
+position = Vector2(501, -80)
+
+[node name="Crab" parent="." index="18" instance=ExtResource("10_l2jln")]
+position = Vector2(-584, 656)
+
+[connection signal="body_entered" from="Button" to="LockedDoor2" method="OperateDoor"]
+[connection signal="body_exited" from="Button" to="LockedDoor2" method="OperateDoor"]
+[connection signal="body_entered" from="Button2" to="LockedDoor" method="OperateDoor"]
+[connection signal="body_entered" from="Button2" to="LockedDoor3" method="OperateDoor"]
+[connection signal="body_exited" from="Button2" to="LockedDoor" method="OperateDoor"]
+[connection signal="body_exited" from="Button2" to="LockedDoor3" method="OperateDoor"]
